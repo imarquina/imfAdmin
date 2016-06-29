@@ -1,3 +1,5 @@
+package resources.collection;
+
 import java.util.Date;
 import java.util.Hashtable;
 

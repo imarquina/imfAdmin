@@ -1,13 +1,15 @@
+package resources.elements;
+
 /**
  * Created by inaki.marquina on 29/06/2016.
  */
-public class Title {
+public class Slogan {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Title() {
+    public Slogan() {
     }
 
     /**

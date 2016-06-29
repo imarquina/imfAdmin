@@ -1,9 +1,11 @@
+package resources.elements;
+
 import java.util.Date;
 
 /**
  * Created by inaki.marquina on 29/06/2016.
  */
-public class Image {
+public class Photo {
     private String _id;
     private Integer _width;
     private Integer _height;
@@ -21,11 +23,11 @@ public class Image {
     /**
      * CONSTRUCTORES
      */
-    public Image() {
+    public Photo() {
 
     }
 
-    public Image(String _id, Integer _width, Integer _height, String _caption, String _src, Date _update, Date _public) {
+    public Photo(String _id, Integer _width, Integer _height, String _caption, String _src, Date _update, Date _public) {
         this._id = _id;
         this._width = _width;
         this._height = _height;

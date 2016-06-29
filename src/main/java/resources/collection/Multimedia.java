@@ -1,14 +1,17 @@
+package resources.collection;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Hashtable;
 
 /**
  * Created by inaki.marquina on 29/06/2016.
  */
-public class Gallery {
+public class Multimedia {
     private String _name;
     private String _src;
     private String _title;
-    private String _infoText;
+    private String _infotext;
     private String _keywords;
     private Date _update;
 
@@ -17,18 +20,19 @@ public class Gallery {
     /**
      * CONSTRUCTORES
      */
-    public Gallery() {
-
+    public Multimedia() {
     }
 
-    public Gallery(String _name, String _src, String _title, Date _update) {
-        this._name = _name;
-        this._src = _src;
-        this._title = _title;
-        this._update = _update;
+    public Multimedia(String _name, String _src, String _title, String _infotext, String _keywords, Date _update) {
+        this.set_name(_name);
+        this.set_src(_src);
+        this.set_title(_title);
+        this.set_infotext(_infotext);
+        this.set_keywords(_keywords);
+        this.set_update(_update);
     }
 
-    /**
+        /**
      * GETTER / SETTER
      */
     public String get_name() {
@@ -55,12 +59,12 @@ public class Gallery {
         this._title = _title;
     }
 
-    public String get_infoText() {
-        return _infoText;
+    public String get_infotext() {
+        return _infotext;
     }
 
-    public void set_infoText(String _infoText) {
-        this._infoText = _infoText;
+    public void set_infotext(String _infotext) {
+        this._infotext = _infotext;
     }
 
     public String get_keywords() {

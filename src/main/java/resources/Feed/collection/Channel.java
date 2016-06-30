@@ -14,14 +14,14 @@ public class Channel {
     public WebMaster webMaster;
 
     public Channel() {
-        title = new Title();
-        link = new Link();
-        description = new Description();
-        language = new Language();
-        pubDate = new PubDate();
-        lastBuildDate = new LastBuildDate();
-        docs = new Docs();
-        managingEditor = new ManagingEditor();
-        webMaster = new WebMaster();
+        this.title = new Title();
+        this.link = new Link();
+        this.description = new Description();
+        this.language = new Language();
+        this.pubDate = new PubDate();
+        this.lastBuildDate = new LastBuildDate();
+        this.docs = new Docs();
+        this.managingEditor = new ManagingEditor();
+        this.webMaster = new WebMaster();
     }
 }

@@ -13,17 +13,17 @@ public class Rss {
 
     public Rss(String _version) {
         this._version = _version;
-        chanel = new Channel();
+        this.chanel = new Channel();
     }
 
     /**
      * GETTER / SETTER
      */
     String get_version() {
-        return _version;
+        return this._version;
     }
 
-    void set_version(String _version) {
-        this._version = _version;
+    void set_version(String version) {
+        this._version = version;
     }
 }

@@ -1,7 +1,9 @@
 package resources.Feed.element;
 
+import java.util.Date;
+
 public class PubDate {
-    private String _content;
+    private Date _content;
 
     /**
      * CONSTRUCTORS
@@ -9,18 +11,18 @@ public class PubDate {
     public PubDate() {
     }
 
-    public PubDate(String _content) {
-        this._content = _content;
+    public PubDate(Date content) {
+        this.set_content(content);
     }
 
     /**
      * GETTER / SETTER
      */
-    public String get_content() {
-        return _content;
+    public Date get_content() {
+        return this._content;
     }
 
-    public void set_content(String _content) {
-        this._content = _content;
+    public void set_content(Date content) {
+        this._content = content;
     }
 }

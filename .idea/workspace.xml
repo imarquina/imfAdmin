@@ -2,41 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d53a1a-fe74-4847-a9a6-f991806c17a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/collection/Folder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/collection/Galleries.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/collection/Gallery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/collection/Multimedia.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/collection/Photos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/ContactForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Image.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Photo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Section.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Slogan.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Title.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Track.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/element/Video.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/XmlFeed.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/diff.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/github_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ide.general.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/resources/XmlFeed.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/resources/XmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/XmlConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/resources/XmlPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Data/XmlPhotos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/resources/XmlSitemap.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IntelliLang.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/git.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/keymap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/laf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/path.macros.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/colors.scheme.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/debugger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/inspection/Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenVersion.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ui.lnf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web-browsers.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/program/Launcher.java" afterPath="$PROJECT_DIR$/src/main/java/program/Launcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,17 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Photos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/XmlPhotos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/program/Launcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Title.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Slogan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/ContactForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Track.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Image.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Section.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Video.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Folder.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/Galleries.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/Gallery.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/Multimedia.java" />
@@ -124,6 +101,17 @@
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/element/Slogan.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/element/Track.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Data/element/Title.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" />
       </list>
     </option>
   </component>
@@ -241,7 +229,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,7 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -305,7 +293,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -487,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467273259902</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Actualizacion">
+      <created>1467288711711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467288711711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -587,102 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/XmlFeed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/Data/XmlConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -712,8 +611,8 @@
         <state relative-caret-position="782">
           <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
           <folding>
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,7 +630,7 @@
         <state relative-caret-position="770">
           <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,7 +640,7 @@
         <state relative-caret-position="430">
           <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -751,9 +650,9 @@
         <state relative-caret-position="221">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#225#226#0" expanded="false" />
+            <element signature="e#279#280#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -787,8 +686,8 @@
         <state relative-caret-position="719">
           <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
           <folding>
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="false" />
+            <element signature="e#1537#1538#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -806,8 +705,8 @@
         <state relative-caret-position="736">
           <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="false" />
+            <element signature="e#1448#1449#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,8 +716,8 @@
         <state relative-caret-position="527">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding>
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="false" />
+            <element signature="e#732#733#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -828,7 +727,126 @@
         <state relative-caret-position="272">
           <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding>
-            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/XmlFeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d53a1a-fe74-4847-a9a6-f991806c17a5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IntelliLang.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Lastmod.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Loc.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Url.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Urlset.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/git.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/keymap.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/laf.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/path.macros.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/colors.scheme.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/debugger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/inspection/Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mavenVersion.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ui.lnf.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web-browsers.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Channel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/collection/Rss.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Description.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Docs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Language.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Link.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/ManagingEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/Title.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java" afterPath="$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +30,50 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="PubDate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XmlSitemap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Urlset.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Urlset.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Url.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Url.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,14 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Galleries.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Gallery.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/Multimedia.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/element/Galleries.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/collection/Galleries.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Data/collection/Photos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Rss/Rss.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/Rss/Channel.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Rss/Title.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Rss/Link.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Rss/Description.java" />
@@ -112,6 +131,14 @@
         <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/WebMaster.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/LastBuildDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/Lastmod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Lastmod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/Loc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Loc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/Url.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/Urlset.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Url.java" />
       </list>
     </option>
   </component>
@@ -200,6 +227,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sitemap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sitemap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="element" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,6 +363,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="collection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,12 +573,19 @@
       <option name="project" value="LOCAL" />
       <updated>1467288711711</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Actualizacion">
+      <created>1467289109570</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1467289109570</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -498,7 +596,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -562,16 +660,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/elements/Image.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/elements/Section.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/elements/Video.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="90" column="6" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/program/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -840,13 +928,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/Feed/element/PubDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="374">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Lastmod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Loc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/XmlSitemap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Urlset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/Sitemap/element/Url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -9,18 +9,18 @@ public class Docs {
     public Docs() {
     }
 
-    public Docs(String _content) {
-        this._content = _content;
+    public Docs(String content) {
+        this.set_content(content);
     }
 
     /**
      * GETTER / SETTER
      */
     public String get_content() {
-        return _content;
+        return this._content;
     }
 
-    public void set_content(String _content) {
-        this._content = _content;
+    public void set_content(String content) {
+        this._content = content;
     }
 }

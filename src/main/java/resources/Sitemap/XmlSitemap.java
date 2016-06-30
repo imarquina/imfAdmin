@@ -1,4 +1,4 @@
-package resources;
+package resources.Sitemap;
 
 import java.util.Date;
 import java.util.Hashtable;

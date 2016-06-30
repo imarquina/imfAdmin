@@ -1,9 +1,13 @@
 package resources.Data.collection;
 
+import resources.Data.element.Image;
+import resources.Data.element.Photo;
+
 import java.util.Date;
 import java.util.Hashtable;
 
 public class Gallery {
+    private Integer _iKey;
     private String _name;
     private String _src;
     private String _title;
@@ -17,16 +21,17 @@ public class Gallery {
      * CONSTRUCTORES
      */
     public Gallery() {
+        _iKey = 0;
         elements = new Hashtable<Integer, Object>();
     }
 
     public Gallery(String name, String src, String title, Date update) {
+        this();
+
         set_name(name);
         set_src(src);
         set_title(title);
         set_update(update);
-
-        elements = new Hashtable<Integer, Object>();
     }
 
     /**
@@ -78,5 +83,16 @@ public class Gallery {
 
     public void set_update(Date update) {
         this._update = update;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Photo addPhoto() {
+        Photo photo = new Photo();
+        this.elements.put(_iKey++, photo);
+
+        return photo;
     }
 }

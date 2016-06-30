@@ -7,6 +7,7 @@ import java.util.Hashtable;
  * COLLECTIONS
  */
 public class Folder {
+    private Integer _iKey;
     private String _name;
     private String _src;
     private String _title;
@@ -20,18 +21,20 @@ public class Folder {
      * CONSTRUCTORS
      */
     public Folder() {
+        _iKey = 0;
         this.elements = new Hashtable<Integer, Object>();
     }
 
     public Folder(String name, String src, String title, String infoText, String
             keywords, Date update) {
+        this();
+
         this.set_name(name);
         this.set_src(src);
         this.set_title(title);
         this.set_infoText(infoText);
         this.set_keywords(keywords);
         this.set_update(update);
-        this.elements = new Hashtable<Integer, Object>();
     }
 
     /**
@@ -83,5 +86,16 @@ public class Folder {
 
     public void set_update(Date update) {
         this._update = update;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Gallery addGallery () {
+        Gallery gallery = new Gallery();
+        this.elements.put(_iKey++, gallery);
+
+        return gallery;
     }
 }

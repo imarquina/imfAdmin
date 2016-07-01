@@ -1,5 +1,6 @@
 package resources.Data;
 
+import resources.Data.collection.*;
 import resources.Data.element.*;
 import java.util.Hashtable;
 
@@ -10,6 +11,7 @@ public class XmlConfig {
     private String _title;
     private String _infoText;
     private String _keywords;
+    private Integer _iKey;
     public Title title;
     public Slogan slogan;
     public ContactForm contactForm;
@@ -20,6 +22,7 @@ public class XmlConfig {
      * CONSTRUCTORS
      */
     public XmlConfig() {
+        this._iKey = 0;
         this.title = new Title();
         this.slogan = new Slogan();
         this.contactForm = new ContactForm();
@@ -28,16 +31,11 @@ public class XmlConfig {
     }
 
     public XmlConfig(String title, String infoText, String keywords) {
+        this ();
+
         this.set_title(title);
         this.set_infoText(infoText);
         this.set_keywords(keywords);
-
-        this.title = new Title();
-        this.slogan = new Slogan();
-        this.contactForm = new ContactForm();
-        this.tracks = new Hashtable<String, Track>();
-        this.elements = new Hashtable<Integer, Object>();
-        this.elements = new Hashtable<Integer, Object>();
     }
 
     /**
@@ -65,6 +63,54 @@ public class XmlConfig {
 
     public void set_keywords(String _keywords) {
         this._keywords = _keywords;
+    }
+
+    private Integer get_iKey() {
+        return _iKey;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Galleries addGalleries(){
+        Galleries galleries = new Galleries();
+        this.elements.put(_iKey++, galleries);
+
+        return galleries;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Folder addFolder(){
+        Folder folder = new Folder();
+        this.elements.put(_iKey++, folder);
+
+        return folder;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Section addSection(){
+        Section section = new Section();
+        this.elements.put(_iKey++, section);
+
+        return section;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Track addTrack(){
+        Track track = new Track();
+        this.elements.put(_iKey++, track);
+
+        return track;
     }
 }
 

@@ -1,10 +1,7 @@
-package program;
+package iml.imfotografia;
 
 import org.xml.sax.SAXException;
-import resources.Data.collection.*;
-import resources.Data.element.*;
-import resources.Data.XmlConfig;
-import resources.Data.XmlPhotos;
+import iml.imfotografia.xml.data.XmlPhotos;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
@@ -16,13 +13,10 @@ import java.text.ParseException;
 public class Launcher {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
         try {
-            XmlPhotos photos = new XmlPhotos("./resources/xml/in/photos.xml");
+            XmlPhotos photos = new XmlPhotos("/xml/in/photos.xml");
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        //photos.images.photo.put("01", new Photo());
-        //ParseUnknownXml.openXml();
 
         /*
         XmlConfig config = new XmlConfig("title", "infotext", "keywords");

@@ -1,5 +1,6 @@
 package iml.imfotografia;
 
+import iml.imfotografia.xml.data.XmlConfig;
 import org.xml.sax.SAXException;
 import iml.imfotografia.xml.data.XmlPhotos;
 
@@ -12,8 +13,16 @@ import java.text.ParseException;
  */
 public class Launcher {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+        /*
         try {
-            XmlPhotos photos = new XmlPhotos("/xml/in/photos.xml");
+            XmlPhotos photos = new XmlPhotos("./data/xml/in/photos.xml");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        */
+
+        try {
+            XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,11 @@
 package resources.Data.element;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+import resources.Utils;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Photo {
@@ -16,6 +22,7 @@ public class Photo {
     private Integer _price;
     private Date _update;
     private Date _public;
+    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     /**
      * CONSTRUCTORES
@@ -50,12 +57,20 @@ public class Photo {
         return this._width;
     }
 
+    public void set_width(String width) {
+        this._width = Integer.parseInt(width);
+    }
+
     public void set_width(Integer width) {
         this._width = width;
     }
 
     public Integer get_height() {
         return this._height;
+    }
+
+    public void set_height(String height) {
+        this._height = Integer.parseInt(height);
     }
 
     public void set_height(Integer height) {
@@ -122,6 +137,12 @@ public class Photo {
         return this._price;
     }
 
+    public void set_price(String price) {
+        if (Utils.isNumeric(price))
+            this._price = Integer.parseInt(price);
+        else
+            this._price = 0;
+    }
     public void set_price(Integer price) {
         this._price = price;
     }
@@ -130,12 +151,20 @@ public class Photo {
         return this._update;
     }
 
+    public void set_update(String update) throws ParseException {
+        this._update = _formatDate.parse(update);
+    }
+
     public void set_update(Date update) {
         this._update = update;
     }
 
     public Date get_dPublic() {
         return this._public;
+    }
+
+    public void set_dPublic(String dPublic) throws ParseException {
+        this._public = _formatDate.parse(dPublic);
     }
 
     public void set_dPublic(Date dPublic) {

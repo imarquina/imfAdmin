@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 
+import org.apache.log4j.Logger;
+
 
 /**
  * Created by imarquina on 29/6/16.
@@ -22,6 +24,8 @@ public class XmlPhotos {
     private String _xml;
     public Photos images = new Photos();
     public Videos videos = new Videos();
+
+    final static Logger logger = Logger.getLogger(XmlPhotos.class);
 
     /**
      * ENUMERATORS

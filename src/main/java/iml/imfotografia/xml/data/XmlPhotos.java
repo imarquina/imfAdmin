@@ -51,6 +51,10 @@ public class XmlPhotos {
     }
 
     public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException, ParseException {
+        logger.warn("This is warn : ");
+        logger.error("This is error : ");
+        logger.fatal("This is fatal : ");
+
         this.set_xml(xml);
         parseXml();
     }

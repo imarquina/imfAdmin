@@ -23,6 +23,7 @@ public class Launcher {
 
         try {
             XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
+            System.out.println();
         } catch (ParseException e) {
             e.printStackTrace();
         }

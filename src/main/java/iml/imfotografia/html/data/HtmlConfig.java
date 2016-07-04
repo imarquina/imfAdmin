@@ -1,7 +1,5 @@
-package iml.imfotografia.xml;
+package iml.imfotografia.html.data;
 
-import iml.imfotografia.xml.data.XmlConfig;
-import iml.imfotografia.xml.data.collection.*;
 import iml.imfotografia.xml.data.element.*;
 
 import java.io.File;
@@ -14,7 +12,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import static iml.imfotografia.utils.Text.SetLength;

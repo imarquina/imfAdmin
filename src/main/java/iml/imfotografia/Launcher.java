@@ -1,8 +1,6 @@
 package iml.imfotografia;
 
 import iml.imfotografia.xml.data.XmlConfig;
-import iml.imfotografia.xml.data.XmlTikaParser;
-import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -22,18 +20,12 @@ public class Launcher {
         }
         */
 
+
         try {
             XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
+            //HtmlConfig config = new HtmlConfig("./data/xml/in/config.xml");
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        /*
-        try {
-            XmlTikaParser prueba = new XmlTikaParser("./data/xml/in/config.xml");
-        } catch (TikaException e) {
-            e.printStackTrace();
-        }
-        */
     }
 }

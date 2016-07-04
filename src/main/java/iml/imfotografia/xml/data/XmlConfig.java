@@ -2,7 +2,6 @@ package iml.imfotografia.xml.data;
 
 import iml.imfotografia.xml.data.collection.*;
 import iml.imfotografia.xml.data.element.*;
-import org.w3c.dom.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,11 +9,15 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 import org.apache.log4j.Logger;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import static iml.imfotografia.utils.Text.SetLength;
+import static iml.imfotografia.utils.Xml.innerXml;
 
 /**
  * Created by inaki.marquina on 29/06/2016.
@@ -84,7 +87,7 @@ public class XmlConfig {
         this.elements = new Hashtable<Integer, Object>();
     }
 
-    public XmlConfig(String xml) throws IOException, SAXException, ParserConfigurationException, ParseException {
+    public XmlConfig(String xml) throws IOException, ParserConfigurationException, ParseException, SAXException {
         this ();
         this.set_xml(xml);
         parseXml();
@@ -179,11 +182,10 @@ public class XmlConfig {
     /**
      * Parsea el xml para convertirlo en un objeto
      * @throws ParserConfigurationException
-     * @throws SAXException
      * @throws IOException
      * @throws ParseException
      */
-    private void parseXml() throws ParserConfigurationException, SAXException, IOException, ParseException {
+    private void parseXml() throws ParserConfigurationException, IOException, ParseException, SAXException {
         logger.debug("parseXml::Begin");
 
         //Get Document Builder
@@ -194,7 +196,7 @@ public class XmlConfig {
         Document document = builder.parse(new File(get_xml()));
 
         //Normalize the XML Structure; It's just too important !!
-        //document.getDocumentElement().normalize();
+        document.getDocumentElement().normalize();
 
         //Here comes the root node
         Element root = document.getDocumentElement();
@@ -222,67 +224,68 @@ public class XmlConfig {
 
                 String nodeName =  node.getNodeName();
                 if (!nodeName.equals(null)) nodeName = nodeName.trim();
-                String nodeValue = node.getTextContent();
-                if (!(nodeValue == null)) nodeValue = nodeValue.trim();
 
-                logger.debug("openChildNodes::" + "Node Name = " + nodeName + "; Value = " +  nodeValue);
+                logger.debug("openChildNodes::" + "Node Name = " + nodeName +
+                        "; Value = " + SetLength(node.getTextContent(), 60));
 
-                //Check all attributes
-                if (node.hasAttributes()) {
-                    if (nodeName == NODO_COLLECTION_GALLERIES) {
-                        Galleries galleries = getAttrGalleries(node, collectionType.galleries);
-                        this.elements.put(_iKey++, galleries);
-                    }
-                    else if (nodeName == NODO_COLLECTION_GALLERY) {
-                        Gallery gallery = getAttrGallery(node, collectionType.gallery);
-                        this.elements.put(_iKey++, gallery);
-                    }
-                    else if (nodeName == NODO_COLLECTION_FOLDER) {
-                        Folder folder = getAttrFolder(node, collectionType.folder);
-                        this.elements.put(_iKey++, folder);
-                    }
-                    else if (nodeName == NODO_COLLECTION_MULTIMEDIA) {
-                        Multimedia multimedia = getAttrMultimedia(node, collectionType.multimedia);
-                        this.elements.put(_iKey++, multimedia);
-                    }
-                    else if (nodeName == NODO_COLLECTION_TRACK) {
-                        Tracks tracks = getAttrTracks(node, collectionType.tracks);
-                        this.elements.put(_iKey++, tracks);
-                    }
-                    else if (nodeName == NODO_IMAGEN) {
-                        Image image = getAttrImage(node, nodeType.imagen);
-                        this.elements.put(_iKey++, image);
-                    }
-                    else if (nodeName == NODO_VIDEO) {
-                        Video video = getAttrVideo(node, nodeType.video);
-                        this.elements.put(_iKey++, video);
-                    }
-                    else if (nodeName == NODO_SECTION) {
-                        Section section = getAttrSection(node, nodeType.section);
-                        section.set_content(nodeValue);
-                        this.elements.put(_iKey++, section);
-
-                        bNodeContentHTML = true;
-                    }
-                    else if (nodeName == NODO_TITLE) {
-                        Title title = getAttrTitle(node, nodeType.title);
-                        title.set_content(nodeValue);
-                        this.elements.put(_iKey++, title);
-                    }
-                    else if (nodeName == NODO_SLOGAN) {
-                        Slogan slogan = getAttrSlogan(node, nodeType.slogan);
-                        slogan.set_content(nodeValue);
-                        this.elements.put(_iKey++, slogan);
-                    }
-                    else if (nodeName == NODO_TRACK) {
-                        Track track = getAttrTrack(node, nodeType.track);
-                        this.elements.put(_iKey++, track);
-                    }
-                    else if (nodeName == NODO_CONTACTFORM) {
-                        ContactForm contactform = getAttrContactform(node, nodeType.contactform);
-                        this.elements.put(_iKey++, contactform);
-                    }
+                if (nodeName.equalsIgnoreCase(NODO_COLLECTION_GALLERIES)) {
+                    Galleries galleries = getAttrGalleries(node, collectionType.galleries);
+                    this.elements.put(_iKey++, galleries);
                 }
+                else if (nodeName.equalsIgnoreCase(NODO_COLLECTION_GALLERY)) {
+                    Gallery gallery = getAttrGallery(node, collectionType.gallery);
+                    this.elements.put(_iKey++, gallery);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_COLLECTION_FOLDER)) {
+                    Folder folder = getAttrFolder(node, collectionType.folder);
+                    this.elements.put(_iKey++, folder);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_COLLECTION_MULTIMEDIA)) {
+                    Multimedia multimedia = getAttrMultimedia(node, collectionType.multimedia);
+                    this.elements.put(_iKey++, multimedia);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_COLLECTION_TRACK)) {
+                    Tracks tracks = getAttrTracks(node, collectionType.tracks);
+                    this.elements.put(_iKey++, tracks);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_IMAGEN)) {
+                    Image image = getAttrImage(node, nodeType.imagen);
+                    this.elements.put(_iKey++, image);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_VIDEO)) {
+                    Video video = getAttrVideo(node, nodeType.video);
+                    this.elements.put(_iKey++, video);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_SECTION)) {
+                    Section section = getAttrSection(node, nodeType.section);
+                    section.set_content(innerXml(node));
+                    this.elements.put(_iKey++, section);
+
+                    bNodeContentHTML = true;
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_TITLE)) {
+                    Title title = getAttrTitle(node, nodeType.title);
+                    title.set_content(innerXml(node));
+                    this.elements.put(_iKey++, title);
+
+                    bNodeContentHTML = true;
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_SLOGAN)) {
+                    Slogan slogan = getAttrSlogan(node, nodeType.slogan);
+                    slogan.set_content(innerXml(node));
+                    this.elements.put(_iKey++, slogan);
+
+                    bNodeContentHTML = true;
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_TRACK)) {
+                    Track track = getAttrTrack(node, nodeType.track);
+                    this.elements.put(_iKey++, track);
+                }
+                else if (nodeName.equalsIgnoreCase(NODO_CONTACTFORM)) {
+                    ContactForm contactform = getAttrContactform(node, nodeType.contactform);
+                    this.elements.put(_iKey++, contactform);
+                }
+
                 if (!bNodeContentHTML && node.hasChildNodes())
                     openChildNodes(node.getChildNodes());
             }

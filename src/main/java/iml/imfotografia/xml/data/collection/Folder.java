@@ -1,5 +1,8 @@
 package iml.imfotografia.xml.data.collection;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
 
@@ -14,6 +17,7 @@ public class Folder {
     private String _infoText;
     private String _keywords;
     private Date _update;
+    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     public Hashtable<Integer, Object> elements;
 
@@ -82,6 +86,10 @@ public class Folder {
 
     public Date get_update() {
         return this._update;
+    }
+
+    public void set_update(String update) throws ParseException {
+        this._update = _formatDate.parse(update);
     }
 
     public void set_update(Date update) {

@@ -1,15 +1,20 @@
 package iml.imfotografia.xml.data.collection;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
 
 public class Multimedia {
+    private Integer _iKey;
     private String _name;
     private String _src;
     private String _title;
-    private String _infotext;
+    private String _infoText;
     private String _keywords;
     private Date _update;
+    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     public Hashtable<Integer, Object> elements;
 
@@ -17,6 +22,7 @@ public class Multimedia {
      * CONSTRUCTORES
      */
     public Multimedia() {
+        _iKey = 0;
         elements = new Hashtable<Integer, Object>();
     }
 
@@ -25,7 +31,7 @@ public class Multimedia {
         this.set_name(name);
         this.set_src(src);
         this.set_title(title);
-        this.set_infotext(infotext);
+        this.set_infoText(infotext);
         this.set_keywords(keywords);
         this.set_update(update);
 
@@ -59,12 +65,12 @@ public class Multimedia {
         this._title = title;
     }
 
-    public String get_infotext() {
-        return this._infotext;
+    public String get_infoText() {
+        return this._infoText;
     }
 
-    public void set_infotext(String infotext) {
-        this._infotext = infotext;
+    public void set_infoText(String infotext) {
+        this._infoText = infotext;
     }
 
     public String get_keywords() {
@@ -79,7 +85,22 @@ public class Multimedia {
         return this._update;
     }
 
+    public void set_update(String update) throws ParseException {
+        this._update = _formatDate.parse(update);
+    }
+
     public void set_update(Date update) {
         this._update = update;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Multimedia addGallery () {
+        Multimedia multimedia = new Multimedia();
+        this.elements.put(_iKey++, multimedia);
+
+        return multimedia;
     }
 }

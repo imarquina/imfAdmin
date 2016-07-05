@@ -2,12 +2,6 @@ package iml.imfotografia.xml.data;
 
 import iml.imfotografia.xml.data.collection.*;
 import iml.imfotografia.xml.data.element.*;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Hashtable;
-
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -15,9 +9,15 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.Hashtable;
 
 import static iml.imfotografia.utils.Text.SetLength;
 import static iml.imfotografia.utils.Xml.innerXml;
+import static iml.imfotografia.utils.Xml.normalize;
 
 /**
  * Created by inaki.marquina on 29/06/2016.
@@ -87,9 +87,10 @@ public class XmlConfig {
         this.elements = new Hashtable<Integer, Object>();
     }
 
-    public XmlConfig(String xml) throws IOException, ParserConfigurationException, ParseException, SAXException {
+    public XmlConfig(String xml) throws IOException, ParserConfigurationException, ParseException, SAXException, XPathExpressionException {
         this ();
         this.set_xml(xml);
+
         parseXml();
     }
 
@@ -133,50 +134,6 @@ public class XmlConfig {
     }
 
     /**
-     *
-     * @return
-     */
-    public Galleries addGalleries(){
-        Galleries galleries = new Galleries();
-        this.elements.put(_iKey++, galleries);
-
-        return galleries;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Folder addFolder(){
-        Folder folder = new Folder();
-        this.elements.put(_iKey++, folder);
-
-        return folder;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Section addSection(){
-        Section section = new Section();
-        this.elements.put(_iKey++, section);
-
-        return section;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Track addTrack(){
-        Track track = new Track();
-        this.elements.put(_iKey++, track);
-
-        return track;
-    }
-
-    /**
      * PRIVATE METHODS
      */
     /**
@@ -185,8 +142,8 @@ public class XmlConfig {
      * @throws IOException
      * @throws ParseException
      */
-    private void parseXml() throws ParserConfigurationException, IOException, ParseException, SAXException {
-        logger.debug("parseXml::Begin");
+    private void parseXml() throws ParserConfigurationException, IOException, ParseException, SAXException, XPathExpressionException {
+        logger.debug("Begin");
 
         //Get Document Builder
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -195,15 +152,34 @@ public class XmlConfig {
         //Build Document
         Document document = builder.parse(new File(get_xml()));
 
+        normalize(document);
+
         //Normalize the XML Structure; It's just too important !!
         document.getDocumentElement().normalize();
 
         //Here comes the root node
         Element root = document.getDocumentElement();
-        logger.info("parseXml::" + "root Node: " + root.getNodeName());
+        logger.info("root Node: " + root.getNodeName());
 
         if (root.hasChildNodes())
             openChildNodes(root.getChildNodes());
+
+        logger.debug("End");
+    }
+
+    private void writeXml() {
+        /*
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+        //initialize StreamResult with File object to save to file
+        StreamResult result = new StreamResult(new StringWriter());
+        DOMSource source = new DOMSource(doc);
+        transformer.transform(source, result);
+
+        String xmlString = result.getWriter().toString();
+        System.out.println(xmlString);
+        */
     }
 
     /**
@@ -213,7 +189,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private void openChildNodes(NodeList nList) throws ParseException {
-        logger.debug("openChildNodes:Start");
+        logger.debug("Start");
 
         for (int temp = 0; temp < nList.getLength(); temp++)
         {
@@ -225,8 +201,7 @@ public class XmlConfig {
                 String nodeName =  node.getNodeName();
                 if (!nodeName.equals(null)) nodeName = nodeName.trim();
 
-                logger.debug("openChildNodes::" + "Node Name = " + nodeName +
-                        "; Value = " + SetLength(node.getTextContent(), 60));
+                logger.info("Node Name = " + nodeName + "; Value = " + SetLength(innerXml(node, true), 60));
 
                 if (nodeName.equalsIgnoreCase(NODO_COLLECTION_GALLERIES)) {
                     Galleries galleries = getAttrGalleries(node, collectionType.galleries);
@@ -290,11 +265,11 @@ public class XmlConfig {
                     openChildNodes(node.getChildNodes());
             }
         }
-        logger.debug("openChildNodes:End");
+        logger.debug("End");
     }
 
     private void getAttribute(Node node) {
-        logger.debug("getAttribute::Start");
+        logger.debug("Start");
 
         // get attributes names and values
         NamedNodeMap nodeMap = node.getAttributes();
@@ -305,9 +280,9 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttribute:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.debug("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
         }
-        logger.debug("getAttribute::End");
+        logger.debug("End");
     }
 
     /**
@@ -317,7 +292,7 @@ public class XmlConfig {
      * @return
      */
     private Galleries getAttrGalleries(Node node, collectionType type) {
-        logger.debug("getAttrGalleries::Start");
+        logger.debug("Start");
         Galleries galleries = new Galleries();
 
         // get attributes names and values
@@ -329,12 +304,12 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrGalleries:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            logger.debug("getAttrGalleries::set Galleries property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Galleries property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrGalleries::End");
+        logger.debug("End");
         return galleries;
     }
 
@@ -346,7 +321,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Gallery getAttrGallery(Node node, collectionType type) throws ParseException {
-        logger.debug("getAttrGallery::Start");
+        logger.debug("Start");
         Gallery gallery = new Gallery();
 
         // get attributes names and values
@@ -358,7 +333,7 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrGallery:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "NAME") {
                 gallery.set_name(sAttrValue);
@@ -373,13 +348,13 @@ public class XmlConfig {
             } else if (sAttrName == "UPDATE") {
                 gallery.set_update(sAttrValue);
             } else {
-                logger.info("getAttrGallery::unknow Gallery property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Gallery property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrGallery::set Gallery property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Gallery property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrGallery::End");
+        logger.debug("End");
         return gallery;
     }
 
@@ -391,7 +366,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Folder getAttrFolder(Node node, collectionType type) throws ParseException {
-        logger.debug("getAttrFolder::Start");
+        logger.debug("Start");
         Folder folder = new Folder();
 
         // get attributes names and values
@@ -403,7 +378,7 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrFolder:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "NAME") {
                 folder.set_name(sAttrValue);
@@ -418,13 +393,13 @@ public class XmlConfig {
             } else if (sAttrName == "UPDATE") {
                 folder.set_update(sAttrValue);
             } else {
-                logger.info("getAttrFolder::unknow Folder property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Folder property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrFolder::set Folder property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Folder property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrFolder::End");
+        logger.debug("End");
         return folder;
     }
 
@@ -436,7 +411,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Multimedia getAttrMultimedia(Node node, collectionType type) throws ParseException {
-        logger.debug("getAttrMultimedia::Start");
+        logger.debug("Start");
         Multimedia multimedia = new Multimedia();
 
         // get attributes names and values
@@ -448,7 +423,7 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrMultimedia:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "NAME") {
                 multimedia.set_name(sAttrValue);
@@ -463,13 +438,13 @@ public class XmlConfig {
             } else if (sAttrName == "UPDATE") {
                 multimedia.set_update(sAttrValue);
             } else {
-                logger.info("getAttrMultimedia::unknow Multimedia property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Multimedia property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrMultimedia::set Multimedia property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Multimedia property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrMultimedia::End");
+        logger.debug("End");
         return multimedia;
     }
 
@@ -480,7 +455,7 @@ public class XmlConfig {
      * @return
      */
     private Tracks getAttrTracks(Node node, collectionType type) {
-        logger.debug("getAttrTracks::Start");
+        logger.debug("Start");
         Tracks tracks = new Tracks();
 
         // get attributes names and values
@@ -492,18 +467,18 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrTracks:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "NAME") {
                 tracks.set_name(sAttrValue);
             } else {
-                logger.info("getAttrTracks::unknow Tracks property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Tracks property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrTracks::set Tracks property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Tracks property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrTracks::End");
+        logger.debug("End");
         return tracks;
     }
 
@@ -515,7 +490,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Image getAttrImage(Node node, nodeType type) throws ParseException {
-        logger.debug("getAttrImage::Start");
+        logger.debug("Start");
         Image image = new Image();
 
         // get attributes names and values
@@ -527,16 +502,16 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrPhoto:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "ID") {
                 image.set_id(sAttrValue);
             } else {
-                logger.info("getAttrPhoto::unknow Image property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Image property " + sAttrName + ":" + sAttrValue);
             }
-            logger.debug("getAttrPhoto::set Image property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Image property " + sAttrName + ":" + sAttrValue);
         }
-        logger.debug("getAttrImage::End");
+        logger.debug("End");
         return image;
     }
 
@@ -548,7 +523,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Video getAttrVideo(Node node, nodeType type) throws ParseException {
-        logger.debug("getAttrVideo::Start");
+        logger.debug("Start");
         Video video = new Video();
 
         // get attributes names and values
@@ -560,17 +535,17 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrPhoto:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "ID") {
                 video.set_id(sAttrValue);
             } else {
-                logger.info("getAttrVideo::unknow Video property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Video property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrVideo::set Video property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Video property " + sAttrName + ":" + sAttrValue);
         }
-        logger.debug("getAttrVideo::End");
+        logger.debug("End");
         return video;
     }
 
@@ -582,7 +557,7 @@ public class XmlConfig {
      * @throws ParseException
      */
     private Section getAttrSection(Node node, nodeType type) throws ParseException {
-        logger.debug("getAttrSection::Start");
+        logger.debug("Start");
         Section section = new Section();
 
         // get attributes names and values
@@ -594,7 +569,7 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrSection:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "NAME") {
                 section.set_name(sAttrValue);
@@ -607,12 +582,12 @@ public class XmlConfig {
             } else if (sAttrName == "UPDATE") {
                 section.set_update(sAttrValue);
             } else {
-                logger.info("getAttrPhoto::unknow Section property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Section property " + sAttrName + ":" + sAttrValue);
             }
-            logger.debug("getAttrSection::set Section property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Section property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrSection::End");
+        logger.debug("End");
         return section;
     }
 
@@ -623,7 +598,7 @@ public class XmlConfig {
      * @return
      */
     private Title getAttrTitle(Node node, nodeType type) {
-        logger.debug("getAttrTitle::Start");
+        logger.debug("Start");
         Title title = new Title();
 
         // get attributes names and values
@@ -635,17 +610,17 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrTitle:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            logger.debug("getAttrTitle::set Title property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Title property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrTitle::End");
+        logger.debug("End");
         return title;
     }
 
     private Slogan getAttrSlogan(Node node, nodeType type) {
-        logger.debug("getAttrSlogan::Start");
+        logger.debug("Start");
         Slogan slogan = new Slogan();
 
         // get attributes names and values
@@ -657,17 +632,17 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrSlogan:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            logger.debug("getAttrSlogan::set Slogan property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Slogan property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrSlogan::End");
+        logger.debug("End");
         return slogan;
     }
 
     private Track getAttrTrack(Node node, nodeType type) {
-        logger.debug("getAttrTrack::Start");
+        logger.debug("Start");
         Track track = new Track();
 
         // get attributes names and values
@@ -679,7 +654,7 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrTrack:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "SRC") {
                 track.set_src(sAttrValue);
@@ -688,18 +663,18 @@ public class XmlConfig {
             } else if (sAttrValue == "NAME") {
                 track.set_name(sAttrValue);
             } else {
-                logger.info("getAttrPhoto::unknow Track property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow Track property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("getAttrTrack::set Track property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Track property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrTrack::End");
+        logger.debug("End");
         return track;
     }
 
     private ContactForm getAttrContactform(Node node, nodeType type) {
-        logger.debug("getAttrContactform::Start");
+        logger.debug("Start");
         ContactForm contactform = new ContactForm();
 
         // get attributes names and values
@@ -711,12 +686,12 @@ public class XmlConfig {
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
 
-            logger.debug("getAttrContactform:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            logger.debug("getAttrContactform::set ContactForm property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set ContactForm property " + sAttrName + ":" + sAttrValue);
         }
 
-        logger.debug("getAttrContactform::End");
+        logger.debug("End");
         return contactform;
     }
 }

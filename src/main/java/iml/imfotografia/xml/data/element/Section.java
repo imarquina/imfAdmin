@@ -1,6 +1,11 @@
 package iml.imfotografia.xml.data.element;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static iml.imfotografia.utils.Numbers.isNumeric;
 
 public class Section {
     private String _name;
@@ -9,6 +14,7 @@ public class Section {
     private Boolean _byDefault;
     private Date _update;
     private String _content;
+    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     /**
      * CONSTRUCTORES
@@ -39,12 +45,26 @@ public class Section {
         return this._width;
     }
 
+    public void set_width(String width) {
+        if (isNumeric(width))
+            this._width = Integer.parseInt(width);
+        else
+            this._width = 0;
+    }
+
     public void set_width(Integer width) {
         this._width = width;
     }
 
     public Integer get_height() {
         return this._height;
+    }
+
+    public void set_height(String height) {
+        if (isNumeric(height))
+            this._height = Integer.parseInt(height);
+        else
+            this._height = 0;
     }
 
     public void set_height(Integer height) {
@@ -55,12 +75,20 @@ public class Section {
         return this._byDefault;
     }
 
+    public void set_byDefault(String byDefault) {
+        this._byDefault = Boolean.valueOf(byDefault);
+    }
+
     public void set_byDefault(Boolean byDefault) {
         this._byDefault = byDefault;
     }
 
     public Date get_update() {
         return this._update;
+    }
+
+    public void set_update(String update) throws ParseException {
+        this._update = _formatDate.parse(update);
     }
 
     public void set_update(Date update) {

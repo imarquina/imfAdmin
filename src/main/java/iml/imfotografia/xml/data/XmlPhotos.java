@@ -3,9 +3,9 @@ package iml.imfotografia.xml.data;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 import iml.imfotografia.xml.data.collection.Photos;
-import iml.imfotografia.xml.data.collection.Videos;
+import iml.imfotografia.xml.data.collection.Medias;
 import iml.imfotografia.xml.data.element.Photo;
-import iml.imfotografia.xml.data.element.Video;
+import iml.imfotografia.xml.data.element.Media;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
 public class XmlPhotos {
     private String _xml;
     public Photos images = new Photos();
-    public Videos videos = new Videos();
+    public Medias medias = new Medias();
 
     final static Logger logger = Logger.getLogger(XmlPhotos.class);
 
@@ -33,16 +33,16 @@ public class XmlPhotos {
     private enum nodeType
     {
         imagen,
-        video
+        media
     }
 
     /**
      * CONSTANTS
      */
-    private static String NODO_COLLECTION_IMAGEN = "photos";
-    private static String NODO_COLLECTION_VIDEO = "videos";
-    private static String NODO_IMAGEN = "img";
-    private static String NODO_VIDEO = "vid";
+    private static final String NODO_COLLECTION_IMAGEN = "photos";
+    private static final String NODO_COLLECTION_VIDEO = "videos";
+    private static final String NODO_IMAGEN = "img";
+    private static final String NODO_VIDEO = "vid";
 
     /**
      * CONSTRUCTORS
@@ -51,10 +51,6 @@ public class XmlPhotos {
     }
 
     public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException, ParseException {
-        logger.warn("This is warn : ");
-        logger.error("This is error : ");
-        logger.fatal("This is fatal : ");
-
         this.set_xml(xml);
         parseXml();
     }
@@ -81,6 +77,8 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private void parseXml() throws ParserConfigurationException, SAXException, IOException, ParseException {
+        logger.debug("parseXml::Begin");
+
         //Get Document Builder
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -93,14 +91,15 @@ public class XmlPhotos {
 
         //Here comes the root node
         Element root = document.getDocumentElement();
-        System.out.println("root Node: " + root.getNodeName());
+        logger.info("parseXml::" + "root Node: " + root.getNodeName());
 
         //Get all photos
         NodeList nPhotos = document.getElementsByTagName(NODO_COLLECTION_IMAGEN);
         openChildNodes(nPhotos);
         NodeList nVideos = document.getElementsByTagName(NODO_COLLECTION_VIDEO);
         openChildNodes(nVideos);
-        System.out.println("============================");
+
+        logger.debug("parseXml::End");
     }
 
     /**
@@ -110,6 +109,8 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private void openChildNodes(NodeList nList) throws ParseException {
+        logger.debug("openChildNodes:Start");
+
         for (int temp = 0; temp < nList.getLength(); temp++)
         {
             Node node = nList.item(temp);
@@ -120,7 +121,8 @@ public class XmlPhotos {
                 String nodeValue = node.getNodeValue();
                 if (!(nodeValue == null)) nodeValue = nodeValue.trim();
 
-                System.out.println("Node Name = " + nodeName + "; Value = " +  nodeValue);
+                logger.debug("openChildNodes::" + "Node Name = " + nodeName + "; Value = " +  nodeValue);
+
                 //Check all attributes
                 if (node.hasAttributes()) {
                     if (nodeName == NODO_IMAGEN) {
@@ -128,8 +130,8 @@ public class XmlPhotos {
                         this.images.photo.put(photo.get_id(), photo);
                     }
                     else if (nodeName == NODO_VIDEO) {
-                        Video video = getAttrVideo(node, nodeType.video);
-                        this.videos.video.put(video.get_id(), video);
+                        Media video = getAttrMedia(node, nodeType.media);
+                        this.medias.video.put(video.get_id(), video);
                     }
                 }
                 if (node.hasChildNodes()) {
@@ -137,6 +139,7 @@ public class XmlPhotos {
                 }
             }
         }
+        logger.debug("openChildNodes:End");
     }
 
     /**
@@ -147,6 +150,7 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private Photo getAttrPhoto(Node node, nodeType type) throws ParseException {
+        logger.debug("getAttrPhoto::Start");
         Photo photo = new Photo();
 
         // get attributes names and values
@@ -157,6 +161,8 @@ public class XmlPhotos {
             if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
+
+            logger.debug("getAttrPhoto:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "WIDTH") {
                 photo.set_width(sAttrValue);
@@ -183,10 +189,12 @@ public class XmlPhotos {
                 photo.set_update(sAttrValue);
             } else if (sAttrName == "PUBLIC") {
                 photo.set_dPublic(sAttrValue);
+            } else {
+                logger.info("getAttrPhoto::unknow Photo property " + sAttrName + ":" + sAttrValue);
             }
-
-            System.out.println("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.debug("getAttrPhoto::set Photo property " + sAttrName + ":" + sAttrValue);
         }
+        logger.debug("getAttrPhoto::End");
         return photo;
     }
 
@@ -197,8 +205,9 @@ public class XmlPhotos {
      * @return
      * @throws ParseException
      */
-    private Video getAttrVideo(Node node, nodeType type) throws ParseException {
-        Video video = new Video();
+    private Media getAttrMedia(Node node, nodeType type) throws ParseException {
+        logger.debug("getAttrMedia::Start");
+        Media video = new Media();
 
         // get attributes names and values
         NamedNodeMap nodeMap = node.getAttributes();
@@ -208,6 +217,8 @@ public class XmlPhotos {
             if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
             String sAttrValue = tempNode.getNodeValue();
             if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
+
+            logger.debug("getAttrMedia:: " + "    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName == "WIDTH") {
                 video.set_width(sAttrValue);
@@ -230,10 +241,13 @@ public class XmlPhotos {
                 video.set_update(sAttrValue);
             } else if (sAttrName == "PUBLIC") {
                 video.set_dPublic(sAttrValue);
+            } else {
+                logger.info("getAttrMedia::unknow Photo property " + sAttrName + ":" + sAttrValue);
             }
 
-            System.out.println("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+            logger.debug("getAttrMedia::set Photo property " + sAttrName + ":" + sAttrValue);
         }
+        logger.debug("getAttrMedia::End");
         return video;
     }
 }

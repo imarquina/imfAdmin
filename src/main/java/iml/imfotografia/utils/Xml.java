@@ -1,9 +1,9 @@
 package iml.imfotografia.utils;
 
+import iml.imfotografia.modifiers.StringWriter;
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSSerializer;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
@@ -11,7 +11,10 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.StringWriter;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
 /**
  * Created by imarquina on 4/7/16.
@@ -39,26 +42,41 @@ public class Xml {
      * @return
      */
     public static String innerXml(Node node) {
+        return innerXml(node, false);
+    }
+
+    public static String innerXml(Node node, Boolean includeItself) {
         String xmlString = "";
         try {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
-            if (node.hasChildNodes()) {
-                NodeList nodes = node.getChildNodes();
+            if (includeItself) {
+                Source source = new DOMSource(node);
 
-                for (int i = 0; i < nodes.getLength(); i++) {
-                    Source source = new DOMSource(nodes.item(i));
+                StringWriter sw = new StringWriter();
+                StreamResult result = new StreamResult(sw);
 
-                    StringWriter sw = new StringWriter();
-                    StreamResult result = new StreamResult(sw);
+                transformer.transform(source, result);
+                xmlString = sw.toStringNormalized();
+            } else {
+                if (node.hasChildNodes()) {
+                    NodeList nodes = node.getChildNodes();
 
-                    transformer.transform(source, result);
-                    xmlString += sw.toString();
-                }
+                    for (int i = 0; i < nodes.getLength(); i++) {
+                        //if (!isBlankText(nodes.item(i))) {
+                            Source source = new DOMSource(nodes.item(i));
+
+                            StringWriter sw = new StringWriter();
+                            StreamResult result = new StreamResult(sw);
+
+                            transformer.transform(source, result);
+                            xmlString += sw.toStringNormalized();
+                        //}
+                    }
+                } else xmlString = node.getTextContent();
             }
-            else xmlString = node.getTextContent();
 
         } catch (Exception ex) {
             ex.printStackTrace ();
@@ -67,5 +85,26 @@ public class Xml {
         return xmlString;
     }
 
+    private static Boolean isBlankText(Node node) {
+        if (node instanceof org.w3c.dom.Text) {
+            String value = node.getNodeValue().trim();
+            if (value.equals("") ) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public static void normalize(Document document) throws XPathExpressionException {
+        XPathFactory xpathFactory = XPathFactory.newInstance();
+        // XPath to find empty text nodes.
+        XPathExpression xpathExp = xpathFactory.newXPath().compile("//text()[normalize-space(.) = '']");
+        NodeList emptyTextNodes = (NodeList)xpathExp.evaluate(document, XPathConstants.NODESET);
+
+        // Remove each empty text node from document.
+        for (int i = 0; i < emptyTextNodes.getLength(); i++) {
+            Node emptyTextNode = emptyTextNodes.item(i);
+            emptyTextNode.getParentNode().removeChild(emptyTextNode);
+        }
+    }
 }

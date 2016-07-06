@@ -1,15 +1,18 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class Link {
+/**
+ * Created by inaki.marquina on 06/07/2016.
+ */
+public class Category {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Link() {
+    public Category() {
     }
 
-    public Link(String content) {
+    public Category(String content) {
         this.set_content(content);
     }
 

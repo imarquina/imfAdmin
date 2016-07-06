@@ -1,21 +1,21 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LastBuildDate {
+public class PubDate {
     private Date _content;
     private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     /**
      * CONSTRUCTORS
      */
-    public LastBuildDate() {
+    public PubDate() {
     }
 
-    public LastBuildDate(Date content) {
+    public PubDate(Date content) {
         this.set_content(content);
     }
 

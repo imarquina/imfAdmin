@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed.collection;
 
-import iml.imfotografia.xml.feed.element.*;
+import iml.imfotografia.xml.feed.struct.*;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
@@ -17,14 +17,35 @@ public class Item {
      * CONSTRUCTORS
      */
     public Item() {
+        this.category = new Category();
+        this.description = new Description();
+        this.guid = new Guid();
+        this.link = new Link();
+        this.pubDate = new PubDate();
+        this.title = new Title();
     }
 
-    public Item(Category category, Description description, Guid guid, Link link, PubDate pubDate, Title title) {
+    public void addCategory(Category category){
         this.category = category;
+    }
+
+    public void addDescription(Description description){
         this.description = description;
+    }
+
+    public void addGuid(Guid guid){
         this.guid = guid;
+    }
+
+    public void addLink(Link link){
         this.link = link;
+    }
+
+    public void addPubDate(PubDate pubDate){
         this.pubDate = pubDate;
+    }
+
+    public void addTitle(Title title){
         this.title = title;
     }
 }

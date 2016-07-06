@@ -1,18 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-/**
- * Created by inaki.marquina on 06/07/2016.
- */
-public class Guid {
+public class Docs {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Guid() {
+    public Docs() {
     }
 
-    public Guid(String content) {
+    public Docs(String content) {
         this.set_content(content);
     }
 

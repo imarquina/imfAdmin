@@ -1,4 +1,4 @@
-package iml.imfotografia.xml.feed.collection;
+package iml.imfotografia.xml.feed.struct;
 
 public class Rss {
     private String _version;
@@ -8,6 +8,7 @@ public class Rss {
      * CONSTRUCTORS
      */
     public Rss() {
+
         chanel = new Channel();
     }
 
@@ -25,5 +26,9 @@ public class Rss {
 
     void set_version(String version) {
         this._version = version;
+    }
+
+    public void addChanel(Channel chanel){
+        this.chanel = chanel;
     }
 }

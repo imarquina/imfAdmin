@@ -1,22 +1,14 @@
 package iml.imfotografia.utils;
 
-import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by imarquina on 5/7/16.
  */
 
 public class Crypto {
-    /**
-     *
-     * @param input
-     * @return
-     */
-    public static String getMD5(String input) {
+    /*public static String getMD5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
 
@@ -33,14 +25,14 @@ public class Crypto {
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
     /**
      *
      * @param input
      * @return
      */
-    public static String getMD52(String input) {
+    public static String getMD5(String input) {
         byte[] source;
         try {
             //Get byte according by specified coding.

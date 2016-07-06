@@ -1,9 +1,13 @@
 package iml.imfotografia.xml.feed.element;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PubDate {
     private Date _content;
+    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
     /**
      * CONSTRUCTORS
@@ -20,6 +24,10 @@ public class PubDate {
      */
     public Date get_content() {
         return this._content;
+    }
+
+    public void set_content(String content) throws ParseException {
+        this._content = _formatDate.parse(content);
     }
 
     public void set_content(Date content) {

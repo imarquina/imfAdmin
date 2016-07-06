@@ -1,7 +1,7 @@
 package iml.imfotografia;
 
-import iml.imfotografia.xml.data.XmlConfig;
-import iml.imfotografia.xml.data.XmlPhotos;
+import iml.imfotografia.xml.config.XmlConfig;
+import iml.imfotografia.xml.element.XmlPhotos;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
@@ -17,18 +17,38 @@ public class Launcher {
     final static Logger logger = Logger.getLogger(Launcher.class);
     final static String separatorLog = "++++++++++++++++++++++++++++++++++++++++";
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
+    public static void main(String[] args) {
+        logger.info("+ Begin +" + separatorLog);
+
         try {
-            logger.info("+ Begin +" + separatorLog);
-
             XmlPhotos photos = new XmlPhotos("./data/xml/in/photos.xml");
-            XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
-            //HtmlConfig config = new HtmlConfig("./data/xml/in/config.xml");
-
-            logger.info("+ End +" + separatorLog);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
         } catch (ParseException e) {
-            logger.error("Error: " + e.getStackTrace());
             e.printStackTrace();
         }
+        //xborrar_XmlConfig config = new xborrar_XmlConfig("./data/xml/in/config.xml");
+        try {
+            XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        logger.info("+ End +" + separatorLog);
+
+        ////HtmlConfig config = new HtmlConfig("./config/xml/in/config.xml");
+        //logger.info(Crypto.getMD5("Bilbao"));
     }
 }

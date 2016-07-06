@@ -1,9 +1,9 @@
 package iml.imfotografia.html.data;
 
-import iml.imfotografia.xml.data.element.ContactForm;
-import iml.imfotografia.xml.data.element.Slogan;
-import iml.imfotografia.xml.data.element.Title;
-import iml.imfotografia.xml.data.element.Track;
+import iml.imfotografia.xml.config.structs.ContactForm;
+import iml.imfotografia.xml.config.structs.Slogan;
+import iml.imfotografia.xml.config.structs.Title;
+import iml.imfotografia.xml.config.structs.Track;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

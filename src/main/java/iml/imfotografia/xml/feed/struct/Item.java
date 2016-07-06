@@ -1,4 +1,4 @@
-package iml.imfotografia.xml.feed.collection;
+package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.feed.struct.*;
 

@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.config.structs;
 
+import iml.imfotografia.xml.config.interfaces.IConfig;
 import iml.imfotografia.xml.config.xborrar_XmlConfig;
 import org.apache.log4j.Logger;
 
@@ -8,7 +9,7 @@ import java.util.LinkedHashMap;
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Config {
+public class Config implements IConfig {
     private String _title;
     private String _infoText;
     private String _keywords;

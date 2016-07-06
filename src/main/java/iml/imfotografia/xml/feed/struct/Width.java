@@ -1,15 +1,18 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class WebMaster {
+/**
+ * Created by inaki.marquina on 06/07/2016.
+ */
+public class Width {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public WebMaster() {
+    public Width() {
     }
 
-    public WebMaster(String content) {
+    public Width(String content) {
         this.set_content(content);
     }
 

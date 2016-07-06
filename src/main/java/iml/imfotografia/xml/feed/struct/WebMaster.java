@@ -1,15 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class Docs {
+public class WebMaster {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Docs() {
+    public WebMaster() {
     }
 
-    public Docs(String content) {
+    public WebMaster(String content) {
         this.set_content(content);
     }
 

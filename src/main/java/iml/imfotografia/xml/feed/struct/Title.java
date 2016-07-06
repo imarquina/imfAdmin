@@ -1,15 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class ManagingEditor {
+public class Title {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public ManagingEditor() {
+    public Title() {
     }
 
-    public ManagingEditor(String content) {
+    public Title(String content) {
         this.set_content(content);
     }
 

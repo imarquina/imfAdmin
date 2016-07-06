@@ -1,18 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-/**
- * Created by inaki.marquina on 06/07/2016.
- */
-public class Height {
+public class Language {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Height() {
+    public Language() {
     }
 
-    public Height(String content) {
+    public Language(String content) {
         this.set_content(content);
     }
 

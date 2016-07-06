@@ -1,15 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class Title {
+public class Description {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Title() {
+    public Description() {
     }
 
-    public Title(String content) {
+    public Description(String content) {
         this.set_content(content);
     }
 

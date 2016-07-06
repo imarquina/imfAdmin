@@ -1,18 +1,15 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-/**
- * Created by inaki.marquina on 06/07/2016.
- */
-public class Width {
+public class ManagingEditor {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Width() {
+    public ManagingEditor() {
     }
 
-    public Width(String content) {
+    public ManagingEditor(String content) {
         this.set_content(content);
     }
 

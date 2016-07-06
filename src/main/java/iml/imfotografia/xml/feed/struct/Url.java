@@ -1,15 +1,18 @@
-package iml.imfotografia.xml.feed.element;
+package iml.imfotografia.xml.feed.struct;
 
-public class Language {
+/**
+ * Created by inaki.marquina on 06/07/2016.
+ */
+public class Url {
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public Language() {
+    public Url() {
     }
 
-    public Language(String content) {
+    public Url(String content) {
         this.set_content(content);
     }
 

@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed.collection;
 
-import iml.imfotografia.xml.feed.element.*;
+import iml.imfotografia.xml.feed.struct.*;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
@@ -17,14 +17,11 @@ public class Image {
      * CONSTRUCTOR
      */
     public Image() {
-    }
-
-    public Image(Height height, Link link, PubDate pubDate, Title title, Url url, Width width) {
-        this.height = height;
-        this.link = link;
-        this.pubDate = pubDate;
-        this.title = title;
-        this.url = url;
-        this.width = width;
+        this.height = new Height();
+        this.link = new Link();
+        this.pubDate = new PubDate();
+        this.title = new Title();
+        this.url = new Url();
+        this.width = new Width();
     }
 }

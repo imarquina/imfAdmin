@@ -4,7 +4,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * COLLECTIONS
@@ -19,14 +20,14 @@ public class Folder {
     private Date _update;
     private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
-    public Hashtable<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
     /**
      * CONSTRUCTORS
      */
     public Folder() {
         _iKey = 0;
-        this.elements = new Hashtable<Integer, Object>();
+        this.elements = new LinkedHashMap<Integer, Object>();
     }
 
     public Folder(String name, String src, String title, String infoText, String

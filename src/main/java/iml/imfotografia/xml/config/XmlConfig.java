@@ -22,7 +22,7 @@ import static iml.imfotografia.utils.Xml.normalize;
  */
 public class XmlConfig {
     private String _xml;
-    Config config;
+    public Config config;
 
     final static Logger logger = Logger.getLogger(XmlConfig.class);
 
@@ -97,10 +97,10 @@ public class XmlConfig {
         document.getDocumentElement().normalize();
 
         //Here comes the root node
-        Element root = document.getDocumentElement();
+        Node root = document.getDocumentElement();
         logger.info("root Node: " + root.getNodeName());
 
-        getAttrConfig(root);
+        this.getAttrConfig(root);
 
         if (root.hasChildNodes())
             openChildNodes(root.getChildNodes(), this.config);
@@ -109,7 +109,7 @@ public class XmlConfig {
     }
 
     private void openChildNodes(NodeList nList, Object object) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
 
         for (int temp = 0; temp < nList.getLength(); temp++)
         {
@@ -152,7 +152,7 @@ public class XmlConfig {
                         ContactForm contactForm = getAttrContactForm(node);
                         this.config.addContactForm(contactForm);
                     } else {
-                        logger.info("unknow Node of Config: " + nodeName);
+                        logger.info("unknow Node of ConfigNode: " + nodeName);
                     }
                 } else if (object instanceof Galleries) {
                     Galleries galleries = (Galleries)object;
@@ -180,6 +180,7 @@ public class XmlConfig {
 
                     if (nodeName.equalsIgnoreCase(NODO_IMAGEN)) {
                         Image image = getAttrImage(node);
+                        gallery.addImage(image);
                     } else {
                         logger.info("unknow Node of Gallery: " + nodeName);
                     }
@@ -222,7 +223,7 @@ public class XmlConfig {
     }
 
     private void getAttrConfig(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
 
         // get attributes names and values
         NamedNodeMap nodeMap = node.getAttributes();
@@ -242,17 +243,17 @@ public class XmlConfig {
             } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_KEYWORDS)) {
                 this.config.set_keywords(sAttrValue);
             } else {
-                logger.info("unknow Config property " + sAttrName + ":" + sAttrValue);
+                logger.info("unknow ConfigNode property " + sAttrName + ":" + sAttrValue);
             }
 
-            logger.debug("set Config property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set ConfigNode property " + sAttrName + ":" + sAttrValue);
         }
 
         logger.debug("End");
     }
 
     private Galleries getAttrGalleries(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         Galleries galleries = new Galleries();
 
         // get attributes names and values
@@ -274,7 +275,7 @@ public class XmlConfig {
     }
 
     private Folder getAttrFolder(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Folder folder = new Folder();
 
         // get attributes names and values
@@ -312,7 +313,7 @@ public class XmlConfig {
     }
 
     private Gallery getAttrGallery(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Gallery gallery = new Gallery();
 
         // get attributes names and values
@@ -350,7 +351,7 @@ public class XmlConfig {
     }
 
     private Multimedia getAttrMultimedia(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Multimedia multimedia = new Multimedia();
 
         // get attributes names and values
@@ -388,7 +389,7 @@ public class XmlConfig {
     }
 
     private Section getAttrSection(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Section section = new Section();
 
         // get attributes names and values
@@ -423,7 +424,7 @@ public class XmlConfig {
     }
 
     private Title getAttrTitle(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         Title title = new Title();
 
         // get attributes names and values
@@ -445,7 +446,7 @@ public class XmlConfig {
     }
 
     private Slogan getAttrSlogan(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         Slogan slogan = new Slogan();
 
         // get attributes names and values
@@ -467,7 +468,7 @@ public class XmlConfig {
     }
 
     private Tracks getAttrTracks(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         Tracks tracks = new Tracks();
 
         // get attributes names and values
@@ -495,7 +496,7 @@ public class XmlConfig {
     }
 
     private ContactForm getAttrContactForm(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         ContactForm contactForm = new ContactForm();
 
         // get attributes names and values
@@ -517,7 +518,7 @@ public class XmlConfig {
     }
 
     private Image getAttrImage(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Image image = new Image();
 
         // get attributes names and values
@@ -543,7 +544,7 @@ public class XmlConfig {
     }
 
     private Video getAttrVideo(Node node) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Video video = new Video();
 
         // get attributes names and values
@@ -570,7 +571,7 @@ public class XmlConfig {
     }
 
     private Track getAttrTrack(Node node) {
-        logger.debug("Start");
+        logger.debug("Begin");
         Track track = new Track();
 
         // get attributes names and values

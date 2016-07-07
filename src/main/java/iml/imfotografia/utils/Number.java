@@ -3,7 +3,7 @@ package iml.imfotografia.utils;
 /**
  * Created by inaki.marquina on 01/07/2016.
  */
-public class Numbers {
+public class Number {
 
     public static boolean isNumeric(String str)
     {

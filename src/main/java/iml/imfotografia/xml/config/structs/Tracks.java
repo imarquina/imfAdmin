@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.config.structs;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by imarquina on 2/7/16.
@@ -8,7 +9,7 @@ import java.util.LinkedHashMap;
 public class Tracks {
     private Integer _iKey;
     private String _name;
-    public LinkedHashMap<Integer, Track> track;
+    public Map<Integer, Track> track;
 
     /**
      * CONSTRUCTORS

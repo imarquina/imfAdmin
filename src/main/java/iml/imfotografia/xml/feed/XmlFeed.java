@@ -122,13 +122,17 @@ public class XmlFeed {
             }
         });
 
+        //Estraer galerias e imágenes para completar información de item
+        Gallery gallery = extractElements(xmlConfig.config.elements);
 
-
+        //Recorrer cada item para procesado
         for (IElement e : list) {
-            Item item = createItem(e, xmlConfig);
-            chanel.addItem(item);
+            //1.Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
+
+            //2.Bucle para añadir items por cada elemento si hay más de uno
+                Item item = createItem(e, gallery);
+                chanel.addItem(item);
         }
-        extractElements(xmlConfig.config.elements, element.get_id());
 
         logger.debug("End");
     }
@@ -181,21 +185,19 @@ public class XmlFeed {
         return item;
     }
 
-    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, String id){
+    private Map<Integer, Gallery> extractElements(Map<Integer, Object> elements){
         for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
             Integer key = entry.getKey();
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractElements((Map<Integer, Object>) value, id);
+                extractElements((Map<Integer, Object>) value);
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)entry;
 
-                if (gallery.elements.containsKey(id)){
-                    boolean b = true;
-                }
+
             } else if (value instanceof Folder) {
-                extractElements(((Folder) value).elements, id);
+                extractElements(((Folder) value).elements);
             }
         }
     }

@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Date.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/base/ElementBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/interfaces/IElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ItemH.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/interfaces/IConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/prueba/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/xborrar_XmlConfig.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Numbers.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Number.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/debugger.renderers.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/toStringTemplates.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/xml/in/feed.xml" afterPath="$PROJECT_DIR$/data/xml/in/feed.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/XmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/XmlConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Config.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Folder.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Folder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Galleries.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Galleries.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Gallery.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Gallery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Multimedia.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Multimedia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Section.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Section.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Tracks.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Tracks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/XmlPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/XmlPhotos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Media.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Media.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Photo.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Photo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,50 +30,13 @@
       <file leaf-file-name="XmlFeed.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+            <state relative-caret-position="266">
+              <caret line="172" column="5" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3356#3366#0" expanded="true" />
                 <element signature="e#3510#3699#0" expanded="true" />
                 <element signature="e#3698#3699#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gallery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Gallery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#set_update#0;class#Gallery#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -872,7 +810,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467808013776</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Actualización">
+      <created>1467893560495</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467893560495</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -960,7 +905,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java</url>
-          <line>127</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
@@ -1397,8 +1342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="266">
+          <caret line="172" column="5" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3356#3366#0" expanded="true" />

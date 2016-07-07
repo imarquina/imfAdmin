@@ -123,15 +123,20 @@ public class XmlFeed {
         });
 
         //Estraer galerias e imágenes para completar información de item
-        Gallery gallery = extractElements(xmlConfig.config.elements);
+        ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
+        extractElements(xmlConfig.config.elements, imageGalleries);
 
         //Recorrer cada item para procesado
         for (IElement e : list) {
-            //1.Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-
-            //2.Bucle para añadir items por cada elemento si hay más de uno
-                Item item = createItem(e, gallery);
-                chanel.addItem(item);
+            //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
+            for (Gallery g : imageGalleries){
+                if (g.elements.containsKey(e.get_id())) {
+                    //Bucle para añadir items por cada elemento si hay más de uno
+                    Object img = g.elements.get(e.get_id());
+                    Item item = createItem(e, g, 0);
+                    chanel.addItem(item);
+                }
+            }
         }
 
         logger.debug("End");
@@ -176,30 +181,42 @@ public class XmlFeed {
      *
      * @return
      */
-    private Item createItem(IElement element, Gallery gallery) {
+    private Item createItem(IElement element, Gallery gallery, Integer iImage) {
         logger.debug("Begin");
 
-        Item item = new Item(element, gallery);
+        Item item = new Item(element, gallery, iImage);
 
         logger.debug("End");
         return item;
     }
 
-    private Map<Integer, Gallery> extractElements(Map<Integer, Object> elements){
+    /**
+     *
+     * @param elements
+     * @return
+     */
+    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, ArrayList<Gallery> imageGalleries){
+        logger.debug("Begin");
+
+        Integer iKey = 0;
+
         for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
             Integer key = entry.getKey();
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractElements((Map<Integer, Object>) value);
+                extractElements(((Galleries) value).elements, imageGalleries);
             } else if (value instanceof Gallery){
-                Gallery gallery = (Gallery)entry;
+                Gallery gallery = (Gallery)value;
 
-
+                imageGalleries.add(gallery);
             } else if (value instanceof Folder) {
-                extractElements(((Folder) value).elements);
+                extractElements(((Folder) value).elements, imageGalleries);
             }
         }
+
+        logger.debug("End");
+        return  imageGalleries;
     }
 }
 

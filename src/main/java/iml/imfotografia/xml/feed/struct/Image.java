@@ -1,4 +1,4 @@
-package iml.imfotografia.xml.feed.collection;
+package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.feed.struct.*;
 
@@ -23,5 +23,29 @@ public class Image {
         this.title = new Title();
         this.url = new Url();
         this.width = new Width();
+    }
+
+    public void addTitle(Title title){
+        this.title = new Title();
+    }
+
+    public void addUrl(Url url) {
+        this.url = url;
+    }
+
+    public void  addLink(Link link) {
+        this.link = link;
+    }
+
+    public void PubDate(PubDate pubDate){
+        this.pubDate = pubDate;
+    }
+
+    public void With(Width with){
+        this.width = with;
+    }
+
+    public void Height(Height height){
+        this.height = height;
     }
 }

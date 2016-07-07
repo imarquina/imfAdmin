@@ -20,11 +20,11 @@ public class Rss {
     /**
      * GETTER / SETTER
      */
-    String get_version() {
+    public String get_version() {
         return this._version;
     }
 
-    void set_version(String version) {
+    public void set_version(String version) {
         this._version = version;
     }
 

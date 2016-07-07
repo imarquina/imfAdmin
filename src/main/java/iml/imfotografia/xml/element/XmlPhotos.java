@@ -105,7 +105,7 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private void openChildNodes(NodeList nList) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
 
         for (int temp = 0; temp < nList.getLength(); temp++)
         {
@@ -146,7 +146,7 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private Photo getAttrPhoto(Node node, nodeType type) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Photo photo = new Photo();
 
         // get attributes names and values
@@ -206,7 +206,7 @@ public class XmlPhotos {
      * @throws ParseException
      */
     private Media getAttrMedia(Node node, nodeType type) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
         Media video = new Media();
 
         // get attributes names and values

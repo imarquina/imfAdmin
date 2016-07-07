@@ -4,10 +4,10 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Gallery {
-    private Integer _iKey;
     private String _name;
     private String _src;
     private String _title;
@@ -16,14 +16,13 @@ public class Gallery {
     private Date _update;
     private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
-    public Hashtable<Integer, Object> elements;
+    public Map<String, Object> elements;
 
     /**
      * CONSTRUCTORES
      */
     public Gallery() {
-        _iKey = 0;
-        elements = new Hashtable<Integer, Object>();
+        elements = new LinkedHashMap<String, Object>();
     }
 
     public Gallery(String name, String src, String title, Date update) {
@@ -94,10 +93,7 @@ public class Gallery {
      *
      * @return
      */
-    public Image addImage() {
-        Image image = new Image();
-        this.elements.put(_iKey++, image);
-
-        return image;
+    public void addImage(Image image) {
+        this.elements.put(image.get_id(), image);
     }
 }

@@ -1,10 +1,11 @@
 package iml.imfotografia.xml.config.structs;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Galleries {
     private Integer _iKey;
-    public LinkedHashMap<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
     /**
      * CONSTRUCTORES

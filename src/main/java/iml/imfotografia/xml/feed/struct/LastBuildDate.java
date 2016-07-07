@@ -15,6 +15,10 @@ public class LastBuildDate {
     public LastBuildDate() {
     }
 
+    public LastBuildDate(String content) throws ParseException {
+        this.set_content(content);
+    }
+
     public LastBuildDate(Date content) {
         this.set_content(content);
     }

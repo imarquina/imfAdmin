@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Multimedia {
     private Integer _iKey;
@@ -16,7 +17,7 @@ public class Multimedia {
     private Date _update;
     private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
-    public LinkedHashMap<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
     /**
      * CONSTRUCTORES

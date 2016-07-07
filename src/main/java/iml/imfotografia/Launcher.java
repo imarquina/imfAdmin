@@ -1,7 +1,6 @@
 package iml.imfotografia;
 
-import iml.imfotografia.xml.config.XmlConfig;
-import iml.imfotografia.xml.element.XmlPhotos;
+import iml.imfotografia.xml.feed.XmlFeed;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
@@ -20,8 +19,11 @@ public class Launcher {
     public static void main(String[] args) {
         logger.info("+ Begin +" + separatorLog);
 
-        try {
-            XmlPhotos photos = new XmlPhotos("./data/xml/in/photos.xml");
+        String photosXml = "./data/xml/in/photos.xml";
+        String configXml = "./data/xml/in/config.xml";
+
+        /*try {
+            XmlPhotos photos = new XmlPhotos(photosXml);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -30,10 +32,10 @@ public class Launcher {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
-        }
-        //xborrar_XmlConfig config = new xborrar_XmlConfig("./data/xml/in/config.xml");
-        try {
-            XmlConfig config = new XmlConfig("./data/xml/in/config.xml");
+        }*/
+
+        /*try {
+            XmlConfig config = new XmlConfig(configXml);
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
@@ -43,6 +45,20 @@ public class Launcher {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
+            e.printStackTrace();
+        }*/
+
+        try {
+            XmlFeed feed = new XmlFeed(configXml, photosXml);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

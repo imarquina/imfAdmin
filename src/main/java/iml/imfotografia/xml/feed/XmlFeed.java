@@ -1,32 +1,32 @@
 package iml.imfotografia.xml.feed;
 
-import iml.imfotografia.xml.config.prueba.Config;
-import iml.imfotografia.xml.config.structs.*;
-import iml.imfotografia.xml.feed.struct.*;
-import iml.imfotografia.xml.feed.struct.Title;
+import iml.imfotografia.utils.Date;
+import iml.imfotografia.xml.config.XmlConfig;
+import iml.imfotografia.xml.config.structs.Folder;
+import iml.imfotografia.xml.config.structs.Galleries;
+import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.element.XmlPhotos;
+import iml.imfotografia.xml.element.interfaces.IElement;
+import iml.imfotografia.xml.feed.struct.Channel;
+import iml.imfotografia.xml.feed.struct.Image;
+import iml.imfotografia.xml.feed.struct.Item;
+import iml.imfotografia.xml.feed.struct.Rss;
 import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.print.Doc;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-
-import static iml.imfotografia.utils.Xml.normalize;
+import java.util.*;
 
 /**
  * Created by imarquina on 29/6/16.
  */
 public class XmlFeed {
-    private String _xml;
+    private String _xmlElement;
+    private String _xmlConfig;
     public Rss rss;
 
     final static Logger logger = Logger.getLogger(XmlFeed.class);
@@ -48,35 +48,41 @@ public class XmlFeed {
      * CONSTRUCTORS
      */
     public XmlFeed() {
-        this._xml = "";
+        this._xmlConfig = "";
+        this._xmlElement = "";
         rss = new Rss();
     }
 
-    public XmlFeed(String xml) throws ParserConfigurationException, ParseException, SAXException, XPathExpressionException, IOException {
+    public XmlFeed(String xmlConfig, String xmlElement) throws ParserConfigurationException, ParseException, SAXException, XPathExpressionException, IOException {
         this ();
-        this.set_xml(xml);
+        this.set_xmlElement(xmlElement);
+        this.set_xmlConfig(xmlConfig);
 
-        parseXml();
+        generateXml();
     }
 
     /**
      * GETTER / SETTER
      */
-    public String get_xml() {
-        return this._xml;
+    public String get_xmlElement() {
+        return this._xmlElement;
     }
 
-    public void set_xml(String xml) {
-        this._xml = xml;
+    public void set_xmlElement(String xmlElement) {
+        this._xmlElement = xmlElement;
+    }
+
+    public String get_xmlConfig() {
+        return this._xmlConfig;
+    }
+
+    public void set_xmlConfig(String xmlConfig) {
+        this._xmlConfig = xmlConfig;
     }
 
     /**
      * PUBLIC METHODS
      */
-    public void generateXml(String xmlConfig, String xmlPhotos) {
-
-    }
-
     public void writeXml() {
 
     }
@@ -84,77 +90,114 @@ public class XmlFeed {
     /**
      * PRIVATE METHODS
      */
-    private void parseXml() throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, ParseException {
+    /**
+     *
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     * @throws XPathExpressionException
+     * @throws ParseException
+     */
+    private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
         this.rss.set_version("2.0");
 
-        //Get Document Builder
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
+        XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());
+        XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
-        //Build Document
-        Document document = builder.parse(new File(get_xml()));
-
-        normalize(document);
-
-        //Normalize the XML Structure; It's just too important !!
-        document.getDocumentElement().normalize();
-
-        //Here comes the root node
-        Node root = document.getDocumentElement();
-        logger.info("root Node: " + root.getNodeName());
-
-        Channel chanel = new Channel();
-
-        Config config = new Config(root);
-
-        Title title = getAttrTitle(config);
-        chanel.addTitle(title);
-
-        Link link = getAttrLink(root, ATTRIBUTE_LINK);
-        chanel.addLink(link);
-
-        Description description = getAttrDescription(root, ATTRIBUTE_DESCRIPTION);
-        chanel.addDescription(description);
-
-        Language language = getAttrLanguage(root, ATTRIBUTE_LANGUAGE);
-        chanel.addLanguage(language);
-
-        PubDate pubDate = getAttrPubDate(root, ATTRIBUTE_PUBDATE);
-        chanel.addPubDate(pubDate);
-
-        LastBuildDate lastBuildDate = getAttrLastBuildDate(root, ATTRIBUTE_LASTBUILDDATE);
-        chanel.addLastBuildDate(lastBuildDate);
-
-        Docs docs = getAttrDocs(root, ATTRIBUTE_DOCS);
-        chanel.addDocs(docs);
-
-        ManagingEditor managingEditor = getAttrManagingEditor(root, ATTRIBUTE_MANAGINGEDITOR);
-        chanel.addManagingEditor(managingEditor);
-
-        WebMaster webMaster = getAttrWebMaster(root, ATTRIBUTE_WEBMASTER);
-        chanel.addWebMaster(webMaster);
-
+        Channel chanel = createChanel(xmlConfig);
         this.rss.addChanel(chanel);
 
-        if (root.hasChildNodes())
-            openChildNodes(root.getChildNodes(), this.rss);
+        Image image = createImage();
+        chanel.addImage(image);
+
+        List<IElement> list = new ArrayList<IElement>();
+        list.addAll(xmlElment.images.photo.values());
+        list.addAll(xmlElment.medias.media.values());
+
+        Collections.sort(list, new Comparator<IElement>() {
+            public int compare(IElement o1, IElement o2) {
+                return (int) Date.DateDiff(o1.get_update(), o2.get_update());
+            }
+        });
+
+
+
+        for (IElement e : list) {
+            Item item = createItem(e, xmlConfig);
+            chanel.addItem(item);
+        }
+        extractElements(xmlConfig.config.elements, element.get_id());
 
         logger.debug("End");
     }
 
     private void openChildNodes(NodeList nList, Object object) throws ParseException {
-        logger.debug("Start");
+        logger.debug("Begin");
 
         logger.debug("End");
     }
 
-    private Title getAttrTitle(Config config){
-        Title title = new Title();
-        title.set_content(config.get_title());
+    /**
+     *
+     * @param xmlConfig
+     * @return
+     * @throws ParseException
+     */
+    private Channel createChanel(XmlConfig xmlConfig) throws ParseException {
+        logger.debug("Begin");
 
-        return title;
+        Channel chanel = new Channel(xmlConfig.config);
+
+        logger.debug("End");
+        return chanel;
+    }
+
+    /**
+     *
+     * @return
+     * @throws ParseException
+     */
+    private Image createImage() throws ParseException {
+        logger.debug("Begin");
+
+        Image image = new Image();
+
+        logger.debug("End");
+        return image;
+    }
+
+    /**
+     *
+     * @return
+     */
+    private Item createItem(IElement element, Gallery gallery) {
+        logger.debug("Begin");
+
+        Item item = new Item(element, gallery);
+
+        logger.debug("End");
+        return item;
+    }
+
+    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, String id){
+        for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
+            Integer key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof Galleries) {
+                extractElements((Map<Integer, Object>) value, id);
+            } else if (value instanceof Gallery){
+                Gallery gallery = (Gallery)entry;
+
+                if (gallery.elements.containsKey(id)){
+                    boolean b = true;
+                }
+            } else if (value instanceof Folder) {
+                extractElements(((Folder) value).elements, id);
+            }
+        }
     }
 }
 

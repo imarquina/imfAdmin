@@ -15,6 +15,10 @@ public class PubDate {
     public PubDate() {
     }
 
+    public PubDate(String content) throws ParseException {
+        this.set_content(content);
+    }
+
     public PubDate(Date content) {
         this.set_content(content);
     }

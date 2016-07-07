@@ -1,6 +1,8 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.struct.*;
+import iml.imfotografia.utils.Crypto;
+import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.element.interfaces.IElement;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
@@ -16,13 +18,28 @@ public class Item {
     /**
      * CONSTRUCTORS
      */
-    public Item() {
-        this.category = new Category();
-        this.description = new Description();
-        this.guid = new Guid();
-        this.link = new Link();
-        this.pubDate = new PubDate();
-        this.title = new Title();
+    public Item(){
+        super();
+    }
+
+    public Item(IElement element, Gallery gallery) {
+        Title title = new Title(element.get_caption());
+        this.addTitle(title);
+
+        Link link = new Link(Crypto.getMD5(gallery.get_name()));
+        this.addLink(link);
+
+        Description description = new Description(element.get_infoText());
+        this.addDescription(description);
+
+        Category category = new Category(gallery.get_name());
+        this.addCategory(category);
+
+        PubDate pubDate = new PubDate(element.get_dPublic());
+        this.addPubDate(pubDate);
+
+        Guid guid = new Guid("");
+        this.addGuid(guid);
     }
 
     public void addCategory(Category category){

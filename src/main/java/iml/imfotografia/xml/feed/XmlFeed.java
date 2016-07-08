@@ -132,8 +132,7 @@ public class XmlFeed {
             for (Gallery g : imageGalleries){
                 if (g.elements.containsKey(e.get_id())) {
                     //Bucle para añadir items por cada elemento si hay más de uno
-                    Object img = g.elements.get(e.get_id());
-                    Item item = createItem(e, g, 0);
+                    Item item = createItem(e, g, GetIndexKey(g.elements, e.get_id()));
                     chanel.addItem(item);
                 }
             }
@@ -218,5 +217,16 @@ public class XmlFeed {
         logger.debug("End");
         return  imageGalleries;
     }
+
+    private Integer GetIndexKey(Map<String, Object> elements, String key){
+        List<Object> list = new ArrayList<Object>(elements.values());
+
+        for (Integer i = 0; i < list.size(); i++){
+            if (((iml.imfotografia.xml.config.structs.Image)list.get(i)).get_id().equalsIgnoreCase(key))
+                return i;
+        }
+        return -1;
+    }
+
 }
 

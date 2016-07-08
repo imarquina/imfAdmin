@@ -45,6 +45,12 @@ public class Xml {
         return innerXml(node, false);
     }
 
+    /**
+     *
+     * @param node
+     * @param includeItself
+     * @return
+     */
     public static String innerXml(Node node, Boolean includeItself) {
         String xmlString = "";
         try {
@@ -85,6 +91,11 @@ public class Xml {
         return xmlString;
     }
 
+    /**
+     *
+     * @param node
+     * @return
+     */
     private static Boolean isBlankText(Node node) {
         if (node instanceof org.w3c.dom.Text) {
             String value = node.getNodeValue().trim();
@@ -95,6 +106,11 @@ public class Xml {
         return false;
     }
 
+    /**
+     *
+     * @param document
+     * @throws XPathExpressionException
+     */
     public static void normalize(Document document) throws XPathExpressionException {
         XPathFactory xpathFactory = XPathFactory.newInstance();
         // XPath to find empty text nodes.

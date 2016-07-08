@@ -4,6 +4,8 @@ import iml.imfotografia.utils.Crypto;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
 
+import static iml.imfotografia.utils.Text.htmlReplace;
+
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
@@ -18,7 +20,7 @@ public class Item {
     /**
      * CONSTANTS
      */
-    private static final String URL_LINK = "http://www.imarquina.es/detail.html?gallery=d";
+    private static final String URL_LINK = "http://www.imarquina.es/detail.html?gallery=";
 
     /**
      * CONSTRUCTORS
@@ -31,7 +33,7 @@ public class Item {
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(URL_LINK + Crypto.getMD5(gallery.get_name()) + "&amp;photo=" + iImage);
+        Link link = new Link(URL_LINK + Crypto.getMD5(htmlReplace(gallery.get_name())) + "&amp;photo=" + iImage);
         this.addLink(link);
 
         Description description = new Description(element.get_infoText());

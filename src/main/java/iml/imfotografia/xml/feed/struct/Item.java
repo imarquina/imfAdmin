@@ -16,17 +16,22 @@ public class Item {
     public Guid guid;
 
     /**
+     * CONSTANTS
+     */
+    private static final String URL_LINK = "http://www.imarquina.es/detail.html?gallery=d";
+
+    /**
      * CONSTRUCTORS
      */
     public Item(){
         super();
     }
 
-    public Item(IElement element, Gallery gallery) {
+    public Item(IElement element, Gallery gallery, Integer iImage) {
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(Crypto.getMD5(gallery.get_name()));
+        Link link = new Link(URL_LINK + Crypto.getMD5(gallery.get_name()) + "&amp;photo=" + iImage);
         this.addLink(link);
 
         Description description = new Description(element.get_infoText());

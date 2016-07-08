@@ -56,7 +56,7 @@ public abstract class ElementBase implements IElement {
     }
 
     public void set_id(String id) {
-        this._id = id;
+        this._id = id.replace(".jpg","").replace(".png","");
     }
 
     public Integer get_width() {

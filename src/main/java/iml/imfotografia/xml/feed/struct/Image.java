@@ -1,5 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.utils.Property;
+
 import java.text.ParseException;
 
 /**
@@ -13,27 +15,32 @@ public class Image {
     public Width width;
     public Height height;
 
+    private Property properties;
+
     /**
      * CONSTRUCTOR
      */
     public Image() throws ParseException {
-        Height height = new Height("60");
+        properties = new Property("config.properties");
+
+        Height height = new Height(properties.readProperty("iml.feed.image.logo.height"));
         this.addHeight(height);
 
-        Link link = new Link("http://www.imarquina.es");
+        Width width = new Width(properties.readProperty("iml.feed.image.logo.width"));
+        this.addWith(width);
+
+        Link link = new Link(properties.readProperty("iml.url.root"));
         this.addLink(link);
 
         PubDate pubDate = new PubDate("20120512");
         this.addPubDate(pubDate);
 
-        Title title = new Title("IMFotografia");
+        Title title = new Title(properties.readProperty("iml.name"));
         this.addTitle(title);
 
-        Url url = new Url("http://www.imarquina.es/resources/logo_xs.png");
+        Url url = new Url(properties.readProperty("iml.url.root") +
+                properties.readProperty("iml.feed.image.logo.url"));
         this.addUrl(url);
-
-        Width width = new Width("175");
-        this.addWith(width);
     }
 
     public void addTitle(Title title){

@@ -3,9 +3,7 @@ package iml.imfotografia.xml.config.structs;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Gallery {
     private String _name;
@@ -95,5 +93,20 @@ public class Gallery {
      */
     public void addImage(Image image) {
         this.elements.put(image.get_id(), image);
+    }
+
+    /**
+     *
+     * @param key
+     * @return
+     */
+    public Integer getIndexKey(String key){
+        List<Object> list = new ArrayList<Object>(this.elements.values());
+
+        for (Integer i = 0; i < list.size(); i++){
+            if (((Image)list.get(i)).get_id().equalsIgnoreCase(key))
+                return i;
+        }
+        return -1;
     }
 }

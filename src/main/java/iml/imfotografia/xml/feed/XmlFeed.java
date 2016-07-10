@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.feed;
 
 import iml.imfotografia.utils.Date;
+import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.structs.Folder;
 import iml.imfotografia.xml.config.structs.Galleries;
@@ -43,6 +44,8 @@ public class XmlFeed {
     private static final String ATTRIBUTE_DOCS = "DOCS";
     private static final String ATTRIBUTE_MANAGINGEDITOR = "MANAGINGEDITOR";
     private static final String ATTRIBUTE_WEBMASTER = "WEBMASTER";
+
+    private Property properties;
 
     /**
      * CONSTRUCTORS
@@ -101,30 +104,26 @@ public class XmlFeed {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        this.rss.set_version("2.0");
+        properties = new Property("config.properties");
 
+        this.rss.set_version(properties.readProperty("iml.feed.rss.version"));
+
+        //Leer los datos de elementos y estructura
         XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
+        //Agrupar los elementos
+        List<IElement> list = xmlElment.getElementByUpdate();
+
+        //Estraer galerias e imágenes para completar información de item
+        ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
+
+        //Crear el xml
         Channel chanel = createChanel(xmlConfig);
         this.rss.addChanel(chanel);
 
         Image image = createImage();
         chanel.addImage(image);
-
-        List<IElement> list = new ArrayList<IElement>();
-        list.addAll(xmlElment.images.photo.values());
-        list.addAll(xmlElment.medias.media.values());
-
-        Collections.sort(list, new Comparator<IElement>() {
-            public int compare(IElement o1, IElement o2) {
-                return (int) Date.DateDiff(o1.get_update(), o2.get_update());
-            }
-        });
-
-        //Estraer galerias e imágenes para completar información de item
-        ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
-        extractElements(xmlConfig.config.elements, imageGalleries);
 
         //Recorrer cada item para procesado
         for (IElement e : list) {
@@ -132,17 +131,11 @@ public class XmlFeed {
             for (Gallery g : imageGalleries){
                 if (g.elements.containsKey(e.get_id())) {
                     //Bucle para añadir items por cada elemento si hay más de uno
-                    Item item = createItem(e, g, GetIndexKey(g.elements, e.get_id()));
+                    Item item = createItem(e, g, g.getIndexKey(e.get_id()));
                     chanel.addItem(item);
                 }
             }
         }
-
-        logger.debug("End");
-    }
-
-    private void openChildNodes(NodeList nList, Object object) throws ParseException {
-        logger.debug("Begin");
 
         logger.debug("End");
     }
@@ -188,45 +181,5 @@ public class XmlFeed {
         logger.debug("End");
         return item;
     }
-
-    /**
-     *
-     * @param elements
-     * @return
-     */
-    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, ArrayList<Gallery> imageGalleries){
-        logger.debug("Begin");
-
-        Integer iKey = 0;
-
-        for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
-            Integer key = entry.getKey();
-            Object value = entry.getValue();
-
-            if (value instanceof Galleries) {
-                extractElements(((Galleries) value).elements, imageGalleries);
-            } else if (value instanceof Gallery){
-                Gallery gallery = (Gallery)value;
-
-                imageGalleries.add(gallery);
-            } else if (value instanceof Folder) {
-                extractElements(((Folder) value).elements, imageGalleries);
-            }
-        }
-
-        logger.debug("End");
-        return  imageGalleries;
-    }
-
-    private Integer GetIndexKey(Map<String, Object> elements, String key){
-        List<Object> list = new ArrayList<Object>(elements.values());
-
-        for (Integer i = 0; i < list.size(); i++){
-            if (((iml.imfotografia.xml.config.structs.Image)list.get(i)).get_id().equalsIgnoreCase(key))
-                return i;
-        }
-        return -1;
-    }
-
 }
 

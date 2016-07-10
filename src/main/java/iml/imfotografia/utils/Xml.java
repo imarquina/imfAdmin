@@ -1,6 +1,6 @@
 package iml.imfotografia.utils;
 
-import iml.imfotografia.modifiers.StringWriter;
+import iml.imfotografia.extensions.StringWriter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

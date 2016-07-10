@@ -4,6 +4,7 @@ package iml.imfotografia.utils;
  * Created by inaki.marquina on 07/07/2016.
  */
 public class Date extends java.util.Date {
+
     /**
      *
      * @param startDate

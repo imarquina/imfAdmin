@@ -1,25 +1,30 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import iml.imfotografia.xml.feed.struct.Item;
+
 import java.util.Hashtable;
 
 public class Urlset {
+    private Integer _iKey;
     private String _xmlns;
     private String xmlns_xsi;
     private String xsi_schemaLocation;
-    Hashtable<String, Url> url;
+    Hashtable<Integer, Url> url;
 
     /**
      * CONSTRUCTORS
      */
     public Urlset() {
-        url = new Hashtable<String, Url>();
+        _iKey = 0;
+        url = new Hashtable<Integer, Url>();
     }
 
     public Urlset(String xmlns, String xmlns_xsi, String xsi_schemaLocation) {
+        this();
+
         this.set_xmlns(xmlns);
         this.setXmlns_xsi(xmlns_xsi);
         this.setXsi_schemaLocation(xsi_schemaLocation);
-        url = new Hashtable<String, Url>();
     }
 
     /**
@@ -47,5 +52,9 @@ public class Urlset {
 
     public void setXsi_schemaLocation(String xsi_schemaLocation) {
         this.xsi_schemaLocation = xsi_schemaLocation;
+    }
+
+    public void addUrl(Url url) {
+        this.url.put(_iKey++, url);
     }
 }

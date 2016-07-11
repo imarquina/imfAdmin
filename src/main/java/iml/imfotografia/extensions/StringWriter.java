@@ -1,4 +1,4 @@
-package iml.imfotografia.modifiers;
+package iml.imfotografia.extensions;
 
 /**
  * Created by inaki.marquina on 05/07/2016.

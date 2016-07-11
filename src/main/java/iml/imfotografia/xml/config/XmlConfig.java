@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.config;
 
 import iml.imfotografia.xml.config.structs.*;
+import iml.imfotografia.xml.element.interfaces.IElement;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -12,6 +13,8 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Map;
 
 import static iml.imfotografia.utils.Text.SetLength;
 import static iml.imfotografia.utils.Xml.innerXml;
@@ -72,7 +75,7 @@ public class XmlConfig {
     }
 
     /**
-     * PUBLIC METHODS
+     * PRIVATE METHODS
      */
     /**
      *
@@ -600,5 +603,50 @@ public class XmlConfig {
 
         logger.debug("End");
         return track;
+    }
+
+    /**
+     * Recorre de manera redundante todos los elementos para extraer
+     * los Gallery y sus imágenes
+     * @param elements
+     * @param imageGalleries
+     * @return
+     */
+    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, ArrayList<Gallery> imageGalleries){
+        logger.debug("Begin");
+
+        Integer iKey = 0;
+
+        for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
+            Integer key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof Galleries) {
+                extractElements(((Galleries) value).elements, imageGalleries);
+            } else if (value instanceof Gallery){
+                Gallery gallery = (Gallery)value;
+
+                imageGalleries.add(gallery);
+            } else if (value instanceof Folder) {
+                extractElements(((Folder) value).elements, imageGalleries);
+            }
+        }
+
+        logger.debug("End");
+        return  imageGalleries;
+    }
+
+    /**
+     * PUBLIC METHODS
+     */
+    /**
+     * Obtiene todas los elementos Gallery y sus imágenes
+     * @param elements
+     * @return
+     */
+    public ArrayList<Gallery> getGallerys(Map<Integer, Object> elements){
+        ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
+
+        return this.extractElements(elements, imageGalleries);
     }
 }

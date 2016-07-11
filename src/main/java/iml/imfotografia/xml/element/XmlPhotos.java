@@ -1,5 +1,7 @@
 package iml.imfotografia.xml.element;
 
+import iml.imfotografia.utils.Date;
+import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.element.structs.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
@@ -11,6 +13,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
 /**
@@ -257,5 +263,27 @@ public class XmlPhotos {
         }
         logger.debug("End");
         return video;
+    }
+
+    /**
+     * PUBLIC METHODS
+     */
+    /**
+     * Agrupa los elementos y los ordena por el campo update
+     * @return
+     */
+    public List<IElement> getElementByUpdate(){
+        List<IElement> list = new ArrayList<IElement>();
+        list.addAll(this.images.photo.values());
+        list.addAll(this.medias.media.values());
+
+        //Ordenar los elementos de más a menos reciente
+        Collections.sort(list, new Comparator<IElement>() {
+            public int compare(IElement o1, IElement o2) {
+                return (int) Date.DateDiff(o1.get_update(), o2.get_update());
+            }
+        });
+
+        return list;
     }
 }

@@ -1,5 +1,6 @@
 package iml.imfotografia;
 
+import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.feed.XmlFeed;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;

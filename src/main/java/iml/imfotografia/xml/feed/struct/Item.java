@@ -1,8 +1,11 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.utils.Crypto;
+import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
+
+import static iml.imfotografia.utils.Text.htmlReplace;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
@@ -15,10 +18,8 @@ public class Item {
     public PubDate pubDate;
     public Guid guid;
 
-    /**
-     * CONSTANTS
-     */
-    private static final String URL_LINK = "http://www.imarquina.es/detail.html?gallery=d";
+    private Property properties;
+
 
     /**
      * CONSTRUCTORS
@@ -28,10 +29,14 @@ public class Item {
     }
 
     public Item(IElement element, Gallery gallery, Integer iImage) {
+        properties = new Property("config.properties");
+
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(URL_LINK + Crypto.getMD5(gallery.get_name()) + "&amp;photo=" + iImage);
+        Link link = new Link(properties.readProperty("iml.url.root") +
+                properties.readProperty("iml.feed.item.link") +
+                Crypto.getMD5(htmlReplace(gallery.get_name())) + "&amp;photo=" + iImage);
         this.addLink(link);
 
         Description description = new Description(element.get_infoText());

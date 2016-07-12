@@ -2,6 +2,7 @@ package iml.imfotografia;
 
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
@@ -49,8 +50,22 @@ public class Launcher {
             e.printStackTrace();
         }*/
 
-        try {
+        /*try {
             XmlFeed feed = new XmlFeed(configXml, photosXml);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        try {
+            XmlSitemap sitemap = new XmlSitemap(configXml);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (ParseException e) {

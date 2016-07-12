@@ -1,8 +1,5 @@
 package iml.imfotografia.xml.sitemap.element;
 
-
-import iml.imfotografia.xml.feed.struct.LastBuildDate;
-
 import java.util.Date;
 
 public class Url {

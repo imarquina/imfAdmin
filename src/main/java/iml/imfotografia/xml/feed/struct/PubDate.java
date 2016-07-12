@@ -4,34 +4,39 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class PubDate {
     private Date _content;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
 
     /**
      * CONSTRUCTORS
      */
     public PubDate() {
+        _dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
     }
 
     public PubDate(String content) throws ParseException {
+        this();
         this.set_content(content);
     }
 
     public PubDate(Date content) {
+        this();
         this.set_content(content);
     }
 
     /**
      * GETTER / SETTER
      */
-    public Date get_content() {
-        return this._content;
+    public String get_content() {
+        return _dateFormatOut.format(this._content);
     }
 
     public void set_content(String content) throws ParseException {
-        this._content = _formatDate.parse(content);
+        this._content = _dateFormatIn.parse(content);
     }
 
     public void set_content(Date content) {

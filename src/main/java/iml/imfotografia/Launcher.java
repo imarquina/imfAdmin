@@ -1,6 +1,5 @@
 package iml.imfotografia;
 
-import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
@@ -21,66 +20,28 @@ public class Launcher {
     public static void main(String[] args) {
         logger.info("+ Begin +" + separatorLog);
 
-        String photosXml = "./data/xml/in/photos.xml";
-        String configXml = "./data/xml/in/config.xml";
-
-        /*try {
-            XmlPhotos photos = new XmlPhotos(photosXml);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }*/
-
-        /*try {
-            XmlConfig config = new XmlConfig(configXml);
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (XPathExpressionException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }*/
-
-        /*try {
-            XmlFeed feed = new XmlFeed(configXml, photosXml);
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (XPathExpressionException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
         try {
-            XmlSitemap sitemap = new XmlSitemap(configXml);
+            String photosXml = "./data/xml/in/photos.xml";
+            String configXml = "./data/xml/in/config.xml";
+
+            //XmlPhotos photos = new XmlPhotos(photosXml);
+            //XmlConfig config = new XmlConfig(configXml);
+            XmlFeed feed = new XmlFeed(configXml, photosXml);
+            XmlSitemap  sitemap = new XmlSitemap(configXml);
+
+            System.out.println();
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         } catch (SAXException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         } catch (XPathExpressionException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         }
 
         logger.info("+ End +" + separatorLog);
-
-        ////HtmlConfig config = new HtmlConfig("./config/xml/in/config.xml");
-        //logger.info(Crypto.getMD5("Bilbao"));
     }
 }

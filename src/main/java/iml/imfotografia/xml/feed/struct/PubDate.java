@@ -1,5 +1,8 @@
 package iml.imfotografia.xml.feed.struct;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -42,5 +45,11 @@ public class PubDate {
 
     public void set_content(Date content) {
         this._content = content;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        Element pubDateNode = document.createElement("pubDate");
+        pubDateNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(pubDateNode);
     }
 }

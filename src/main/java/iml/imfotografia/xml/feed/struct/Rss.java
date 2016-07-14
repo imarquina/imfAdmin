@@ -2,13 +2,12 @@ package iml.imfotografia.xml.feed.struct;
 
 public class Rss {
     private String _version;
-    private Channel chanel;
+    public Channel chanel;
 
     /**
      * CONSTRUCTORS
      */
     public Rss() {
-
         chanel = new Channel();
     }
 

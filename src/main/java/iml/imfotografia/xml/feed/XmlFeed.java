@@ -1,10 +1,24 @@
 package iml.imfotografia.xml.feed;
 
-import iml.imfotografia.utils.Date;
+import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
+
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.XmlConfig;
-import iml.imfotografia.xml.config.structs.Folder;
-import iml.imfotografia.xml.config.structs.Galleries;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.element.interfaces.IElement;
@@ -13,10 +27,8 @@ import iml.imfotografia.xml.feed.struct.Image;
 import iml.imfotografia.xml.feed.struct.Item;
 import iml.imfotografia.xml.feed.struct.Rss;
 import org.apache.log4j.Logger;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.text.ParseException;
@@ -28,6 +40,7 @@ import java.util.*;
 public class XmlFeed {
     private String _xmlElement;
     private String _xmlConfig;
+    private String _nameXml = "feed";
     public Rss rss;
 
     final static Logger logger = Logger.getLogger(XmlFeed.class);
@@ -86,8 +99,51 @@ public class XmlFeed {
     /**
      * PUBLIC METHODS
      */
-    public void writeXml() {
+    public void writeXml() throws ParserConfigurationException, TransformerConfigurationException, TransformerException {
+        logger.debug("Begin");
 
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(null, this._nameXml, null);
+        document.setXmlVersion("1.0");
+
+        //Main Node
+        Element raiz = document.getDocumentElement();
+
+        Element rssNode = document.createElement("rss");
+        rssNode.setAttribute("version", this.rss.get_version());
+
+        Element chanelNode = document.createElement("channel");
+
+        Element titleNode = document.createElement("title");
+        titleNode.appendChild(document.createTextNode(this.rss.chanel.title.get_content());
+        chanelNode.appendChild(titleNode);
+
+        Element linkNode = document.createElement("link");
+        linkNode.appendChild(document.createTextNode(this.rss.chanel.link.get_content());
+        chanelNode.appendChild(linkNode);
+
+        Element descriptionNode = document.createElement("description");
+        descriptionNode.appendChild(document.createTextNode(this.rss.chanel.description.get_content());
+        chanelNode.appendChild(descriptionNode);
+
+        //...
+
+        rssNode.appendChild(chanelNode);
+
+        raiz.appendChild(rssNode);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        //Indicamos donde lo queremos almacenar
+        Result result = new StreamResult(new java.io.File(this._nameXml + ".xml")); //nombre del archivo
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.transform(source, result);
+
+        logger.debug("End");
     }
 
     /**

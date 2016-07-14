@@ -1,6 +1,8 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.utils.Property;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.ParseException;
 
@@ -65,5 +67,18 @@ public class Image {
 
     public void addHeight(Height height){
         this.height = height;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        Element imageNode = document.createElement("image");
+
+        this.title.toXml(document, imageNode);
+        this.url.toXml(document, imageNode);
+        this.link.toXml(document, imageNode);
+        this.pubDate.toXml(document, imageNode);
+        this.width.toXml(document, imageNode);
+        this.height.toXml(document, imageNode);
+
+        parentNode.appendChild(imageNode);
     }
 }

@@ -6,6 +6,8 @@ import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.text.ParseException;
@@ -29,7 +31,7 @@ public class Launcher {
             XmlFeed feed = new XmlFeed(configXml, photosXml);
             XmlSitemap  sitemap = new XmlSitemap(configXml);
 
-            System.out.println();
+            feed.writeXml();
         } catch (ParserConfigurationException e) {
             logger.error(e.getStackTrace());
         } catch (ParseException e) {
@@ -39,6 +41,10 @@ public class Launcher {
         } catch (XPathExpressionException e) {
             logger.error(e.getStackTrace());
         } catch (IOException e) {
+            logger.error(e.getStackTrace());
+        } catch (TransformerConfigurationException e) {
+            logger.error(e.getStackTrace());
+        } catch (TransformerException e) {
             logger.error(e.getStackTrace());
         }
 

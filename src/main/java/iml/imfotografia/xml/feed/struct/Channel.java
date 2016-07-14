@@ -2,6 +2,8 @@ package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Config;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.ParseException;
 import java.util.LinkedHashMap;
@@ -118,5 +120,26 @@ public class Channel {
 
     public void addItem (Item item) {
         this.elements.put(_iKey++, item);
+    }
+
+    public void toXml(Document document, Element parentNode){
+        Element chanelNode = document.createElement("channel");
+
+        this.title.toXml(document, chanelNode);
+        this.link.toXml(document, chanelNode);
+        this.description.toXml(document, chanelNode);
+        this.language.toXml(document, chanelNode);
+        this.pubDate.toXml(document, chanelNode);
+        this.lastBuildDate.toXml(document, chanelNode);
+        this.docs.toXml(document, chanelNode);
+        this.managingEditor.toXml(document, chanelNode);
+        this.webMaster.toXml(document, chanelNode);
+
+        Image image = (Image)this.elements.get(0);
+        image.toXml(document, chanelNode);
+
+        //bucle para los item desde 1 hasta size() - 1
+
+        parentNode.appendChild(chanelNode);
     }
 }

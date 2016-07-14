@@ -1,5 +1,8 @@
 package iml.imfotografia.xml.feed.struct;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public class Docs {
     private String _content;
 
@@ -22,5 +25,11 @@ public class Docs {
 
     public void set_content(String content) {
         this._content = content;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        Element docsNode = document.createElement("docs");
+        docsNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(docsNode);
     }
 }

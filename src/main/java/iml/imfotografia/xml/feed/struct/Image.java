@@ -46,7 +46,7 @@ public class Image {
     }
 
     public void addTitle(Title title){
-        this.title = new Title();
+        this.title = title;
     }
 
     public void addUrl(Url url) {

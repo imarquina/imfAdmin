@@ -92,20 +92,17 @@ public class XmlFeed {
     /**
      * PUBLIC METHODS
      */
-    public void writeXml() throws ParserConfigurationException, TransformerConfigurationException, TransformerException {
+    public void writeXml() throws ParserConfigurationException, TransformerException {
         logger.debug("Begin");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         DOMImplementation implementation = builder.getDOMImplementation();
 
-        Document document = implementation.createDocument(null, this._nameXml, null);
+        Document document = implementation.createDocument(null, this.rss.get_nodeName(), null);
         document.setXmlVersion("1.0");
 
-        //Main Node
-        Element raiz = document.getDocumentElement();
-
-        this.rss.toXml(document, raiz);
+        this.rss.toXml(document);
 
         //Generate XML
         Source source = new DOMSource(document);

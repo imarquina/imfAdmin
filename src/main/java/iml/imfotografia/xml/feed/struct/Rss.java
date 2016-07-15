@@ -5,18 +5,21 @@ import org.w3c.dom.Element;
 
 public class Rss {
     private String _version;
+    private String _nodeName;
     public Channel chanel;
 
     /**
      * CONSTRUCTORS
      */
     public Rss() {
+        this._nodeName = "rss";
+        this._version = "";
         chanel = new Channel();
     }
 
     public Rss(String _version) {
+        this();
         this._version = _version;
-        this.chanel = new Channel();
     }
 
     /**
@@ -30,16 +33,19 @@ public class Rss {
         this._version = version;
     }
 
+    public String get_nodeName() {
+        return this._nodeName;
+    }
+
     public void addChanel(Channel chanel){
         this.chanel = chanel;
     }
 
-    public void toXml(Document document, Element parentNode){
-        Element rssNode = document.createElement("rss");
+    public void toXml(Document document){
+        //Main Node
+        Element rssNode = document.getDocumentElement();
         rssNode.setAttribute("version", this.get_version());
 
         chanel.toXml(document, rssNode);
-
-        parentNode.appendChild(rssNode);
     }
 }

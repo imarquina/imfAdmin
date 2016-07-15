@@ -4,15 +4,19 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class WebMaster {
+    private String _nodeName;
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
     public WebMaster() {
+        this._nodeName = "webMaster";
+        this._content = "";
     }
 
     public WebMaster(String content) {
+        this();
         this.set_content(content);
     }
 
@@ -27,8 +31,17 @@ public class WebMaster {
         this._content = content;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element webMasterNode = document.createElement("webMaster");
+        Element webMasterNode = document.createElement(this.get_nodeName());
         webMasterNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(webMasterNode);
     }

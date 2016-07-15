@@ -11,6 +11,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 public class PubDate {
+    private String _nodeName;
     private Date _content;
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
     private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
@@ -19,7 +20,9 @@ public class PubDate {
      * CONSTRUCTORS
      */
     public PubDate() {
-        _dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
+        this._nodeName = "pubDate";
+        this._content = new Date();
+        this._dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
     }
 
     public PubDate(String content) throws ParseException {
@@ -47,8 +50,17 @@ public class PubDate {
         this._content = content;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element pubDateNode = document.createElement("pubDate");
+        Element pubDateNode = document.createElement(this.get_nodeName());
         pubDateNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(pubDateNode);
     }

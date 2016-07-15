@@ -1,22 +1,29 @@
 package iml.imfotografia.xml.sitemap.element;
 
 import iml.imfotografia.xml.feed.struct.Item;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Urlset {
     private Integer _iKey;
+    private String _nodeName;
     private String _xmlns;
     private String xmlns_xsi;
     private String xsi_schemaLocation;
-    Hashtable<Integer, Url> url;
+
+    public Map<Integer, Url> url;
 
     /**
      * CONSTRUCTORS
      */
     public Urlset() {
-        _iKey = 0;
-        url = new Hashtable<Integer, Url>();
+        this._iKey = 0;
+        this._nodeName = "urlset";
+        this.url = new LinkedHashMap<Integer, Url>();
     }
 
     public Urlset(String xmlns, String xmlns_xsi, String xsi_schemaLocation) {
@@ -54,7 +61,33 @@ public class Urlset {
         this.xsi_schemaLocation = xsi_schemaLocation;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     * PUBLIC METHODS
+     */
     public void addUrl(Url url) {
         this.url.put(_iKey++, url);
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        Element pubDateNode = document.createElement(this.get_nodeName());
+
+        //bucle para los item
+        for (Map.Entry<Integer, Url> entry : this.url.entrySet()) {
+            Integer key = entry.getKey();
+            Url value = entry.getValue();
+
+            value.toXml(document, pubDateNode);
+        }
+
+        parentNode.appendChild(pubDateNode);
     }
 }

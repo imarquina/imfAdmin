@@ -4,15 +4,19 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Title {
+    private String _nodeName;
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
     public Title() {
+        this._nodeName = "title";
+        this._content = "";
     }
 
     public Title(String content) {
+        this();
         this.set_content(content);
     }
 
@@ -27,8 +31,17 @@ public class Title {
         this._content = content;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element titleNode = document.createElement("title");
+        Element titleNode = document.createElement(this.get_nodeName());
         titleNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(titleNode);
     }

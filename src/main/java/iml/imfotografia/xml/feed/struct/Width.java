@@ -7,15 +7,19 @@ import org.w3c.dom.Element;
  * Created by inaki.marquina on 06/07/2016.
  */
 public class Width {
+    private String _nodeName;
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
     public Width() {
+        this._nodeName = "width";
+        this._content = "";
     }
 
     public Width(String content) {
+        this();
         this.set_content(content);
     }
 
@@ -30,8 +34,17 @@ public class Width {
         this._content = content;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element titleNode = document.createElement("width");
+        Element titleNode = document.createElement(this.get_nodeName());
         titleNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(titleNode);
     }

@@ -10,6 +10,8 @@ import java.text.ParseException;
  * Created by inaki.marquina on 06/07/2016.
  */
 public class Image {
+    private String _nodeName;
+
     public Title title;
     public Url url;
     public Link link;
@@ -24,6 +26,8 @@ public class Image {
      */
     public Image() throws ParseException {
         properties = new Property("config.properties");
+
+        this._nodeName = "image";
 
         Height height = new Height(properties.readProperty("iml.feed.image.logo.height"));
         this.addHeight(height);
@@ -44,6 +48,14 @@ public class Image {
                 properties.readProperty("iml.feed.image.logo.url"));
         this.addUrl(url);
     }
+
+    /**
+     * GETTER / SETTER
+     */
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
 
     public void addTitle(Title title){
         this.title = title;
@@ -69,8 +81,13 @@ public class Image {
         this.height = height;
     }
 
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element imageNode = document.createElement("image");
+        Element imageNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, imageNode);
         this.url.toXml(document, imageNode);

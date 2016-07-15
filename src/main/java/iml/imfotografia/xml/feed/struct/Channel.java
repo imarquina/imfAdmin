@@ -7,9 +7,11 @@ import org.w3c.dom.Element;
 
 import java.text.ParseException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Channel {
     private Integer _iKey;
+    private String _nodeName;
     public Title title;
     public Link link;
     public Description description;
@@ -19,7 +21,7 @@ public class Channel {
     public Docs docs;
     public ManagingEditor managingEditor;
     public WebMaster webMaster;
-    public LinkedHashMap<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
     private Property properties;
 
@@ -29,7 +31,8 @@ public class Channel {
     public Channel() {
         properties = new Property("config.properties");
 
-        _iKey = 0;
+        this._iKey = 0;
+        this._nodeName = "channel";
 
         this.title = new Title();
         this.link = new Link();
@@ -73,6 +76,13 @@ public class Channel {
 
         WebMaster webMaster = new WebMaster(properties.readProperty("iml.email"));
         this.addWebMaster(webMaster);
+    }
+
+    /**
+     * GETTER / SETTER
+     */
+    public String get_nodeName() {
+        return _nodeName;
     }
 
     /**
@@ -123,7 +133,7 @@ public class Channel {
     }
 
     public void toXml(Document document, Element parentNode){
-        Element chanelNode = document.createElement("channel");
+        Element chanelNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, chanelNode);
         this.link.toXml(document, chanelNode);
@@ -138,7 +148,14 @@ public class Channel {
         Image image = (Image)this.elements.get(0);
         image.toXml(document, chanelNode);
 
-        //bucle para los item desde 1 hasta size() - 1
+        //bucle para los item
+        for (Map.Entry<Integer, Object> entry : this.elements.entrySet()) {
+            Integer key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof Item)
+                ((Item)value).toXml(document, chanelNode);
+        }
 
         parentNode.appendChild(chanelNode);
     }

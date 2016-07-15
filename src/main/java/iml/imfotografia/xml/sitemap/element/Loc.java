@@ -1,15 +1,22 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public class Loc {
+    private String _nodeName;
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
     public Loc() {
+        this._nodeName = "loc";
+        this._content = "";
     }
 
     public Loc(String content) {
+        this();
         this.set_content(content);
     }
 
@@ -22,5 +29,20 @@ public class Loc {
 
     public void set_content(String content) {
         this._content = content;
+    }
+
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        Element pubDateNode = document.createElement(this.get_nodeName());
+        pubDateNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(pubDateNode);
     }
 }

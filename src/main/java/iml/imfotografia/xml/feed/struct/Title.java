@@ -1,11 +1,15 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Title {
     private String _nodeName;
     private String _content;
+
+    final static Logger logger = Logger.getLogger(Title.class);
 
     /**
      * CONSTRUCTORS
@@ -41,8 +45,12 @@ public class Title {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element titleNode = document.createElement(this.get_nodeName());
         titleNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(titleNode);
+
+        logger.debug("End");
     }
 }

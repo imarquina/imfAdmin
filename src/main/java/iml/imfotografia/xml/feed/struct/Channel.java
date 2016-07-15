@@ -2,6 +2,8 @@ package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Config;
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -24,6 +26,8 @@ public class Channel {
     public Map<Integer, Object> elements;
 
     private Property properties;
+
+    final static Logger logger = Logger.getLogger(Channel.class);
 
     /**
      * CONSTRUCTORS
@@ -133,6 +137,8 @@ public class Channel {
     }
 
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element chanelNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, chanelNode);
@@ -158,5 +164,7 @@ public class Channel {
         }
 
         parentNode.appendChild(chanelNode);
+
+        logger.debug("End");
     }
 }

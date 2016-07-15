@@ -1,5 +1,7 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -10,6 +12,8 @@ public class Url {
 
     public Loc loc;
     public Lastmod lastmod;
+
+    final static Logger logger = Logger.getLogger(Url.class);
 
     /**
      * CONSTRUCTORS
@@ -49,11 +53,15 @@ public class Url {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element pubDateNode = document.createElement(this.get_nodeName());
 
         this.loc.toXml(document, pubDateNode);
         this.lastmod.toXml(document, pubDateNode);
 
         parentNode.appendChild(pubDateNode);
+
+        logger.debug("End");
     }
 }

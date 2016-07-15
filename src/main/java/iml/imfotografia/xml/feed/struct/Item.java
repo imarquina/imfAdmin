@@ -4,6 +4,8 @@ import iml.imfotografia.utils.Crypto;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -23,6 +25,8 @@ public class Item {
     public Guid guid;
 
     private Property properties;
+
+    final static Logger logger = Logger.getLogger(Item.class);
 
     /**
      * CONSTRUCTORS
@@ -94,6 +98,8 @@ public class Item {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element itemNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, itemNode);
@@ -104,5 +110,7 @@ public class Item {
         this.guid.toXml(document, itemNode);
 
         parentNode.appendChild(itemNode);
+
+        logger.debug("End");
     }
 }

@@ -1,6 +1,8 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.feed.struct.Item;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -16,6 +18,8 @@ public class Urlset {
     private String xsi_schemaLocation;
 
     public Map<Integer, Url> url;
+
+    final static Logger logger = Logger.getLogger(Urlset.class);
 
     /**
      * CONSTRUCTORS
@@ -78,6 +82,8 @@ public class Urlset {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element pubDateNode = document.createElement(this.get_nodeName());
 
         //bucle para los item
@@ -89,5 +95,7 @@ public class Urlset {
         }
 
         parentNode.appendChild(pubDateNode);
+
+        logger.debug("End");
     }
 }

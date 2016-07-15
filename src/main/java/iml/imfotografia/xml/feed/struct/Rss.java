@@ -1,5 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -7,6 +9,8 @@ public class Rss {
     private String _version;
     private String _nodeName;
     public Channel chanel;
+
+    final static Logger logger = Logger.getLogger(Rss.class);
 
     /**
      * CONSTRUCTORS
@@ -42,10 +46,14 @@ public class Rss {
     }
 
     public void toXml(Document document){
+        logger.debug("Begin");
+
         //Main Node
         Element rssNode = document.getDocumentElement();
         rssNode.setAttribute("version", this.get_version());
 
         chanel.toXml(document, rssNode);
+
+        logger.debug("End");
     }
 }

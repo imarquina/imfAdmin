@@ -1,6 +1,8 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -20,6 +22,8 @@ public class Image {
     public Height height;
 
     private Property properties;
+
+    final static Logger logger = Logger.getLogger(Image.class);
 
     /**
      * CONSTRUCTOR
@@ -87,6 +91,8 @@ public class Image {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element imageNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, imageNode);
@@ -97,5 +103,7 @@ public class Image {
         this.height.toXml(document, imageNode);
 
         parentNode.appendChild(imageNode);
+
+        logger.debug("End");
     }
 }

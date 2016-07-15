@@ -1,11 +1,15 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Language {
     private String _nodeName;
     private String _content;
+
+    final static Logger logger = Logger.getLogger(Language.class);
 
     /**
      * CONSTRUCTORS
@@ -41,8 +45,12 @@ public class Language {
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
         Element languageNode = document.createElement(this.get_nodeName());
         languageNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(languageNode);
+
+        logger.debug("End");
     }
 }

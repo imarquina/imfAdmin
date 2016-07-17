@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed;
 
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.XmlPhotos;
@@ -12,7 +12,6 @@ import iml.imfotografia.xml.feed.struct.Rss;
 import org.apache.log4j.Logger;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -22,6 +21,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -50,8 +50,6 @@ public class XmlFeed {
     private static final String ATTRIBUTE_DOCS = "DOCS";
     private static final String ATTRIBUTE_MANAGINGEDITOR = "MANAGINGEDITOR";
     private static final String ATTRIBUTE_WEBMASTER = "WEBMASTER";
-
-    private Property properties;
 
     /**
      * CONSTRUCTORS
@@ -108,8 +106,15 @@ public class XmlFeed {
         Source source = new DOMSource(document);
 
         //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new java.io.File(this._nameXml + ".xml")); //nombre del archivo
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Result result = new StreamResult(new File(PropConfig.readProperty("iml.xml.dir.out") +
+                this._nameXml + ".xml")); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
         transformer.transform(source, result);
 
         logger.debug("End");
@@ -129,9 +134,7 @@ public class XmlFeed {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        properties = new Property("config.properties");
-
-        this.rss.set_version(properties.readProperty("iml.feed.rss.version"));
+        this.rss.set_version(PropConfig.readProperty("iml.feed.rss.version"));
 
         //Leer los datos de elementos y estructura
         XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());

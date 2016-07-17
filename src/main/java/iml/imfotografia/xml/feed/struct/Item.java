@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.utils.Crypto;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Gallery;
@@ -24,8 +25,6 @@ public class Item {
     public PubDate pubDate;
     public Guid guid;
 
-    private Property properties;
-
     final static Logger logger = Logger.getLogger(Item.class);
 
     /**
@@ -36,15 +35,13 @@ public class Item {
     }
 
     public Item(IElement element, Gallery gallery, Integer iImage) {
-        properties = new Property("config.properties");
-
         this._nodeName = "item";
 
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(properties.readProperty("iml.url.root") +
-                properties.readProperty("iml.feed.item.link") +
+        Link link = new Link(PropConfig.readProperty("iml.url.root") +
+                PropConfig.readProperty("iml.feed.item.link") +
                 Crypto.getMD5(htmlReplace(gallery.get_name())) + "&photo=" + iImage);
         this.addLink(link);
 

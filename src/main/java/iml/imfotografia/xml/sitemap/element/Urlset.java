@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.feed.struct.Item;
 import org.apache.log4j.Logger;
@@ -79,22 +80,26 @@ public class Urlset {
     /**
      *
      * @param document
-     * @param parentNode
      */
-    public void toXml(Document document, Element parentNode){
+    public void toXml(Document document){
         logger.debug("Begin");
 
-        Element pubDateNode = document.createElement(this.get_nodeName());
+        //Main Node
+        Element urlsetNode = document.getDocumentElement();
+        urlsetNode.setAttributeNS(
+                PropConfig.readProperty("iml.sitemap.xsi"), // namespace
+                "xsi:schemaLocation", // node name including prefix
+                PropConfig.readProperty("iml.sitemap.schemaLocation"));
+        urlsetNode.setAttributeNS("http://www.w3.org/2000/xmlns/",
+                "xmlns:xsi", PropConfig.readProperty("iml.sitemap.xsi"));
 
         //bucle para los item
         for (Map.Entry<Integer, Url> entry : this.url.entrySet()) {
             Integer key = entry.getKey();
             Url value = entry.getValue();
 
-            value.toXml(document, pubDateNode);
+            value.toXml(document, urlsetNode);
         }
-
-        parentNode.appendChild(pubDateNode);
 
         logger.debug("End");
     }

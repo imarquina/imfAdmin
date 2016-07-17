@@ -2,29 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/PropConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Category.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Description.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Description.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Docs.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Docs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Guid.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Guid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Height.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Height.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Language.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Language.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Link.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Link.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ManagingEditor.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ManagingEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Rss.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Rss.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Title.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Title.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Url.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/WebMaster.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/WebMaster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Width.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Width.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Loc.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Loc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Url.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,10 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Config.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Folder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Galleries.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Multimedia.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Tracks.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ItemH.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/base/ElementBase.java" />
@@ -77,21 +61,14 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Properties.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Config.java" />
         <option value="$PROJECT_DIR$/data/xml/in/sitemap.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/XmlPhotos.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/XmlConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/extensions/LinkedHasMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/extensions/LinkedHashMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Gallery.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Date.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" />
         <option value="$PROJECT_DIR$/feed.xml" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Url.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Loc.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" />
@@ -105,12 +82,23 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Link.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Language.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Height.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Guid.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Docs.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Description.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/PropConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java" />
+        <option value="$PROJECT_DIR$/data/xml/out/sitemap.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" />
       </list>
     </option>
   </component>
@@ -173,8 +161,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -377,44 +365,6 @@
               <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="feed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="struct" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imfAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imfAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imfotografia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -443,6 +393,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imfAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468611237756</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Actualización">
+      <created>1468612061135</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1468612061135</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -725,7 +704,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -735,10 +714,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39308578" sideWeight="0.50416666" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277849" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277849" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2446352" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2446352" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24444444" sideWeight="0.50497514" order="3" side_tool="true" content_ui="tabs" />
@@ -748,7 +728,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -808,12 +787,6 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java</url>
           <line>5</line>
           <properties />
@@ -823,7 +796,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="77" />
+      <option name="time" value="80" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -832,15 +805,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/extensions/StringWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/modifiers/LinkedHashMax.java" />
-    <entry file="jar://D:/TAJ/Java/src.zip!/java/util/Map.java" />
     <entry file="jar://D:/TAJ/Java/src.zip!/java/util/LinkedHashMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ItemH.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Text.java">
@@ -935,76 +899,11 @@
       </provider>
     </entry>
     <entry file="jar://D:/TAJ/Java/src.zip!/com/sun/org/apache/xerces/internal/dom/CoreDocumentImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rss.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rss.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/in/feed.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/sitemap.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1014,7 +913,7 @@
         <state relative-caret-position="398">
           <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,14 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Rss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -1117,24 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="113" column="28" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="106" column="28" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Height.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -1148,7 +1021,7 @@
         <state relative-caret-position="398">
           <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1169,20 +1042,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="167" column="25" selection-start-line="167" selection-start-column="25" selection-end-line="167" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Category.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1191,23 +1056,124 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/PropConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/utils/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#941#946#0" expanded="true" />
-            <element signature="e#1298#1303#0" expanded="true" />
-            <element signature="e#1743#1748#0" expanded="true" />
-            <element signature="e#2080#2085#0" expanded="true" />
-            <element signature="e#2411#2416#0" expanded="true" />
-            <element signature="e#2759#2764#0" expanded="true" />
-            <element signature="e#3101#3106#0" expanded="true" />
-            <element signature="e#3438#3443#0" expanded="true" />
-            <element signature="e#3767#3772#0" expanded="true" />
-            <element signature="e#4118#4123#0" expanded="true" />
-            <element signature="e#4461#4466#0" expanded="true" />
-            <element signature="e#4840#4845#0" expanded="true" />
-            <element signature="e#5213#5218#0" expanded="true" />
-            <element signature="e#5588#5593#0" expanded="true" />
-            <element signature="e#5957#5962#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Rss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="54" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="93" column="73" selection-start-line="93" selection-start-column="73" selection-end-line="93" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/sitemap.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/out/sitemap.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/out/feed.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="107" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

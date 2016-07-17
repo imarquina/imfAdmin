@@ -9,7 +9,7 @@ import java.util.Properties;
  * Created by imarquina on 9/7/16.
  */
 public class Property {
-    private Properties _prop;
+    private static Properties _prop;
     final static Logger logger = Logger.getLogger(Property.class);
 
     /**

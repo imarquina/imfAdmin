@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.feed.XmlFeed;
 import org.apache.log4j.Logger;
@@ -21,35 +22,31 @@ public class Image {
     public Width width;
     public Height height;
 
-    private Property properties;
-
     final static Logger logger = Logger.getLogger(Image.class);
 
     /**
      * CONSTRUCTOR
      */
     public Image() throws ParseException {
-        properties = new Property("config.properties");
-
         this._nodeName = "image";
 
-        Height height = new Height(properties.readProperty("iml.feed.image.logo.height"));
+        Height height = new Height(PropConfig.readProperty("iml.feed.image.logo.height"));
         this.addHeight(height);
 
-        Width width = new Width(properties.readProperty("iml.feed.image.logo.width"));
+        Width width = new Width(PropConfig.readProperty("iml.feed.image.logo.width"));
         this.addWith(width);
 
-        Link link = new Link(properties.readProperty("iml.url.root"));
+        Link link = new Link(PropConfig.readProperty("iml.url.root"));
         this.addLink(link);
 
         PubDate pubDate = new PubDate("20120512");
         this.addPubDate(pubDate);
 
-        Title title = new Title(properties.readProperty("iml.name"));
+        Title title = new Title(PropConfig.readProperty("iml.name"));
         this.addTitle(title);
 
-        Url url = new Url(properties.readProperty("iml.url.root") +
-                properties.readProperty("iml.feed.image.logo.url"));
+        Url url = new Url(PropConfig.readProperty("iml.url.root") +
+                PropConfig.readProperty("iml.feed.image.logo.url"));
         this.addUrl(url);
     }
 

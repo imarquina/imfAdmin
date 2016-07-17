@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Config;
 import iml.imfotografia.xml.feed.XmlFeed;
@@ -25,16 +26,12 @@ public class Channel {
     public WebMaster webMaster;
     public Map<Integer, Object> elements;
 
-    private Property properties;
-
     final static Logger logger = Logger.getLogger(Channel.class);
 
     /**
      * CONSTRUCTORS
      */
     public Channel() {
-        properties = new Property("config.properties");
-
         this._iKey = 0;
         this._nodeName = "channel";
 
@@ -57,28 +54,28 @@ public class Channel {
         Title title = new Title(xmlConfig.get_title());
         this.addTitle(title);
 
-        Link link = new Link(properties.readProperty("iml.url.root"));
+        Link link = new Link(PropConfig.readProperty("iml.url.root"));
         this.addLink(link);
 
         Description description = new Description(xmlConfig.get_infoText());
         this.addDescription(description);
 
-        Language language = new Language(properties.readProperty("iml.feed.channel.language"));
+        Language language = new Language(PropConfig.readProperty("iml.feed.channel.language"));
         this.addLanguage(language);
 
-        PubDate pubDate = new PubDate(properties.readProperty("iml.feed.channel.pubDate"));
+        PubDate pubDate = new PubDate(PropConfig.readProperty("iml.feed.channel.pubDate"));
         this.addPubDate(pubDate);
 
         LastBuildDate lastBuildDate = new LastBuildDate("20181231");
         this.addLastBuildDate(lastBuildDate);
 
-        Docs docs = new Docs(properties.readProperty("iml.feed.channel.docs"));
+        Docs docs = new Docs(PropConfig.readProperty("iml.feed.channel.docs"));
         this.addDocs(docs);
 
-        ManagingEditor managingEditor = new ManagingEditor(properties.readProperty("iml.email"));
+        ManagingEditor managingEditor = new ManagingEditor(PropConfig.readProperty("iml.email"));
         this.addManagingEditor(managingEditor);
 
-        WebMaster webMaster = new WebMaster(properties.readProperty("iml.email"));
+        WebMaster webMaster = new WebMaster(PropConfig.readProperty("iml.email"));
         this.addWebMaster(webMaster);
     }
 

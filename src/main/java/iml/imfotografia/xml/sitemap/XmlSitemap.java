@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.sitemap;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.utils.Crypto;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.utils.Text;
@@ -9,10 +10,18 @@ import iml.imfotografia.xml.config.structs.Image;
 import iml.imfotografia.xml.sitemap.element.Url;
 import iml.imfotografia.xml.sitemap.element.Urlset;
 import org.apache.log4j.Logger;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -22,8 +31,8 @@ import java.util.Map;
  * Created by imarquina on 29/6/16.
  */
 public class XmlSitemap {
-    private String _xmlElement;
     private String _xmlConfig;
+    private String _nameXml = "sitemap";
     public Urlset urlset = new Urlset();
 
     final static Logger logger = Logger.getLogger(XmlSitemap.class);
@@ -41,14 +50,11 @@ public class XmlSitemap {
     private static final String ATTRIBUTE_MANAGINGEDITOR = "MANAGINGEDITOR";
     private static final String ATTRIBUTE_WEBMASTER = "WEBMASTER";
 
-    private Property properties;
-
     /**
      * CONSTRUCTORS
      */
     public XmlSitemap() {
         this._xmlConfig = "";
-        this._xmlElement = "";
         urlset = new Urlset();
     }
 
@@ -73,8 +79,35 @@ public class XmlSitemap {
     /**
      * PUBLIC METHODS
      */
-    public void writeXml() {
+    public void writeXml() throws ParserConfigurationException, TransformerException {
+        logger.debug("Begin");
 
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(PropConfig.readProperty("iml.sitemap.xmlns"),
+                this.urlset.get_nodeName(), null);
+        document.setXmlVersion("1.0");
+
+        this.urlset.toXml(document);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        //Indicamos donde lo queremos almacenar
+        Result result = new StreamResult(new File(PropConfig.readProperty("iml.xml.dir.out") +
+                this._nameXml + ".xml")); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
+        transformer.transform(source, result);
+
+        logger.debug("End");
     }
 
     /**
@@ -91,11 +124,9 @@ public class XmlSitemap {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        properties = new Property("config.properties");
-
-        this.urlset.set_xmlns(properties.readProperty("iml.sitemap.xmlns"));
-        this.urlset.setXmlns_xsi(properties.readProperty("iml.sitemap.xmlns_xsi"));
-        this.urlset.setXsi_schemaLocation(properties.readProperty("iml.sitemap.xsi_schemaLocation"));
+        this.urlset.set_xmlns(PropConfig.readProperty("iml.sitemap.xmlns"));
+        this.urlset.setXmlns_xsi(PropConfig.readProperty("iml.sitemap.xmlns_xsi"));
+        this.urlset.setXsi_schemaLocation(PropConfig.readProperty("iml.sitemap.xsi_schemaLocation"));
 
         //Leer los datos de estructura
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
@@ -103,9 +134,8 @@ public class XmlSitemap {
         //Estraer galerias e imágenes para completar información de item
         ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
 
-        Property property = new Property("config.properties");
-        String sLoc = property.readProperty("iml.url.root") +
-                property.readProperty("iml.feed.item.link");
+        String sLoc = PropConfig.readProperty("iml.url.root") +
+                PropConfig.readProperty("iml.feed.item.link");
 
         //Recorrer los item para procesado
         for (Gallery g : imageGalleries){

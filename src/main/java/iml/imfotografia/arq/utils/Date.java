@@ -1,4 +1,4 @@
-package iml.imfotografia.utils;
+package iml.imfotografia.arq.utils;
 
 /**
  * Created by inaki.marquina on 07/07/2016.

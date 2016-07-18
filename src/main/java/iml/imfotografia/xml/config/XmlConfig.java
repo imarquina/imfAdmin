@@ -1,7 +1,6 @@
 package iml.imfotografia.xml.config;
 
 import iml.imfotografia.xml.config.structs.*;
-import iml.imfotografia.xml.element.interfaces.IElement;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -16,9 +15,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static iml.imfotografia.utils.Text.SetLength;
-import static iml.imfotografia.utils.Xml.innerXml;
-import static iml.imfotografia.utils.Xml.normalize;
+import static iml.imfotografia.arq.utils.Text.SetLength;
+import static iml.imfotografia.arq.utils.Xml.innerXml;
+import static iml.imfotografia.arq.utils.Xml.normalize;
 
 /**
  * Created by inaki.marquina on 06/07/2016.

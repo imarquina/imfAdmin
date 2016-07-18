@@ -1,16 +1,14 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.PropConfig;
-import iml.imfotografia.utils.Crypto;
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.arq.utils.Crypto;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
-import iml.imfotografia.xml.feed.XmlFeed;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import static iml.imfotografia.utils.Text.htmlReplace;
+import static iml.imfotografia.arq.utils.Text.htmlReplace;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
@@ -40,8 +38,8 @@ public class Item {
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(PropConfig.readProperty("iml.url.root") +
-                PropConfig.readProperty("iml.feed.item.link") +
+        Link link = new Link(Propertyx.readProperty("iml.url.root") +
+                Propertyx.readProperty("iml.feed.item.link") +
                 Crypto.getMD5(htmlReplace(gallery.get_name())) + "&photo=" + iImage);
         this.addLink(link);
 

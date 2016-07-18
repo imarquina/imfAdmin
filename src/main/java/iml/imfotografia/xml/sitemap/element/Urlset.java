@@ -1,13 +1,10 @@
 package iml.imfotografia.xml.sitemap.element;
 
-import iml.imfotografia.PropConfig;
-import iml.imfotografia.xml.feed.XmlFeed;
-import iml.imfotografia.xml.feed.struct.Item;
+import iml.imfotografia.xml.Propertyx;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -87,11 +84,11 @@ public class Urlset {
         //Main Node
         Element urlsetNode = document.getDocumentElement();
         urlsetNode.setAttributeNS(
-                PropConfig.readProperty("iml.sitemap.xsi"), // namespace
+                Propertyx.readProperty("iml.sitemap.xsi"), // namespace
                 "xsi:schemaLocation", // node name including prefix
-                PropConfig.readProperty("iml.sitemap.schemaLocation"));
+                Propertyx.readProperty("iml.sitemap.schemaLocation"));
         urlsetNode.setAttributeNS("http://www.w3.org/2000/xmlns/",
-                "xmlns:xsi", PropConfig.readProperty("iml.sitemap.xsi"));
+                "xmlns:xsi", Propertyx.readProperty("iml.sitemap.xsi"));
 
         //bucle para los item
         for (Map.Entry<Integer, Url> entry : this.url.entrySet()) {

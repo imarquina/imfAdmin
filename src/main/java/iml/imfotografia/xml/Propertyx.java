@@ -1,18 +1,16 @@
-package iml.imfotografia;
-
-import iml.imfotografia.utils.Property;
+package iml.imfotografia.xml;
 
 /**
  * Created by imarquina on 17/7/16.
  */
-final public class PropConfig {
+final public class Propertyx {
     public final static String IML_PROPSFILE = "config.properties";
 
-    private static Property _prop;
+    private static iml.imfotografia.arq.utils.Property _prop;
 
     public static String readProperty(String key){
         if (_prop == null){
-            _prop = new Property(IML_PROPSFILE);
+            _prop = new iml.imfotografia.arq.utils.Property(IML_PROPSFILE);
         }
         return _prop.readProperty(key);
     }

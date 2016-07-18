@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed;
 
-import iml.imfotografia.PropConfig;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.XmlPhotos;
@@ -106,7 +106,7 @@ public class XmlFeed {
         Source source = new DOMSource(document);
 
         //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new File(PropConfig.readProperty("iml.xml.dir.out") +
+        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
                 this._nameXml + ".xml")); //nombre del archivo
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -134,7 +134,7 @@ public class XmlFeed {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        this.rss.set_version(PropConfig.readProperty("iml.feed.rss.version"));
+        this.rss.set_version(Propertyx.readProperty("iml.feed.rss.version"));
 
         //Leer los datos de elementos y estructura
         XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());

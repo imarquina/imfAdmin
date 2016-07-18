@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.element;
 
-import iml.imfotografia.utils.Date;
+import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.element.structs.*;
 import org.apache.log4j.Logger;

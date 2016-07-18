@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static iml.imfotografia.utils.Number.isNumeric;
+import static iml.imfotografia.arq.utils.Number.isNumeric;
 
 /**
  * Created by inaki.marquina on 07/07/2016.

@@ -1,9 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.PropConfig;
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.structs.Config;
-import iml.imfotografia.xml.feed.XmlFeed;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -54,28 +52,28 @@ public class Channel {
         Title title = new Title(xmlConfig.get_title());
         this.addTitle(title);
 
-        Link link = new Link(PropConfig.readProperty("iml.url.root"));
+        Link link = new Link(Propertyx.readProperty("iml.url.root"));
         this.addLink(link);
 
         Description description = new Description(xmlConfig.get_infoText());
         this.addDescription(description);
 
-        Language language = new Language(PropConfig.readProperty("iml.feed.channel.language"));
+        Language language = new Language(Propertyx.readProperty("iml.feed.channel.language"));
         this.addLanguage(language);
 
-        PubDate pubDate = new PubDate(PropConfig.readProperty("iml.feed.channel.pubDate"));
+        PubDate pubDate = new PubDate(Propertyx.readProperty("iml.feed.channel.pubDate"));
         this.addPubDate(pubDate);
 
         LastBuildDate lastBuildDate = new LastBuildDate("20181231");
         this.addLastBuildDate(lastBuildDate);
 
-        Docs docs = new Docs(PropConfig.readProperty("iml.feed.channel.docs"));
+        Docs docs = new Docs(Propertyx.readProperty("iml.feed.channel.docs"));
         this.addDocs(docs);
 
-        ManagingEditor managingEditor = new ManagingEditor(PropConfig.readProperty("iml.email"));
+        ManagingEditor managingEditor = new ManagingEditor(Propertyx.readProperty("iml.email"));
         this.addManagingEditor(managingEditor);
 
-        WebMaster webMaster = new WebMaster(PropConfig.readProperty("iml.email"));
+        WebMaster webMaster = new WebMaster(Propertyx.readProperty("iml.email"));
         this.addWebMaster(webMaster);
     }
 

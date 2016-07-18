@@ -1,4 +1,4 @@
-package iml.imfotografia.utils;
+package iml.imfotografia.arq.utils;
 
 import org.apache.log4j.Logger;
 

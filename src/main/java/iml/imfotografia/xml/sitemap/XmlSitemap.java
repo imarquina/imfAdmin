@@ -1,9 +1,8 @@
 package iml.imfotografia.xml.sitemap;
 
-import iml.imfotografia.PropConfig;
-import iml.imfotografia.utils.Crypto;
-import iml.imfotografia.utils.Property;
-import iml.imfotografia.utils.Text;
+import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.arq.utils.Crypto;
+import iml.imfotografia.arq.utils.Text;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.config.structs.Image;
@@ -86,7 +85,7 @@ public class XmlSitemap {
         DocumentBuilder builder = factory.newDocumentBuilder();
         DOMImplementation implementation = builder.getDOMImplementation();
 
-        Document document = implementation.createDocument(PropConfig.readProperty("iml.sitemap.xmlns"),
+        Document document = implementation.createDocument(Propertyx.readProperty("iml.sitemap.xmlns"),
                 this.urlset.get_nodeName(), null);
         document.setXmlVersion("1.0");
 
@@ -96,7 +95,7 @@ public class XmlSitemap {
         Source source = new DOMSource(document);
 
         //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new File(PropConfig.readProperty("iml.xml.dir.out") +
+        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
                 this._nameXml + ".xml")); //nombre del archivo
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -124,9 +123,9 @@ public class XmlSitemap {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        this.urlset.set_xmlns(PropConfig.readProperty("iml.sitemap.xmlns"));
-        this.urlset.setXmlns_xsi(PropConfig.readProperty("iml.sitemap.xmlns_xsi"));
-        this.urlset.setXsi_schemaLocation(PropConfig.readProperty("iml.sitemap.xsi_schemaLocation"));
+        this.urlset.set_xmlns(Propertyx.readProperty("iml.sitemap.xmlns"));
+        this.urlset.setXmlns_xsi(Propertyx.readProperty("iml.sitemap.xmlns_xsi"));
+        this.urlset.setXsi_schemaLocation(Propertyx.readProperty("iml.sitemap.xsi_schemaLocation"));
 
         //Leer los datos de estructura
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
@@ -134,8 +133,8 @@ public class XmlSitemap {
         //Estraer galerias e imágenes para completar información de item
         ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
 
-        String sLoc = PropConfig.readProperty("iml.url.root") +
-                PropConfig.readProperty("iml.feed.item.link");
+        String sLoc = Propertyx.readProperty("iml.url.root") +
+                Propertyx.readProperty("iml.feed.item.link");
 
         //Recorrer los item para procesado
         for (Gallery g : imageGalleries){

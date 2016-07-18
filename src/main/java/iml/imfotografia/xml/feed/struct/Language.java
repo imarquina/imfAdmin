@@ -1,42 +1,24 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Language {
-    private String _nodeName;
-    private String _content;
-
+public class Language extends ElementBase {
     final static Logger logger = Logger.getLogger(Language.class);
 
     /**
      * CONSTRUCTORS
      */
     public Language() {
-        this._nodeName = "language";
-        this._content = "";
+        super();
     }
 
     public Language(String content) {
-        this();
+        super();
+        this.set_nodeName("language");
         this.set_content(content);
-    }
-
-    /**
-     * GETTER / SETTER
-     */
-    public String get_content() {
-        return this._content;
-    }
-
-    public void set_content(String content) {
-        this._content = content;
-    }
-
-    public String get_nodeName() {
-        return _nodeName;
     }
 
     /**

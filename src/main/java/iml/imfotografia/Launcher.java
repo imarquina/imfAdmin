@@ -1,5 +1,6 @@
 package iml.imfotografia;
 
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
@@ -23,8 +24,8 @@ public class Launcher {
         logger.info("+ Begin +" + separatorLog);
 
         try {
-            String photosXml = PropConfig.readProperty("iml.xml.dir.in") + "photos.xml";
-            String configXml = PropConfig.readProperty("iml.xml.dir.in") + "config.xml";
+            String photosXml = Propertyx.readProperty("iml.xml.dir.in") + "photos.xml";
+            String configXml = Propertyx.readProperty("iml.xml.dir.in") + "config.xml";
 
             //XmlPhotos photos = new XmlPhotos(photosXml);
             //XmlConfig config = new XmlConfig(configXml);

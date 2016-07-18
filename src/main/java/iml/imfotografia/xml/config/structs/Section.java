@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static iml.imfotografia.utils.Number.isNumeric;
+import static iml.imfotografia.arq.utils.Number.isNumeric;
 
 public class Section {
     private String _name;

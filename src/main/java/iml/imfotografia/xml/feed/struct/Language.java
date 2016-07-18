@@ -1,11 +1,11 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.base.ElementBase;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Language extends ElementBase {
+public class Language extends ElementStringBase {
     final static Logger logger = Logger.getLogger(Language.class);
 
     /**
@@ -16,9 +16,8 @@ public class Language extends ElementBase {
     }
 
     public Language(String content) {
-        super();
+        super(content);
         this.set_nodeName("language");
-        this.set_content(content);
     }
 
     /**

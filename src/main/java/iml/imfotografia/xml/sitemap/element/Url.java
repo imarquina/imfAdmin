@@ -1,13 +1,14 @@
 package iml.imfotografia.xml.sitemap.element;
 
 import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import java.util.Date;
 
-public class Url {
+public class Url implements IXmlNode {
     private String _nodeName;
 
     public Loc loc;

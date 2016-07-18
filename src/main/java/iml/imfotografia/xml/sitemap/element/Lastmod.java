@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.sitemap.element;
 
 import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -9,7 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Lastmod {
+public class Lastmod implements IXmlNode {
     private String _nodeName;
     private Date _content;
     private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");

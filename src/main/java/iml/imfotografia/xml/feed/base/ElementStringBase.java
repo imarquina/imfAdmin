@@ -7,19 +7,19 @@ import org.w3c.dom.Element;
 /**
  * Created by inaki.marquina on 18/07/2016.
  */
-public abstract class ElementBase implements IXmlNode {
+public abstract class ElementStringBase implements IXmlNode {
     private String _nodeName;
     private String _content;
 
     /**
      * CONSTRUCTORS
      */
-    public ElementBase() {
+    public ElementStringBase() {
         this._nodeName = "";
         this._content = "";
     }
 
-    public ElementBase(String content) {
+    public ElementStringBase(String content) {
         this();
         this.set_content(content);
     }

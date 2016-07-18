@@ -23,8 +23,8 @@ public class Launcher {
         logger.info("+ Begin +" + separatorLog);
 
         try {
-            String photosXml = "./data/xml/in/photos.xml";
-            String configXml = "./data/xml/in/config.xml";
+            String photosXml = PropConfig.readProperty("iml.xml.dir.in") + "photos.xml";
+            String configXml = PropConfig.readProperty("iml.xml.dir.in") + "config.xml";
 
             //XmlPhotos photos = new XmlPhotos(photosXml);
             //XmlConfig config = new XmlConfig(configXml);
@@ -32,6 +32,7 @@ public class Launcher {
             XmlSitemap  sitemap = new XmlSitemap(configXml);
 
             feed.writeXml();
+            sitemap.writeXml();
         } catch (ParserConfigurationException e) {
             logger.error(e.getStackTrace());
         } catch (ParseException e) {

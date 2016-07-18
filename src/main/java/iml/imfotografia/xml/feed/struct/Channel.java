@@ -1,15 +1,20 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.PropConfig;
 import iml.imfotografia.utils.Property;
 import iml.imfotografia.xml.config.structs.Config;
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import java.text.ParseException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Channel {
     private Integer _iKey;
+    private String _nodeName;
     public Title title;
     public Link link;
     public Description description;
@@ -19,17 +24,16 @@ public class Channel {
     public Docs docs;
     public ManagingEditor managingEditor;
     public WebMaster webMaster;
-    public LinkedHashMap<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
-    private Property properties;
+    final static Logger logger = Logger.getLogger(Channel.class);
 
     /**
      * CONSTRUCTORS
      */
     public Channel() {
-        properties = new Property("config.properties");
-
-        _iKey = 0;
+        this._iKey = 0;
+        this._nodeName = "channel";
 
         this.title = new Title();
         this.link = new Link();
@@ -50,29 +54,36 @@ public class Channel {
         Title title = new Title(xmlConfig.get_title());
         this.addTitle(title);
 
-        Link link = new Link(properties.readProperty("iml.url.root"));
+        Link link = new Link(PropConfig.readProperty("iml.url.root"));
         this.addLink(link);
 
         Description description = new Description(xmlConfig.get_infoText());
         this.addDescription(description);
 
-        Language language = new Language(properties.readProperty("iml.feed.channel.language"));
+        Language language = new Language(PropConfig.readProperty("iml.feed.channel.language"));
         this.addLanguage(language);
 
-        PubDate pubDate = new PubDate(properties.readProperty("iml.feed.channel.pubDate"));
+        PubDate pubDate = new PubDate(PropConfig.readProperty("iml.feed.channel.pubDate"));
         this.addPubDate(pubDate);
 
         LastBuildDate lastBuildDate = new LastBuildDate("20181231");
         this.addLastBuildDate(lastBuildDate);
 
-        Docs docs = new Docs(properties.readProperty("iml.feed.channel.docs"));
+        Docs docs = new Docs(PropConfig.readProperty("iml.feed.channel.docs"));
         this.addDocs(docs);
 
-        ManagingEditor managingEditor = new ManagingEditor(properties.readProperty("iml.email"));
+        ManagingEditor managingEditor = new ManagingEditor(PropConfig.readProperty("iml.email"));
         this.addManagingEditor(managingEditor);
 
-        WebMaster webMaster = new WebMaster(properties.readProperty("iml.email"));
+        WebMaster webMaster = new WebMaster(PropConfig.readProperty("iml.email"));
         this.addWebMaster(webMaster);
+    }
+
+    /**
+     * GETTER / SETTER
+     */
+    public String get_nodeName() {
+        return _nodeName;
     }
 
     /**
@@ -123,7 +134,9 @@ public class Channel {
     }
 
     public void toXml(Document document, Element parentNode){
-        Element chanelNode = document.createElement("channel");
+        logger.debug("Begin");
+
+        Element chanelNode = document.createElement(this.get_nodeName());
 
         this.title.toXml(document, chanelNode);
         this.link.toXml(document, chanelNode);
@@ -138,8 +151,17 @@ public class Channel {
         Image image = (Image)this.elements.get(0);
         image.toXml(document, chanelNode);
 
-        //bucle para los item desde 1 hasta size() - 1
+        //bucle para los item
+        for (Map.Entry<Integer, Object> entry : this.elements.entrySet()) {
+            Integer key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof Item)
+                ((Item)value).toXml(document, chanelNode);
+        }
 
         parentNode.appendChild(chanelNode);
+
+        logger.debug("End");
     }
 }

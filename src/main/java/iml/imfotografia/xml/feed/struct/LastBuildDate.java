@@ -1,5 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -10,21 +12,28 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LastBuildDate {
+    private String _nodeName;
     private Date _content;
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
     private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
+
+    final static Logger logger = Logger.getLogger(LastBuildDate.class);
 
     /**
      * CONSTRUCTORS
      */
     public LastBuildDate() {
+        this._nodeName = "lastBuildDate";
+        this._content = new Date();
     }
 
     public LastBuildDate(String content) throws ParseException {
+        this();
         this.set_content(content);
     }
 
     public LastBuildDate(Date content) {
+        this();
         this.set_content(content);
     }
 
@@ -43,9 +52,22 @@ public class LastBuildDate {
         this._content = content;
     }
 
+    public String get_nodeName() {
+        return this._nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
-        Element lastBuildDateNode = document.createElement("lastBuildDate");
+        logger.debug("Begin");
+
+        Element lastBuildDateNode = document.createElement(this.get_nodeName());
         lastBuildDateNode.appendChild(document.createTextNode(this.get_content()));
         parentNode.appendChild(lastBuildDateNode);
+
+        logger.debug("End");
     }
 }

@@ -1,6 +1,7 @@
 package iml.imfotografia;
 
 import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.sitemap.XmlSitemap;
@@ -29,11 +30,12 @@ public class Launcher {
             String configXml = Propertyx.readProperty("iml.xml.dir.in") + "config.xml";
 
             XmlPhotos photos = new XmlPhotos(photosXml);
-            //XmlConfig config = new XmlConfig(configXml);
+            XmlConfig config = new XmlConfig(configXml);
             XmlFeed feed = new XmlFeed(configXml, photosXml);
             XmlSitemap  sitemap = new XmlSitemap(configXml);
 
             photos.writeXml();
+            config.writeXml();
             feed.writeXml();
             sitemap.writeXml();
         } catch (ParserConfigurationException e) {

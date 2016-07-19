@@ -1,5 +1,9 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,6 +12,7 @@ import java.util.Date;
 import static iml.imfotografia.arq.utils.Number.isNumeric;
 
 public class Section {
+    private String _nodeName = "";
     private String _name;
     private Integer _width;
     private Integer _height;
@@ -16,13 +21,23 @@ public class Section {
     private String _content;
     private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
 
+    final static Logger logger = Logger.getLogger(Section.class);
+
     /**
      * CONSTRUCTORES
      */
     public Section() {
+        this._nodeName = "section";
+        this._name = "";
+        this._width = 0;
+        this._height = 0;
+        this._byDefault = false;
+        this._update = new Date();
+        this._content = "";
     }
 
     public Section(String name, Integer width, Integer height, Boolean byDefault, Date update) {
+        this();
         this.set_name(name);
         this.set_width(width);
         this.set_height(height);
@@ -101,5 +116,20 @@ public class Section {
 
     public void set_content(String content) {
         this._content = content;
+    }
+
+    public String get_nodeName() {
+        return this._nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        logger.debug("End");
     }
 }

@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.config.structs;
 
 public class Track {
+    private String _nodeName = "";
     private String _src;
     private String _artist;
     private String _name;
@@ -9,9 +10,14 @@ public class Track {
      * CONSTRUCTORS
      */
     public Track() {
+        this._nodeName = "track";
+        this._src = "";
+        this._artist = "";
+        this._name = "";
     }
 
     public Track(String src, String artist, String name) {
+        this();
         this._src = src;
         this._artist = artist;
         this._name = name;

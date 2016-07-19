@@ -1,5 +1,9 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +16,7 @@ import java.util.Map;
  */
 public class Folder {
     private Integer _iKey;
+    private String _nodeName = "";
     private String _name;
     private String _src;
     private String _title;
@@ -22,11 +27,14 @@ public class Folder {
 
     public Map<Integer, Object> elements;
 
+    final static Logger logger = Logger.getLogger(Folder.class);
+
     /**
      * CONSTRUCTORS
      */
     public Folder() {
         _iKey = 0;
+        this._nodeName = "folder";
         this.elements = new LinkedHashMap<Integer, Object>();
     }
 
@@ -97,6 +105,10 @@ public class Folder {
         this._update = update;
     }
 
+    public String get_nodeName() {
+        return this._nodeName;
+    }
+
     /**
      *
      * @return
@@ -107,5 +119,16 @@ public class Folder {
 
     public void addSection (Section section) {
         this.elements.put(_iKey++, section);
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        logger.debug("End");
     }
 }

@@ -19,14 +19,29 @@ public class Config {
 
     final static Logger logger = Logger.getLogger(Config.class);
 
+    /**
+     * CONSTRUCTORS
+     */
     public Config(){
         this._nodeName = "config";
     }
 
+    /**
+     * GETTER / SETTER
+     */
     public String get_nodeName() {
         return this._nodeName;
     }
 
+    /**
+     * PUBLIC METHODS
+     */
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
 

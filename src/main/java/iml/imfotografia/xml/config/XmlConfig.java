@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.config;
 
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.structs.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
@@ -8,6 +9,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +27,7 @@ import static iml.imfotografia.arq.utils.Xml.normalize;
  * Created by inaki.marquina on 06/07/2016.
  */
 public class XmlConfig {
+    private String _nameXml = "config";
     private String _xml;
     public Config config;
 
@@ -55,7 +60,8 @@ public class XmlConfig {
         config = new Config();
     }
 
-    public XmlConfig(String xml) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException, ParseException {
+    public XmlConfig(String xml) throws SAXException, ParserConfigurationException,
+            XPathExpressionException, IOException, ParseException {
         this ();
         this.set_xml(xml);
 
@@ -647,5 +653,42 @@ public class XmlConfig {
         ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
 
         return this.extractElements(elements, imageGalleries);
+    }
+
+    /**
+     *
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    public void writeXml() throws ParserConfigurationException, TransformerException {
+        logger.debug("Begin");
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(null, this.config.get_nodeName(), null);
+        document.setXmlVersion("1.0");
+
+        //Main Node
+        Element configNode = document.getDocumentElement();
+        this.config.toXml(document, configNode);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        //Indicamos donde lo queremos almacenar
+        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
+                this._nameXml + ".xml")); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
+        transformer.transform(source, result);
+
+        logger.debug("End");
     }
 }

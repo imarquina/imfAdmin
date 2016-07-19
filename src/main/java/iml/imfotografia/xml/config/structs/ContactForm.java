@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.config.structs;
 
 public class ContactForm {
+    private String _nodeName = "";
     private String _email;
     private String _subjAuxText;
 
@@ -8,9 +9,13 @@ public class ContactForm {
      * CONSTRUCTORES
      */
     public ContactForm() {
+        this._nodeName = "contactform";
+        this._email = "";
+        this._subjAuxText = "";
     }
 
     public ContactForm(String _email, String _subjAuxText) {
+        this();
         this.set_email(_email);
         this.set_subjAuxText(_subjAuxText);
     }
@@ -32,5 +37,9 @@ public class ContactForm {
 
     public void set_subjAuxText(String subjAuxText) {
         this._subjAuxText = subjAuxText;
+    }
+
+    public String get_nodeName() {
+        return this._nodeName;
     }
 }

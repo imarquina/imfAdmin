@@ -1,11 +1,16 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Gallery {
+    private String _nodeName = "";
     private String _name;
     private String _src;
     private String _title;
@@ -16,11 +21,14 @@ public class Gallery {
 
     public Map<String, Object> elements;
 
+    final static Logger logger = Logger.getLogger(Gallery.class);
+
     /**
      * CONSTRUCTORES
      */
     public Gallery() {
-        elements = new LinkedHashMap<String, Object>();
+        this._nodeName = "gallery";
+        this.elements = new LinkedHashMap<String, Object>();
     }
 
     public Gallery(String name, String src, String title, Date update) {
@@ -87,6 +95,10 @@ public class Gallery {
         this._update = update;
     }
 
+    public String get_nodeName() {
+        return this._nodeName;
+    }
+
     /**
      *
      * @return
@@ -108,5 +120,16 @@ public class Gallery {
                 return i;
         }
         return -1;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        logger.debug("End");
     }
 }

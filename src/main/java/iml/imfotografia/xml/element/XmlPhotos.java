@@ -4,6 +4,7 @@ import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.element.structs.*;
+import iml.imfotografia.xml.element.structs.Config;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -29,8 +30,7 @@ import java.util.List;
 public class XmlPhotos {
     private String _nameXml = "photos";
     private String _xml;
-
-    public Config config = new Config();
+    public Config config;
 
     final static Logger logger = Logger.getLogger(XmlPhotos.class);
 
@@ -55,10 +55,15 @@ public class XmlPhotos {
      * CONSTRUCTORS
      */
     public XmlPhotos() {
+        this._xml = "";
+        config = new Config();
     }
 
-    public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException, ParseException {
+    public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException,
+            ParseException {
+        this();
         this.set_xml(xml);
+
         parseXml();
     }
 

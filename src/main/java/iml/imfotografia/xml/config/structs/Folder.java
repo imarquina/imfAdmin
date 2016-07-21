@@ -23,7 +23,8 @@ public class Folder {
     private String _infoText;
     private String _keywords;
     private Date _update;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
 
     public Map<Integer, Object> elements;
 
@@ -97,8 +98,12 @@ public class Folder {
         return this._update;
     }
 
+    public String get_updateString() {
+        return _dateFormatOut.format(this._update);
+    }
+
     public void set_update(String update) throws ParseException {
-        this._update = _formatDate.parse(update);
+        this._update = _dateFormatIn.parse(update);
     }
 
     public void set_update(Date update) {
@@ -128,6 +133,35 @@ public class Folder {
      */
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
+
+        parentNode.setAttribute("name", this.get_name());
+        parentNode.setAttribute("src", this.get_src());
+        parentNode.setAttribute("title", this.get_title());
+        parentNode.setAttribute("infotext", this.get_infoText());
+        parentNode.setAttribute("keywords", this.get_keywords());
+        parentNode.setAttribute("update", this.get_updateString());
+
+        for (Map.Entry<Integer, Object> entry1 : this.elements.entrySet()) {
+            Integer key = entry1.getKey();
+            Object value = entry1.getValue();
+
+            if (value instanceof  Gallery) {
+                Gallery gallery = (Gallery)value;
+
+                //Recoger y escribir atributos
+                Element galleryNode = document.createElement(gallery.get_nodeName());
+                gallery.toXml(document, galleryNode);
+
+                parentNode.appendChild(galleryNode);
+            } else if (value instanceof  Section) {
+                Section section = (Section)value;
+
+                Element sectionNode = document.createElement(section.get_nodeName());
+                section.toXml(document, sectionNode);
+
+                parentNode.appendChild(sectionNode);
+            }
+        }
 
         logger.debug("End");
     }

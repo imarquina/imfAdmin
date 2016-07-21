@@ -49,4 +49,8 @@ public class Track {
     public void set_name(String name) {
         this._name = name;
     }
+
+    public String get_nodeName() {
+        return this._nodeName;
+    }
 }

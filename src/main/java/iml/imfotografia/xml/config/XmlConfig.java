@@ -449,6 +449,8 @@ public class XmlConfig {
             logger.debug("set Title property " + sAttrName + ":" + sAttrValue);
         }
 
+        title.set_content(node.getFirstChild().getTextContent());
+
         logger.debug("End");
         return title;
     }
@@ -470,6 +472,8 @@ public class XmlConfig {
 
             logger.debug("set Slogan property " + sAttrName + ":" + sAttrValue);
         }
+
+        slogan.set_content(node.getFirstChild().getTextContent());
 
         logger.debug("End");
         return slogan;

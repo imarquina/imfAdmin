@@ -158,8 +158,6 @@ public class Config {
                 Gallery gallery = (Gallery)value;
 
                 //Recoger y escribir atributos
-                //Código ...
-
                 Element galleryNode = document.createElement(gallery.get_nodeName());
                 gallery.toXml(document, galleryNode);
 
@@ -167,18 +165,12 @@ public class Config {
             } else if (value instanceof Folder) {
                 Folder folder = (Folder)value;
 
-                //Recoger y escribir atributos
-                //Código ...
-
                 Element folderNode = document.createElement(folder.get_nodeName());
                 folder.toXml(document, folderNode);
 
                 parentNode.appendChild(folderNode);
             } else if (value instanceof Section) {
                 Section section = (Section)value;
-
-                //Recoger y escribir atributos
-                //Código ...
 
                 Element sectionNode = document.createElement(section.get_nodeName());
                 section.toXml(document, sectionNode);
@@ -188,14 +180,32 @@ public class Config {
                 Multimedia multimedia = (Multimedia)value;
 
                 //Recoger y escribir atributos
-                //Código ...
-
                 Element multimediaNode = document.createElement(multimedia.get_nodeName());
                 multimedia.toXml(document, multimediaNode);
 
                 parentNode.appendChild(multimediaNode);
             }
         }
+
+        //title
+        Element titleNode = document.createElement(this.title.get_nodeName());
+        this.title.toXml(document, titleNode);
+        parentNode.appendChild(titleNode);
+
+        //slogan
+        Element sloganNode = document.createElement(this.slogan.get_nodeName());
+        this.slogan.toXml(document, sloganNode);
+        parentNode.appendChild(sloganNode);
+
+        //tracks
+        Element tracksNode = document.createElement(this.tracks.get_nodeName());
+        this.tracks.toXml(document, tracksNode);
+        parentNode.appendChild(tracksNode);
+
+        //contactform
+        Element contacformNode = document.createElement(this.contactForm.get_nodeName());
+        this.contactForm.toXml(document, contacformNode);
+        parentNode.appendChild(contacformNode);
 
         logger.debug("End");
     }

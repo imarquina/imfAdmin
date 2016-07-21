@@ -19,7 +19,8 @@ public class Section {
     private Boolean _byDefault;
     private Date _update;
     private String _content;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
 
     final static Logger logger = Logger.getLogger(Section.class);
 
@@ -102,8 +103,10 @@ public class Section {
         return this._update;
     }
 
+    public String get_updateString() { return  _dateFormatOut.format(this._update); }
+
     public void set_update(String update) throws ParseException {
-        this._update = _formatDate.parse(update);
+        this._update = _dateFormatIn.parse(update);
     }
 
     public void set_update(Date update) {
@@ -129,6 +132,16 @@ public class Section {
      */
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
+
+        parentNode.setAttribute("name", this.get_name());
+        parentNode.setAttribute("width", this.get_width().toString());
+        parentNode.setAttribute("height", this.get_height().toString());
+        parentNode.setAttribute("bydefault", this.get_byDefault().toString());
+        parentNode.setAttribute("update", this.get_updateString());
+
+        Element descriptionNode = document.createElement(this.get_nodeName());
+        descriptionNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(descriptionNode);
 
         logger.debug("End");
     }

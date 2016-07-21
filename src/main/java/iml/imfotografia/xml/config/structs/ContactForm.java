@@ -1,9 +1,15 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public class ContactForm {
     private String _nodeName = "";
     private String _email;
     private String _subjAuxText;
+
+    final static Logger logger = Logger.getLogger(ContactForm.class);
 
     /**
      * CONSTRUCTORES
@@ -41,5 +47,19 @@ public class ContactForm {
 
     public String get_nodeName() {
         return this._nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        parentNode.setAttribute("email", this.get_email());
+        parentNode.setAttribute("subjauxtext", this.get_subjAuxText());
+
+        logger.debug("End");
     }
 }

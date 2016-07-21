@@ -1,8 +1,14 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public class Title {
     private String _nodeName = "";
     private String _content;
+
+    final static Logger logger = Logger.getLogger(Title.class);
 
     /**
      * CONSTRUCTORS
@@ -30,5 +36,20 @@ public class Title {
 
     public String get_nodeName() {
         return this._nodeName;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element descriptionNode = document.createElement(this.get_nodeName());
+        descriptionNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(descriptionNode);
+
+        logger.debug("End");
     }
 }

@@ -1,5 +1,9 @@
 package iml.imfotografia.xml.config.structs;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,6 +15,8 @@ public class Tracks {
     private String _nodeName = "";
     private String _name;
     public Map<Integer, Track> track;
+
+    final static Logger logger = Logger.getLogger(Tracks.class);
 
     /**
      * CONSTRUCTORS
@@ -48,5 +54,30 @@ public class Tracks {
      */
     public void addTrack(Track track){
         this.track.put(_iKey++, track);
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        parentNode.setAttribute("audio", this.get_name());
+
+        for (Map.Entry<Integer, Track> entry1 : this.track.entrySet()) {
+            Integer key = entry1.getKey();
+            Track value = entry1.getValue();
+
+            Element trackNode = document.createElement(value.get_nodeName());
+            trackNode.setAttribute("src", value.get_src());
+            trackNode.setAttribute("artist", value.get_artist());
+            trackNode.setAttribute("name", value.get_name());
+
+            parentNode.appendChild(trackNode);
+        }
+
+        logger.debug("End");
     }
 }

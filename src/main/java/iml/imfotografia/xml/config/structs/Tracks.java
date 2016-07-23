@@ -3,6 +3,8 @@ package iml.imfotografia.xml.config.structs;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,6 +19,11 @@ public class Tracks {
     public Map<Integer, Track> track;
 
     final static Logger logger = Logger.getLogger(Tracks.class);
+
+    /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_NAME = "name";
 
     /**
      * CONSTRUCTORS
@@ -58,22 +65,52 @@ public class Tracks {
 
     /**
      *
+     * @param node
+     * @return
+     */
+    public Tracks fromXml(Node node) {
+        logger.debug("Begin");
+        Tracks tracks = new Tracks();
+
+        // get attributes names and values
+        NamedNodeMap nodeMap = node.getAttributes();
+        for (int i = 0; i < nodeMap.getLength(); i++) {
+            Node tempNode = nodeMap.item(i);
+            String sAttrName = tempNode.getNodeName();
+            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
+            String sAttrValue = tempNode.getNodeValue();
+            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
+
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+
+            if (sAttrName.equalsIgnoreCase(ATTRIBUTE_NAME)) {
+                tracks.set_name(sAttrValue);
+            } else {
+                logger.info("unknow Tracks property " + sAttrName + ":" + sAttrValue);
+            }
+
+            logger.debug("set Tracks property " + sAttrName + ":" + sAttrValue);
+        }
+
+        logger.debug("End");
+        return tracks;
+    }
+    /**
+     *
      * @param document
      * @param parentNode
      */
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
 
-        parentNode.setAttribute("audio", this.get_name());
+        parentNode.setAttribute(ATTRIBUTE_NAME, this.get_name());
 
         for (Map.Entry<Integer, Track> entry1 : this.track.entrySet()) {
             Integer key = entry1.getKey();
             Track value = entry1.getValue();
 
             Element trackNode = document.createElement(value.get_nodeName());
-            trackNode.setAttribute("src", value.get_src());
-            trackNode.setAttribute("artist", value.get_artist());
-            trackNode.setAttribute("name", value.get_name());
+            value.toXml(document, trackNode);
 
             parentNode.appendChild(trackNode);
         }

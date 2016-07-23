@@ -3,6 +3,8 @@ package iml.imfotografia.xml.config.structs;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -57,6 +59,33 @@ public class Galleries {
 
     /**
      *
+     * @param node
+     * @return
+     */
+    public Galleries fromXml(Node node) {
+        logger.debug("Begin");
+        Galleries galleries = new Galleries();
+
+        // get attributes names and values
+        NamedNodeMap nodeMap = node.getAttributes();
+        for (int i = 0; i < nodeMap.getLength(); i++) {
+            Node tempNode = nodeMap.item(i);
+            String sAttrName = tempNode.getNodeName();
+            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
+            String sAttrValue = tempNode.getNodeValue();
+            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
+
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+
+            logger.debug("set Galleries property " + sAttrName + ":" + sAttrValue);
+        }
+
+        logger.debug("End");
+        return galleries;
+    }
+
+    /**
+     *
      * @param document
      * @param parentNode
      */
@@ -70,7 +99,6 @@ public class Galleries {
             if (value instanceof  Gallery) {
                 Gallery gallery = (Gallery)value;
 
-                //Recoger y escribir atributos
                 Element galleryNode = document.createElement(gallery.get_nodeName());
                 gallery.toXml(document, galleryNode);
 

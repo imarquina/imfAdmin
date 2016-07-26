@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.base.ElementBase;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Url extends ElementBase {
+public class Url extends ElementStringBase {
     final static Logger logger = Logger.getLogger(Url.class);
 
     /**
@@ -19,9 +19,8 @@ public class Url extends ElementBase {
     }
 
     public Url(String content) {
-        super();
+        super(content);
         this.set_nodeName("url");
-        this.set_content(content);
     }
 
     /**

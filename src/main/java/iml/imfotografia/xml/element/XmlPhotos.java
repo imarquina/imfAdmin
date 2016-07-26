@@ -1,8 +1,10 @@
 package iml.imfotografia.xml.element;
 
 import iml.imfotografia.arq.utils.Date;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.element.structs.*;
+import iml.imfotografia.xml.element.structs.Config;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -10,6 +12,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
@@ -23,9 +28,9 @@ import java.util.List;
  * Created by imarquina on 29/6/16.
  */
 public class XmlPhotos {
+    private String _nameXml = "photos";
     private String _xml;
-    public Photos images = new Photos();
-    public Medias medias = new Medias();
+    public Config config;
 
     final static Logger logger = Logger.getLogger(XmlPhotos.class);
 
@@ -50,10 +55,15 @@ public class XmlPhotos {
      * CONSTRUCTORS
      */
     public XmlPhotos() {
+        this._xml = "";
+        config = new Config();
     }
 
-    public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException, ParseException {
+    public XmlPhotos(String xml) throws IOException, SAXException, ParserConfigurationException,
+            ParseException {
+        this();
         this.set_xml(xml);
+
         parseXml();
     }
 
@@ -129,11 +139,11 @@ public class XmlPhotos {
                 if (node.hasAttributes()) {
                     if (nodeName == NODO_IMAGEN) {
                         Photo photo = getAttrPhoto(node, nodeType.imagen);
-                        this.images.addPhoto(photo.get_id(), photo);
+                        this.config.images.addPhoto(photo.get_id(), photo);
                     }
                     else if (nodeName == NODO_VIDEO) {
                         Media media = getAttrMedia(node, nodeType.media);
-                        this.medias.addMedia(media.get_id(), media);
+                        this.config.medias.addMedia(media.get_id(), media);
                     }
                 }
                 if (node.hasChildNodes()) {
@@ -268,14 +278,15 @@ public class XmlPhotos {
     /**
      * PUBLIC METHODS
      */
+
     /**
      * Agrupa los elementos y los ordena por el campo update
      * @return
      */
     public List<IElement> getElementByUpdate(){
         List<IElement> list = new ArrayList<IElement>();
-        list.addAll(this.images.photo.values());
-        list.addAll(this.medias.media.values());
+        list.addAll(this.config.images.photo.values());
+        list.addAll(this.config.medias.media.values());
 
         //Ordenar los elementos de más a menos reciente
         Collections.sort(list, new Comparator<IElement>() {
@@ -285,5 +296,42 @@ public class XmlPhotos {
         });
 
         return list;
+    }
+
+    /**
+     *
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    public void writeXml() throws ParserConfigurationException, TransformerException {
+        logger.debug("Begin");
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(null, this.config.get_nodeName(), null);
+        document.setXmlVersion("1.0");
+
+        //Main Node
+        Element configNode = document.getDocumentElement();
+        this.config.toXml(document, configNode);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        //Indicamos donde lo queremos almacenar
+        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
+                this._nameXml + ".xml")); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
+        transformer.transform(source, result);
+
+        logger.debug("End");
     }
 }

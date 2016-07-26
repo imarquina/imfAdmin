@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementDateBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,50 +13,24 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class PubDate {
-    private String _nodeName;
-    private Date _content;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
-
+public class PubDate extends ElementDateBase {
     final static Logger logger = Logger.getLogger(PubDate.class);
 
     /**
      * CONSTRUCTORS
      */
     public PubDate() {
-        this._nodeName = "pubDate";
-        this._content = new Date();
-        this._dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
+        super();
     }
 
     public PubDate(String content) throws ParseException {
-        this();
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("pubDate");
     }
 
     public PubDate(Date content) {
-        this();
-        this.set_content(content);
-    }
-
-    /**
-     * GETTER / SETTER
-     */
-    public String get_content() {
-        return _dateFormatOut.format(this._content);
-    }
-
-    public void set_content(String content) throws ParseException {
-        this._content = _dateFormatIn.parse(content);
-    }
-
-    public void set_content(Date content) {
-        this._content = content;
-    }
-
-    public String get_nodeName() {
-        return _nodeName;
+        super(content);
+        this.set_nodeName("pubDate");
     }
 
     /**

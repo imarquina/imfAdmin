@@ -1,11 +1,11 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.base.ElementBase;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class ManagingEditor extends ElementBase {
+public class ManagingEditor extends ElementStringBase {
     final static Logger logger = Logger.getLogger(ManagingEditor.class);
 
     /**
@@ -16,9 +16,8 @@ public class ManagingEditor extends ElementBase {
     }
 
     public ManagingEditor(String content) {
-        super();
+        super(content);
         this.set_nodeName("managingEditor");
-        this.set_content(content);
     }
 
     /**

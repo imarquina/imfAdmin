@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -8,38 +9,19 @@ import org.w3c.dom.Element;
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Category {
-    private String _nodeName;
-    private String _content;
-
+public class Category extends ElementStringBase {
     final static Logger logger = Logger.getLogger(Category.class);
 
     /**
      * CONSTRUCTORS
      */
     public Category() {
-        this._content = "";
-        this._nodeName = "category";
+        super();
     }
 
     public Category(String content) {
-        this();
-        this.set_content(content);
-    }
-
-    /**
-     * GETTER / SETTER
-     */
-    public String get_content() {
-        return this._content;
-    }
-
-    public void set_content(String content) {
-        this._content = content;
-    }
-
-    public String get_nodeName() {
-        return _nodeName;
+        super(content);
+        this.set_nodeName("category");
     }
 
     /**

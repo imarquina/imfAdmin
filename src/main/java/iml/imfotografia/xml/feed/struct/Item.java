@@ -4,6 +4,7 @@ import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.arq.utils.Crypto;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
+import iml.imfotografia.xml.feed.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,7 +14,7 @@ import static iml.imfotografia.arq.utils.Text.htmlReplace;
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Item {
+public class Item implements IXmlNode {
     private String _nodeName;
 
     public Title title;

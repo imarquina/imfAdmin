@@ -1,6 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.xml.feed.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -10,7 +11,7 @@ import java.text.ParseException;
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Image {
+public class Image implements IXmlNode {
     private String _nodeName;
 
     public Title title;

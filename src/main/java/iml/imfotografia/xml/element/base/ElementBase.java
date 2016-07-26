@@ -13,6 +13,7 @@ import static iml.imfotografia.arq.utils.Number.isNumeric;
  * Created by inaki.marquina on 07/07/2016.
  */
 public abstract class ElementBase implements IElement {
+    private String _nodeName = "";
     private String _id;
     private Integer _width;
     private Integer _height;
@@ -28,14 +29,13 @@ public abstract class ElementBase implements IElement {
     private Integer _price;
     private Date _update;
     private Date _public;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
 
     /**
      * CONSTRUCTORES
      */
-    public ElementBase() {
-
-    }
+    public ElementBase() {}
 
     public ElementBase(String id, Integer width, Integer height, String caption, String src,
                  Date update, Date dPublic) {
@@ -157,8 +157,12 @@ public abstract class ElementBase implements IElement {
         return this._update;
     }
 
+    public String get_updateString() {
+        return _dateFormatOut.format(this._update);
+    }
+
     public void set_update(String update) throws ParseException {
-        this._update = _formatDate.parse(update);
+        this._update = _dateFormatIn.parse(update);
     }
 
     public void set_update(Date update) {
@@ -169,8 +173,12 @@ public abstract class ElementBase implements IElement {
         return this._public;
     }
 
+    public String get_dPublicString() {
+        return _dateFormatOut.format(this._update);
+    }
+
     public void set_dPublic(String dPublic) throws ParseException {
-        this._public = _formatDate.parse(dPublic);
+        this._public = _dateFormatIn.parse(dPublic);
     }
 
     public void set_dPublic(Date dPublic) {
@@ -191,5 +199,11 @@ public abstract class ElementBase implements IElement {
 
     public void set_dy(String dy) {
         this._dy = dy;
+    }
+
+    public String get_nodeName() { return this._nodeName; }
+
+    protected void set_nodeName(String nodeName) {
+        this._nodeName = nodeName;
     }
 }

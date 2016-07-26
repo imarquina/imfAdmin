@@ -1,11 +1,11 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.xml.feed.base.ElementBase;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Link extends ElementBase {
+public class Link extends ElementStringBase {
     final static Logger logger = Logger.getLogger(Link.class);
 
     /**
@@ -16,9 +16,8 @@ public class Link extends ElementBase {
     }
 
     public Link(String content) {
-        super();
+        super(content);
         this.set_nodeName("link");
-        this.set_content(content);
     }
 
     /**

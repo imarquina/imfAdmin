@@ -34,8 +34,8 @@ public class Launcher {
             XmlFeed feed = new XmlFeed(configXml, photosXml);
             XmlSitemap  sitemap = new XmlSitemap(configXml);
 
-            photos.writeXml();
-            config.writeXml();
+            photos.writeXml(XmlPhotos.writeMode.both);
+            config.writeXml(XmlConfig.writeMode.both);
             feed.writeXml();
             sitemap.writeXml();
         } catch (ParserConfigurationException e) {

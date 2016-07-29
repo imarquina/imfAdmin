@@ -55,7 +55,8 @@ public class Media extends ElementBase {
         nodeImage.setAttribute("linkurl", this.get_linkUrl());
         nodeImage.setAttribute("infotext", this.get_infoText());
         nodeImage.setAttribute("format", this.get_format());
-        nodeImage.setAttribute("price", this.get_price().toString());
+        if (this.get_price()>0)
+            nodeImage.setAttribute("price", this.get_price().toString());
         nodeImage.setAttribute("stock", this.get_stock());
         nodeImage.setAttribute("update", this.get_updateString());
         nodeImage.setAttribute("public", this.get_dPublicString());

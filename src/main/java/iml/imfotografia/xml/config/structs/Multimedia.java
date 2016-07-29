@@ -23,7 +23,7 @@ public class Multimedia {
     private String _keywords;
     private Date _update;
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
 
     public Map<Integer, Object> elements;
 
@@ -155,17 +155,17 @@ public class Multimedia {
 
             logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            if (sAttrName == ATTRIBUTE_NAME) {
+            if (sAttrName.equalsIgnoreCase(ATTRIBUTE_NAME)) {
                 multimedia.set_name(sAttrValue);
-            } else if (sAttrName == ATTRIBUTE_SRC) {
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_SRC)) {
                 multimedia.set_src(sAttrValue);
-            } else if (sAttrName == ATTRIBUTE_TITLE) {
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_TITLE)) {
                 multimedia.set_title(sAttrValue);
-            } else if (sAttrName == ATTRIBUTE_INFOTEXT) {
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_INFOTEXT)) {
                 multimedia.set_infoText(sAttrValue);
-            } else if (sAttrName == ATTRIBUTE_KEYWORDS) {
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_KEYWORDS)) {
                 multimedia.set_keywords(sAttrValue);
-            } else if (sAttrName == ATTRIBUTE_UPDATE) {
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_UPDATE)) {
                 multimedia.set_update(sAttrValue);
             } else {
                 logger.info("unknow Multimedia property " + sAttrName + ":" + sAttrValue);

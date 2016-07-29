@@ -30,7 +30,7 @@ public abstract class ElementBase implements IElement {
     private Date _update;
     private Date _public;
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
 
     /**
      * CONSTRUCTORES
@@ -155,13 +155,6 @@ public abstract class ElementBase implements IElement {
 
     public Integer get_price() {
         return this._price;
-    }
-
-    public String get_priceString() {
-        if (this._price == 0)
-            return "";
-        else
-            return this._price.toString();
     }
 
     public void set_price(String price) {

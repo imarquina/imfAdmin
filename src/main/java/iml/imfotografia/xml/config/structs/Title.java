@@ -77,9 +77,7 @@ public class Title {
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
 
-        Element descriptionNode = document.createElement(this.get_nodeName());
-        descriptionNode.appendChild(document.createTextNode(this.get_content()));
-        parentNode.appendChild(descriptionNode);
+        parentNode.appendChild(document.createTextNode(this.get_content()));
 
         logger.debug("End");
     }

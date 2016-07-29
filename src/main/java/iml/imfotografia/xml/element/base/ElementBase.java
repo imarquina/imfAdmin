@@ -35,10 +35,24 @@ public abstract class ElementBase implements IElement {
     /**
      * CONSTRUCTORES
      */
-    public ElementBase() {}
+    public ElementBase() {
+        this._id = "";
+        this._width = 0;
+        this._height = 0;
+        this._caption = "";
+        this._src = "";
+        this._dx = "";
+        this._dy = "";
+        this._linkText = "";
+        this._infoText = "";
+        this._format = "";
+        this._stock = "";
+        this._price = 0;
+    }
 
     public ElementBase(String id, Integer width, Integer height, String caption, String src,
                  Date update, Date dPublic) {
+        this();
         this.set_id(id);
         this.set_width(width);
         this.set_height(height);
@@ -141,6 +155,13 @@ public abstract class ElementBase implements IElement {
 
     public Integer get_price() {
         return this._price;
+    }
+
+    public String get_priceString() {
+        if (this._price == 0)
+            return "";
+        else
+            return this._price.toString();
     }
 
     public void set_price(String price) {

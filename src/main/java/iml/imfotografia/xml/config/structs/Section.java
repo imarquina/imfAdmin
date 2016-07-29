@@ -198,9 +198,7 @@ public class Section {
         parentNode.setAttribute(ATTRIBUTE_BYDEFAULT, this.get_byDefault().toString());
         parentNode.setAttribute(ATTRIBUTE_UPDATE, this.get_updateString());
 
-        Element descriptionNode = document.createElement(this.get_nodeName());
-        descriptionNode.appendChild(document.createTextNode(this.get_content()));
-        parentNode.appendChild(descriptionNode);
+        parentNode.appendChild(document.createTextNode(this.get_content()));
 
         logger.debug("End");
     }

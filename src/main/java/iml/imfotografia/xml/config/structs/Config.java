@@ -1,8 +1,5 @@
 package iml.imfotografia.xml.config.structs;
 
-import iml.imfotografia.arq.utils.Crypto;
-import iml.imfotografia.arq.utils.Text;
-import iml.imfotografia.xml.sitemap.element.Url;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -180,6 +177,10 @@ public class Config {
      */
     public void toXml(Document document, Element parentNode) {
         logger.debug("Begin");
+
+        parentNode.setAttribute(ATTRIBUTE_TITLE, this.get_title());
+        parentNode.setAttribute(ATTRIBUTE_INFOTEXT, this.get_infoText());
+        parentNode.setAttribute(ATTRIBUTE_KEYWORDS, this.get_keywords());
 
         //Recorrer los item para procesado
         for (Map.Entry<Integer, Object> entry1 : this.elements.entrySet()) {

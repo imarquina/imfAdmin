@@ -11,6 +11,11 @@ public class Photo extends ElementBase {
     final static Logger logger = Logger.getLogger(Photo.class);
 
     /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+
+    /**
      * CONSTRUCTORES
      */
     public Photo() {
@@ -53,7 +58,7 @@ public class Photo extends ElementBase {
         nodeImage.setAttribute("dy", this.get_dy());
         nodeImage.setAttribute("linktext", this.get_linkText());
         nodeImage.setAttribute("linkurl", this.get_linkUrl());
-        nodeImage.setAttribute("infotext", this.get_infoText());
+        nodeImage.setAttribute(ATTRIBUTE_INFOTEXT, this.get_infoText());
         nodeImage.setAttribute("format", this.get_format());
         if (this.get_price()>0)
             nodeImage.setAttribute("price", this.get_price().toString());

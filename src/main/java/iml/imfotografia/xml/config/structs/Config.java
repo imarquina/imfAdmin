@@ -31,9 +31,9 @@ public class Config {
     /**
      * CONSTANTS
      */
-    private static final String ATTRIBUTE_TITLE = "TITLE";
-    private static final String ATTRIBUTE_INFOTEXT = "INFOTEXT";
-    private static final String ATTRIBUTE_KEYWORDS = "KEYWORDS";
+    private static final String ATTRIBUTE_TITLE = "title";
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+    private static final String ATTRIBUTE_KEYWORDS = "keywords";
 
     /**
      * CONSTRUCTORS

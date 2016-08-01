@@ -1,6 +1,9 @@
 package iml.imfotografia.xml.element.base;
 
 import iml.imfotografia.xml.element.interfaces.IElement;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -31,6 +34,26 @@ public abstract class ElementBase implements IElement {
     private Date _public;
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
     private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
+
+    final static Logger logger = Logger.getLogger(ElementBase.class);
+
+    /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_WIDTH = "width";
+    private static final String ATTRIBUTE_HEIGHT = "height";
+    private static final String ATTRIBUTE_CAPTION = "caption";
+    private static final String ATTRIBUTE_SRC = "src";
+    private static final String ATTRIBUTE_DX = "dx";
+    private static final String ATTRIBUTE_DY = "dy";
+    private static final String ATTRIBUTE_LINKTEXT = "linktext";
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+    private static final String ATTRIBUTE_LINKURL = "linkurl";
+    private static final String ATTRIBUTE_FORMAT = "format";
+    private static final String ATTRIBUTE_PRICE = "price";
+    private static final String ATTRIBUTE_STOCK = "stock";
+    private static final String ATTRIBUTE_UPDATE = "update";
+    private static final String ATTRIBUTE_PUBLIC = "public";
 
     /**
      * CONSTRUCTORES
@@ -219,5 +242,31 @@ public abstract class ElementBase implements IElement {
 
     protected void set_nodeName(String nodeName) {
         this._nodeName = nodeName;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element nodeImage = document.createElement(this.get_nodeName());
+
+        nodeImage.setAttribute(ATTRIBUTE_WIDTH, this.get_width().toString());
+        nodeImage.setAttribute(ATTRIBUTE_HEIGHT, this.get_height().toString());
+        nodeImage.setAttribute(ATTRIBUTE_CAPTION, this.get_caption());
+        nodeImage.setAttribute(ATTRIBUTE_SRC, this.get_src());
+        nodeImage.setAttribute(ATTRIBUTE_DX, this.get_dx());
+        nodeImage.setAttribute(ATTRIBUTE_DY, this.get_dy());
+        nodeImage.setAttribute(ATTRIBUTE_LINKTEXT, this.get_linkText());
+        nodeImage.setAttribute(ATTRIBUTE_LINKURL, this.get_linkUrl());
+        nodeImage.setAttribute(ATTRIBUTE_INFOTEXT, this.get_infoText());
+        nodeImage.setAttribute(ATTRIBUTE_FORMAT, this.get_format());
+        if (this.get_price()>0)
+            nodeImage.setAttribute(ATTRIBUTE_PRICE, this.get_price().toString());
+        nodeImage.setAttribute(ATTRIBUTE_STOCK, this.get_stock());
+        nodeImage.setAttribute(ATTRIBUTE_UPDATE, this.get_updateString());
+        nodeImage.setAttribute(ATTRIBUTE_PUBLIC, this.get_dPublicString());
+
+        parentNode.appendChild(nodeImage);
+
+        logger.debug("End");
     }
 }

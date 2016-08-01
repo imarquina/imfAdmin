@@ -11,6 +11,11 @@ public class Media extends ElementBase {
     final static Logger logger = Logger.getLogger(Media.class);
 
     /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+
+    /**
      * CONSTRUCTORES
      */
     public Media() {
@@ -53,9 +58,10 @@ public class Media extends ElementBase {
         nodeImage.setAttribute("dy", this.get_dy());
         nodeImage.setAttribute("linktext", this.get_linkText());
         nodeImage.setAttribute("linkurl", this.get_linkUrl());
-        nodeImage.setAttribute("infotext", this.get_infoText());
+        nodeImage.setAttribute(ATTRIBUTE_INFOTEXT, this.get_infoText());
         nodeImage.setAttribute("format", this.get_format());
-        nodeImage.setAttribute("price", this.get_price().toString());
+        if (this.get_price()>0)
+            nodeImage.setAttribute("price", this.get_price().toString());
         nodeImage.setAttribute("stock", this.get_stock());
         nodeImage.setAttribute("update", this.get_updateString());
         nodeImage.setAttribute("public", this.get_dPublicString());

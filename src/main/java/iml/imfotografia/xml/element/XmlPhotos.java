@@ -2,6 +2,7 @@ package iml.imfotografia.xml.element;
 
 import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.element.structs.*;
 import iml.imfotografia.xml.element.structs.Config;
@@ -41,6 +42,19 @@ public class XmlPhotos {
     {
         imagen,
         media
+    }
+
+    public enum writeMode
+    {
+        minified,
+        unminified,
+        both
+    }
+
+    private enum execMode
+    {
+        minified,
+        unminified
     }
 
     /**
@@ -276,6 +290,56 @@ public class XmlPhotos {
     }
 
     /**
+     *
+     * @param type
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    private void setXml(execMode type) throws ParserConfigurationException, TransformerException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(null, this.config.get_nodeName(), null);
+        document.setXmlVersion("1.0");
+
+        //Main Node
+        Element configNode = document.getDocumentElement();
+        this.config.toXml(document, configNode);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        this.execXml(source,type);
+    }
+
+    /**
+     *
+     * @param source
+     * @param type
+     * @throws TransformerException
+     */
+    private void execXml(Source source, execMode type) throws TransformerException {
+
+        String nameFile;
+        if (type == execMode.minified)
+            nameFile = Propertyx.readProperty("iml.xml.dir.out") + this._nameXml + ".min.xml";
+        else
+            nameFile = Propertyx.readProperty("iml.xml.dir.out") + this._nameXml + ".xml";
+
+        //Indicamos donde lo queremos almacenar
+        Result result = new StreamResult(new File(nameFile)); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,(type== execMode.unminified)?"yes":"no");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
+        transformer.transform(source, result);
+    }
+
+    /**
      * PUBLIC METHODS
      */
 
@@ -303,34 +367,17 @@ public class XmlPhotos {
      * @throws ParserConfigurationException
      * @throws TransformerException
      */
-    public void writeXml() throws ParserConfigurationException, TransformerException {
+    public void writeXml(writeMode type) throws ParserConfigurationException, TransformerException {
         logger.debug("Begin");
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        DOMImplementation implementation = builder.getDOMImplementation();
-
-        Document document = implementation.createDocument(null, this.config.get_nodeName(), null);
-        document.setXmlVersion("1.0");
-
-        //Main Node
-        Element configNode = document.getDocumentElement();
-        this.config.toXml(document, configNode);
-
-        //Generate XML
-        Source source = new DOMSource(document);
-
-        //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
-                this._nameXml + ".xml")); //nombre del archivo
-
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
-        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
-        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
-        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
-        transformer.transform(source, result);
+        if(type == writeMode.both){
+            this.setXml(execMode.minified);
+            this.setXml(execMode.unminified);
+        } else if (type == writeMode.minified) {
+            this.setXml(execMode.minified);
+        } else if (type == writeMode.unminified) {
+            this.setXml(execMode.unminified);
+        }
 
         logger.debug("End");
     }

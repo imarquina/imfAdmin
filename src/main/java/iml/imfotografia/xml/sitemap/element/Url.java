@@ -1,7 +1,6 @@
 package iml.imfotografia.xml.sitemap.element;
 
-import iml.imfotografia.xml.feed.XmlFeed;
-import iml.imfotografia.xml.feed.interfaces.IXmlNode;
+import iml.imfotografia.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

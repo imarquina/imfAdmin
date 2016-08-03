@@ -1,8 +1,8 @@
 package iml.imfotografia.xml.config.structs;
 
+import iml.imfotografia.xml.config.base.ElementBase;
+import iml.imfotografia.xml.config.interfaces.IElement;
 import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -11,43 +11,8 @@ import java.text.ParseException;
 /**
  * ELEMENTS
  */
-public class Image {
-    private String _nodeName = "";
-    private String _id;
-
+public class Image extends ElementBase implements IElement {
     final static Logger logger = Logger.getLogger(Image.class);
-
-    /**
-     * CONSTANTS
-     */
-    private static final String ATTRIBUTE_ID = "id";
-
-    /**
-     * CONSTRUCTORS
-     */
-    public Image() {
-        this._nodeName = "img";
-    }
-
-    public Image(String id) {
-        this();
-        this.set_id(id);
-    }
-
-    /**
-     * GETTER / SETTER
-     */
-    public String get_id() {
-        return this._id;
-    }
-
-    public void set_id(String id) {
-        this._id = id;
-    }
-
-    public String get_nodeName() {
-        return this._nodeName;
-    }
 
     /**
      *
@@ -57,7 +22,7 @@ public class Image {
      */
     public Image fromXml(Node node) throws ParseException {
         logger.debug("Begin");
-        Image image = new Image();
+        Image element = new Image();
 
         // get attributes names and values
         NamedNodeMap nodeMap = node.getAttributes();
@@ -71,26 +36,13 @@ public class Image {
             logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
             if (sAttrName.equalsIgnoreCase(ATTRIBUTE_ID)) {
-                image.set_id(sAttrValue);
+                element.set_id(sAttrValue);
             } else {
                 logger.info("unknow Image property " + sAttrName + ":" + sAttrValue);
             }
             logger.debug("set Image property " + sAttrName + ":" + sAttrValue);
         }
         logger.debug("End");
-        return image;
-    }
-
-    /**
-     *
-     * @param document
-     * @param parentNode
-     */
-    public void toXml(Document document, Element parentNode){
-        logger.debug("Begin");
-
-        parentNode.setAttribute(ATTRIBUTE_ID, this.get_id());
-
-        logger.debug("End");
+        return element;
     }
 }

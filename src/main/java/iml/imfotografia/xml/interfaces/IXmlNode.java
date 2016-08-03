@@ -1,4 +1,4 @@
-package iml.imfotografia.xml.sitemap.interfaces;
+package iml.imfotografia.xml.interfaces;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -11,4 +11,3 @@ public interface IXmlNode {
 
     void toXml(Document document, Element parentNode);
 }
-

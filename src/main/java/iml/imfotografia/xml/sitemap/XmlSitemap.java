@@ -4,8 +4,10 @@ import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.arq.utils.Crypto;
 import iml.imfotografia.arq.utils.Text;
 import iml.imfotografia.xml.config.XmlConfig;
+import iml.imfotografia.xml.config.base.CollectionBase;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.config.structs.Image;
+import iml.imfotografia.xml.config.structs.Video;
 import iml.imfotografia.xml.sitemap.element.Url;
 import iml.imfotografia.xml.sitemap.element.Urlset;
 import org.apache.log4j.Logger;
@@ -131,26 +133,31 @@ public class XmlSitemap {
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
         //Estraer galerias e imágenes para completar información de item
-        ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
+        ArrayList<CollectionBase> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements);
 
         String sLoc = Propertyx.readProperty("iml.url.root") +
                 Propertyx.readProperty("iml.feed.item.link");
 
         //Recorrer los item para procesado
-        for (Gallery g : imageGalleries){
-            Url uGal = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(g.get_name())),
-                    g.get_update());
+        for (CollectionBase c : elementCollection){
+            Url uGal = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(c.get_name())),
+                    c.get_update());
             this.urlset.addUrl(uGal);
 
-            for (Map.Entry<String, Object> entry : g.elements.entrySet()) {
+            for (Map.Entry<String, Object> entry : c.elements.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
 
-                Integer iImgIndex = g.getIndexKey(((Image)value).get_id());
+                Integer iImgIndex = -1;
+                if (value instanceof Image){
+                    iImgIndex = c.getIndexKey(((Image)value).get_id());
+                } else if (value instanceof Video){
+                    iImgIndex = c.getIndexKey(((Video)value).get_id());
+                }
 
-                Url uImg = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(g.get_name())) +
+                Url uImg = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(c.get_name())) +
                         "&amp;photo=" + iImgIndex,
-                        g.get_update());
+                        c.get_update());
                 this.urlset.addUrl(uImg);
             }
         }

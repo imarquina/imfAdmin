@@ -278,16 +278,16 @@
 	</galleries>
 	<folder NAME="Sobre mi" UPDATE="20121010">
 		<section NAME="Quien soy" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20121024">
-			<title>QUIÉN SOY</title><p>Iñaki Marquina (night.noise), nació en Bilbao, hace ya más de 40 años. Licenciado en CC. Biológicas (microbiología).</p><p>Motivos laborales me llevaron a adquirir experiencia en programación y cierta habilidad para moverme por en el mundo de la informática. Al principio por cuenta propia, y después por cuenta ajena. Y tras más de 10 años, en ello sigo.</p><p>Me gusta todo aquello relacionado con la imaginación o la creatividad. La imaginación permite ver situaciones que no he visto y que quizá nunca vea. La imaginación es la forma de superar el límite propio.</p>
+			<p>Iñaki Marquina (night.noise), nació en Bilbao, hace ya más de 40 años. Licenciado en CC. Biológicas (microbiología).</p><p>Motivos laborales me llevaron a adquirir experiencia en programación y cierta habilidad para moverme por en el mundo de la informática. Al principio por cuenta propia, y después por cuenta ajena. Y tras más de 10 años, en ello sigo.</p><p>Me gusta todo aquello relacionado con la imaginación o la creatividad. La imaginación permite ver situaciones que no he visto y que quizá nunca vea. La imaginación es la forma de superar el límite propio.</p>
 		</section>
 		<section NAME="Que hago" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20121024">
-			<title>QUE HAGO</title><p>Coloquialmente digo que no he estado en un sitio si no lo ha fotografiado. Así que la fotografía es principalmente una forma de capturar los recuerdos y las sensaciones de un momento, de un díaâŠ y también es el placer y gustillo de ese reto de capturar instantes con la mayor efectividad, originalidad, sentimiento y gusto posible.</p><p>La fotografía creativa sin duda es de las que más esfuerzo me exige. El nacimiento del "hombrecillo del paraguas" que aparece en casi todas mis creaciones preferidas se ha convertido ya en un sello personal. Y esa presencia del misterioso hombre del paraguas, en esos mundos mágicos, es como un autorretrato entre elementos que perdurarán, de una u otra manera, más allá de la existencia personal.</p><p>Os dejo un <a href="http://www.ojodigital.com/foro/content/night-noise-547/" target="_blank">
+			<p>Coloquialmente digo que no he estado en un sitio si no lo ha fotografiado. Así que la fotografía es principalmente una forma de capturar los recuerdos y las sensaciones de un momento, de un díaâŠ y también es el placer y gustillo de ese reto de capturar instantes con la mayor efectividad, originalidad, sentimiento y gusto posible.</p><p>La fotografía creativa sin duda es de las que más esfuerzo me exige. El nacimiento del "hombrecillo del paraguas" que aparece en casi todas mis creaciones preferidas se ha convertido ya en un sello personal. Y esa presencia del misterioso hombre del paraguas, en esos mundos mágicos, es como un autorretrato entre elementos que perdurarán, de una u otra manera, más allá de la existencia personal.</p><p>Os dejo un <a href="http://www.ojodigital.com/foro/content/night-noise-547/" target="_blank">
 					<font COLOR="#E0E0E0">enlace</font>
 				</a> al sitio que quizá más ha aportado a night.noise</p>
 		</section>
 	</folder>
 	<section NAME="Contacta y +info" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20121024">
-		<title>CONTACTO</title><p>Tu opinion sobre esta pagina y el trabajo que hay detras para mí es muy importante. Tienes a tu disposicion:</p>
+		<p>Tu opinion sobre esta pagina y el trabajo que hay detras para mí es muy importante. Tienes a tu disposicion:</p>
 		<ul>
 			<li>Si te ha parecido interesante, <a href="http://twitter.com/share?original_referer=http://www.imarquina.es&amp;source=tweetbutton&amp;data-via=imarkina&amp;text=imarquina.fotografia&amp;url=http://www.imarquina.es" target="_blank">
 					<font COLOR="#E0E0E0">enlazar en Twitter</font>
@@ -305,7 +305,7 @@
 		</ul>
 	</section>
 	<section NAME="Referentes creativos" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20121129">
-		<title>Referentes creativos</title><p>Algunas referencias de para mi imaginación:</p>
+		<p>Algunas referencias de para mi imaginación:</p>
 		<ul>
 			<li>Erik Johansson <a href="http://erikjohanssonphoto.com/" target="_blank">
 					<font COLOR="#E0E0E0">http://erikjohanssonphoto.com</font>
@@ -347,7 +347,7 @@
 		</ul>
 	</section>
 	<section NAME="Tienda online"  WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20140201">
-		<title>TIENDA ONLINE</title><p>Desde la tienda online podrás aquirir las imágenes que aquí ves</p><p>Ir a la tienda online <b>IMFotografía Shop</b> en <a href="http://shop.imarquina.es" target="_blank">
+		<p>Desde la tienda online podrás aquirir las imágenes que aquí ves</p><p>Ir a la tienda online <b>IMFotografía Shop</b> en <a href="http://shop.imarquina.es" target="_blank">
 				<font COLOR="#E0E0E0">shop.imarquina.es</font>
 			</a>. Échale un vistazo ;).</p>
 	</section>

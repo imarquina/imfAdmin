@@ -1,6 +1,8 @@
 package iml.imfotografia.xml.config;
 
 import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.xml.config.base.CollectionBase;
+import iml.imfotografia.xml.config.base.ElementBase;
 import iml.imfotografia.xml.config.structs.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
@@ -233,7 +235,7 @@ public class XmlConfig {
                     Multimedia multimedia = (Multimedia)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_VIDEO)) {
-                        Video video = (new Video()).fromXml(node);
+                        Video video = (Video)(new Video()).fromXml(node);
                         multimedia.addVideo(video);
                     } else {
                         logger.info("unknow Node of Multimedia: " + nodeName);
@@ -288,13 +290,12 @@ public class XmlConfig {
     }
 
     /**
-     * Recorre de manera redundante todos los elementos para extraer
-     * los Gallery y sus imágenes
+     *
      * @param elements
-     * @param imageGalleries
+     * @param elementCollection
      * @return
      */
-    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, ArrayList<Gallery> imageGalleries){
+    private ArrayList<CollectionBase> extractCollections(Map<Integer, Object> elements, ArrayList<CollectionBase> elementCollection){
         logger.debug("Begin");
 
         Integer iKey = 0;
@@ -304,18 +305,22 @@ public class XmlConfig {
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractElements(((Galleries) value).elements, imageGalleries);
+                extractCollections(((Galleries) value).elements, elementCollection);
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)value;
 
-                imageGalleries.add(gallery);
+                elementCollection.add(gallery);
+            } else if (value instanceof Multimedia){
+                Multimedia multimedia = (Multimedia)value;
+
+                elementCollection.add(multimedia);
             } else if (value instanceof Folder) {
-                extractElements(((Folder) value).elements, imageGalleries);
+                extractCollections(((Folder) value).elements, elementCollection);
             }
         }
 
         logger.debug("End");
-        return  imageGalleries;
+        return  elementCollection;
     }
 
     /**
@@ -368,17 +373,14 @@ public class XmlConfig {
     }
 
     /**
-     * PUBLIC METHODS
-     */
-    /**
-     * Obtiene todas los elementos Gallery y sus imágenes
+     *
      * @param elements
      * @return
      */
-    public ArrayList<Gallery> getGallerys(Map<Integer, Object> elements){
-        ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
+    public ArrayList<CollectionBase> getCollections(Map<Integer, Object> elements){
+        ArrayList<CollectionBase> elementCollection = new ArrayList<CollectionBase>();
 
-        return this.extractElements(elements, imageGalleries);
+        return this.extractCollections(elements, elementCollection);
     }
 
     /**

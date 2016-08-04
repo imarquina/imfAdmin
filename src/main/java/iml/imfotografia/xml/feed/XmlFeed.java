@@ -2,7 +2,9 @@ package iml.imfotografia.xml.feed;
 
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
+import iml.imfotografia.xml.config.base.CollectionBase;
 import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.config.structs.Multimedia;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.feed.struct.Channel;
@@ -143,9 +145,6 @@ public class XmlFeed {
         //Agrupar los elementos
         List<IElement> list = xmlElment.getElementByUpdate();
 
-        //Estraer galerias e imágenes para completar información de item
-        ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
-
         //Crear el xml
         Channel chanel = createChanel(xmlConfig);
         this.rss.addChanel(chanel);
@@ -153,13 +152,16 @@ public class XmlFeed {
         Image image = createImage();
         chanel.addImage(image);
 
+        //Estraer galerias e imágenes para completar información de item
+        ArrayList<CollectionBase> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements);
+
         //Recorrer cada item para procesado
         for (IElement e : list) {
             //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-            for (Gallery g : imageGalleries){
-                if (g.elements.containsKey(e.get_id())) {
+            for (CollectionBase c : elementCollection){
+                if (c.elements.containsKey(e.get_id())) {
                     //Bucle para añadir items por cada elemento si hay más de uno
-                    Item item = createItem(e, g, g.getIndexKey(e.get_id()));
+                    Item item = createItem(e, c, c.getIndexKey(e.get_id()));
                     chanel.addItem(item);
                 }
             }
@@ -201,10 +203,10 @@ public class XmlFeed {
      *
      * @return
      */
-    private Item createItem(IElement element, Gallery gallery, Integer iImage) {
+    private Item createItem(IElement element, CollectionBase collection, Integer iImage) {
         logger.debug("Begin");
 
-        Item item = new Item(element, gallery, iImage);
+        Item item = new Item(element, collection, iImage);
 
         logger.debug("End");
         return item;

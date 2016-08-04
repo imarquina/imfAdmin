@@ -1,7 +1,7 @@
 package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.Propertyx;
-import iml.imfotografia.xml.feed.interfaces.IXmlNode;
+import iml.imfotografia.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

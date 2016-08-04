@@ -1,6 +1,6 @@
 package iml.imfotografia.xml.feed.base;
 
-import iml.imfotografia.xml.feed.interfaces.IXmlNode;
+import iml.imfotografia.xml.interfaces.IXmlNode;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

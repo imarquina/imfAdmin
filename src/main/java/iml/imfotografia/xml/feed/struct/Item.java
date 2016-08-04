@@ -2,9 +2,12 @@ package iml.imfotografia.xml.feed.struct;
 
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.arq.utils.Crypto;
+import iml.imfotografia.xml.config.base.CollectionBase;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.element.interfaces.IElement;
-import iml.imfotografia.xml.feed.interfaces.IXmlNode;
+import iml.imfotografia.xml.element.structs.Media;
+import iml.imfotografia.xml.element.structs.Photo;
+import iml.imfotografia.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -33,21 +36,25 @@ public class Item implements IXmlNode {
         super();
     }
 
-    public Item(IElement element, Gallery gallery, Integer iImage) {
+    public Item(IElement element, CollectionBase collection, Integer iImage) {
         this._nodeName = "item";
 
         Title title = new Title(element.get_caption());
         this.addTitle(title);
 
-        Link link = new Link(Propertyx.readProperty("iml.url.root") +
-                Propertyx.readProperty("iml.feed.item.link") +
-                Crypto.getMD5(htmlReplace(gallery.get_name())) + "&photo=" + iImage);
-        this.addLink(link);
+        if (element instanceof Photo){
+            Link link = new Link(Propertyx.readProperty("iml.url.root") +
+                    Propertyx.readProperty("iml.feed.item.link") +
+                    Crypto.getMD5(htmlReplace(collection.get_name())) + "&photo=" + iImage);
+            this.addLink(link);
+        } else if (element instanceof Media){
+            this.addLink(new Link(element.get_linkUrl()));
+        }
 
         Description description = new Description(element.get_infoText());
         this.addDescription(description);
 
-        Category category = new Category(gallery.get_name());
+        Category category = new Category(collection.get_name());
         this.addCategory(category);
 
         PubDate pubDate = new PubDate(element.get_dPublic());

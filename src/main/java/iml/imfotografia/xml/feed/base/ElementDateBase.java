@@ -9,7 +9,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Created by imarquina on 18/7/16.
@@ -17,8 +16,8 @@ import java.util.TimeZone;
 public abstract class ElementDateBase implements IXmlNode {
     private String _nodeName;
     private Date _content;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss 'GMT'", Locale.ENGLISH);
 
     /**
      * CONSTRUCTORS
@@ -26,7 +25,7 @@ public abstract class ElementDateBase implements IXmlNode {
     public ElementDateBase() {
         this._nodeName = "";
         this._content = new Date();
-        this._dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
+        //this._dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
     }
 
     public ElementDateBase(String content) throws ParseException {

@@ -22,8 +22,8 @@ public class Section {
     private Boolean _byDefault;
     private Date _update;
     private String _content;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
     final static Logger logger = Logger.getLogger(Section.class);
 

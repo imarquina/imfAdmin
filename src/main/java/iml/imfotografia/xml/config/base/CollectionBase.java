@@ -3,12 +3,9 @@ package iml.imfotografia.xml.config.base;
 import iml.imfotografia.xml.config.interfaces.ICollection;
 import iml.imfotografia.xml.config.interfaces.IElement;
 import iml.imfotografia.xml.config.structs.Gallery;
-import iml.imfotografia.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -26,8 +23,8 @@ public class CollectionBase implements ICollection {
     private String _infoText;
     private String _keywords;
     private Date _update;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
     public Map<String, Object> elements;
 

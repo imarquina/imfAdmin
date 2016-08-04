@@ -32,8 +32,8 @@ public abstract class ElementBase implements IElement {
     private Integer _price;
     private Date _update;
     private Date _public;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
     final static Logger logger = Logger.getLogger(ElementBase.class);
 
@@ -211,7 +211,7 @@ public abstract class ElementBase implements IElement {
     }
 
     public String get_dPublicString() {
-        return _dateFormatOut.format(this._update);
+        return _dateFormatOut.format(this._public);
     }
 
     public void set_dPublic(String dPublic) throws ParseException {

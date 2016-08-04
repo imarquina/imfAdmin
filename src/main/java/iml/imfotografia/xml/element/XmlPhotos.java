@@ -2,10 +2,10 @@ package iml.imfotografia.xml.element;
 
 import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.xml.Propertyx;
-import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.element.interfaces.IElement;
-import iml.imfotografia.xml.element.structs.*;
 import iml.imfotografia.xml.element.structs.Config;
+import iml.imfotografia.xml.element.structs.Media;
+import iml.imfotografia.xml.element.structs.Photo;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -356,6 +356,25 @@ public class XmlPhotos {
         Collections.sort(list, new Comparator<IElement>() {
             public int compare(IElement o1, IElement o2) {
                 return (int) Date.DateDiff(o1.get_update(), o2.get_update());
+            }
+        });
+
+        return list;
+    }
+
+    /**
+     * Agrupa los elementos y los ordena por el campo public
+     * @return
+     */
+    public List<IElement> getElementByPublic(){
+        List<IElement> list = new ArrayList<IElement>();
+        list.addAll(this.config.images.photo.values());
+        list.addAll(this.config.medias.media.values());
+
+        //Ordenar los elementos de más a menos reciente
+        Collections.sort(list, new Comparator<IElement>() {
+            public int compare(IElement o1, IElement o2) {
+                return (int) Date.DateDiff(o1.get_dPublic(), o2.get_dPublic());
             }
         });
 

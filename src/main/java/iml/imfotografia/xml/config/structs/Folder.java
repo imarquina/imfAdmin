@@ -25,8 +25,8 @@ public class Folder {
     private String _infoText;
     private String _keywords;
     private Date _update;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
     public Map<Integer, Object> elements;
 

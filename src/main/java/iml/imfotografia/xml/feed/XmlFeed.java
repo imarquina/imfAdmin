@@ -3,8 +3,6 @@ package iml.imfotografia.xml.feed;
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.base.CollectionBase;
-import iml.imfotografia.xml.config.structs.Gallery;
-import iml.imfotografia.xml.config.structs.Multimedia;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.feed.struct.Channel;

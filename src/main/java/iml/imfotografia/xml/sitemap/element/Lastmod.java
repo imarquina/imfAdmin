@@ -12,7 +12,7 @@ import java.util.Date;
 public class Lastmod implements IXmlNode {
     private String _nodeName;
     private Date _content;
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-MM-dd");
 
     final static Logger logger = Logger.getLogger(Lastmod.class);
 

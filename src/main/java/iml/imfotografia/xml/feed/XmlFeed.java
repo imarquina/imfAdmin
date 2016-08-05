@@ -24,8 +24,8 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by imarquina on 29/6/16.
@@ -151,15 +151,18 @@ public class XmlFeed {
         chanel.addImage(image);
 
         //Estraer galerias e imágenes para completar información de item
-        ArrayList<CollectionBase> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements);
+        Map<String, Object> extractCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlFeed.class);
 
         //Recorrer cada item para procesado
         for (IElement e : list) {
             //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-            for (CollectionBase c : elementCollection){
-                if (c.elements.containsKey(e.get_id())) {
+            for (Map.Entry<String, Object> entry : extractCollection.entrySet()){
+                String key = entry.getKey();
+                CollectionBase value = (CollectionBase)entry.getValue();
+
+                if (value.elements.containsKey(e.get_id())) {
                     //Bucle para añadir items por cada elemento si hay más de uno
-                    Item item = createItem(e, c, c.getIndexKey(e.get_id()));
+                    Item item = createItem(e, value, value.getIndexKey(e.get_id()));
                     chanel.addItem(item);
                 }
             }

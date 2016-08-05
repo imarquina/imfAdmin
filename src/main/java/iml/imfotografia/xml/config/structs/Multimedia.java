@@ -1,19 +1,13 @@
 package iml.imfotografia.xml.config.structs;
 
 import iml.imfotografia.xml.config.base.CollectionBase;
-import iml.imfotografia.xml.config.interfaces.ICollection;
 import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
-public class Multimedia extends CollectionBase implements ICollection {
+public class Multimedia extends CollectionBase {
     final static Logger logger = Logger.getLogger(Multimedia.class);
 
     /**

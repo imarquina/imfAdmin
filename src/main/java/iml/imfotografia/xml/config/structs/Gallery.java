@@ -1,14 +1,13 @@
 package iml.imfotografia.xml.config.structs;
 
 import iml.imfotografia.xml.config.base.CollectionBase;
-import iml.imfotografia.xml.config.interfaces.ICollection;
 import org.apache.log4j.Logger;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import java.text.ParseException;
 
-public class Gallery extends CollectionBase implements ICollection {
+public class Gallery extends CollectionBase {
     final static Logger logger = Logger.getLogger(Gallery.class);
 
     /**

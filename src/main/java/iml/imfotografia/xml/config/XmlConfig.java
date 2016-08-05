@@ -1,9 +1,8 @@
 package iml.imfotografia.xml.config;
 
 import iml.imfotografia.xml.Propertyx;
-import iml.imfotografia.xml.config.base.CollectionBase;
-import iml.imfotografia.xml.config.base.ElementBase;
 import iml.imfotografia.xml.config.structs.*;
+import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -18,7 +17,7 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static iml.imfotografia.arq.utils.Text.SetLength;
@@ -149,8 +148,6 @@ public class XmlConfig {
             Node node = nList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE)
             {
-                Boolean bNodeContentHTML = false;
-
                 String nodeName =  node.getNodeName();
                 if (!nodeName.equals(null)) nodeName = nodeName.trim();
 
@@ -292,35 +289,42 @@ public class XmlConfig {
     /**
      *
      * @param elements
-     * @param elementCollection
+     * @param extractCollection
+     * @param clazz
      * @return
      */
-    private ArrayList<CollectionBase> extractCollections(Map<Integer, Object> elements, ArrayList<CollectionBase> elementCollection){
+    private Map<String, Object> extractCollections(Map<String, Object> elements,
+                                                   Map<String, Object> extractCollection, Class clazz){
         logger.debug("Begin");
 
         Integer iKey = 0;
 
-        for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
-            Integer key = entry.getKey();
+        for (Map.Entry<String, Object> entry : elements.entrySet()) {
+            String key = entry.getKey();
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractCollections(((Galleries) value).elements, elementCollection);
+                extractCollections(((Galleries) value).elements, extractCollection, clazz);
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)value;
 
-                elementCollection.add(gallery);
+                extractCollection.put(gallery.get_id(), gallery);
             } else if (value instanceof Multimedia){
                 Multimedia multimedia = (Multimedia)value;
 
-                elementCollection.add(multimedia);
+                extractCollection.put(multimedia.get_id(), multimedia);
             } else if (value instanceof Folder) {
-                extractCollections(((Folder) value).elements, elementCollection);
+                if (clazz == XmlSitemap.class){
+                    Folder folder = (Folder)value;
+
+                    extractCollection.put(folder.get_id(), folder);
+                }
+                //extractCollections(((Folder) value).elements, elementCollection, clazz);
             }
         }
 
         logger.debug("End");
-        return  elementCollection;
+        return  extractCollection;
     }
 
     /**
@@ -377,10 +381,11 @@ public class XmlConfig {
      * @param elements
      * @return
      */
-    public ArrayList<CollectionBase> getCollections(Map<Integer, Object> elements){
-        ArrayList<CollectionBase> elementCollection = new ArrayList<CollectionBase>();
+    public Map<String, Object> getCollections(Map<String, Object> elements, Class clazz){
+        Map<String, Object> elementCollection = new LinkedHashMap<String, Object>();
 
-        return this.extractCollections(elements, elementCollection);
+        return this.extractCollections(elements, elementCollection, clazz);
+
     }
 
     /**

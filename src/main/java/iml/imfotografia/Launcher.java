@@ -32,7 +32,7 @@ public class Launcher {
             XmlPhotos photos = new XmlPhotos(photosXml);
             XmlConfig config = new XmlConfig(configXml);
             XmlFeed feed = new XmlFeed(configXml, photosXml);
-            XmlSitemap  sitemap = new XmlSitemap(configXml);
+            XmlSitemap  sitemap = new XmlSitemap(configXml, photosXml);
 
             photos.writeXml(XmlPhotos.writeMode.both);
             config.writeXml(XmlConfig.writeMode.both);

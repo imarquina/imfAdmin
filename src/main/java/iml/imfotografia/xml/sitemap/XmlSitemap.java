@@ -1,7 +1,6 @@
 package iml.imfotografia.xml.sitemap;
 
 import iml.imfotografia.arq.utils.Crypto;
-import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.arq.utils.Text;
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
@@ -10,6 +9,7 @@ import iml.imfotografia.xml.config.structs.Folder;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.config.structs.Image;
 import iml.imfotografia.xml.config.structs.Video;
+import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.sitemap.element.Url;
 import iml.imfotografia.xml.sitemap.element.Urlset;
 import org.apache.log4j.Logger;
@@ -27,12 +27,14 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.Map;
 
 /**
  * Created by imarquina on 29/6/16.
  */
 public class XmlSitemap {
+    private String _xmlElement;
     private String _xmlConfig;
     private String _nameXml = "sitemap";
     public Urlset urlset = new Urlset();
@@ -57,11 +59,13 @@ public class XmlSitemap {
      */
     public XmlSitemap() {
         this._xmlConfig = "";
+        this._xmlElement = "";
         urlset = new Urlset();
     }
 
-    public XmlSitemap(String xmlConfig) throws ParserConfigurationException, ParseException, SAXException, XPathExpressionException, IOException {
+    public XmlSitemap(String xmlConfig, String xmlElement) throws ParserConfigurationException, ParseException, SAXException, XPathExpressionException, IOException {
         this ();
+        this.set_xmlElement(xmlElement);
         this.set_xmlConfig(xmlConfig);
 
         generateXml();
@@ -70,6 +74,14 @@ public class XmlSitemap {
     /**
      * GETTER / SETTER
      */
+    public String get_xmlElement() {
+        return this._xmlElement;
+    }
+
+    public void set_xmlElement(String xmlElement) {
+        this._xmlElement = xmlElement;
+    }
+
     public String get_xmlConfig() {
         return this._xmlConfig;
     }
@@ -131,6 +143,7 @@ public class XmlSitemap {
         this.urlset.setXsi_schemaLocation(Propertyx.readProperty("iml.sitemap.xsi_schemaLocation"));
 
         //Leer los datos de estructura
+        XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
         Url uRot = new Url(Propertyx.readProperty("iml.url.root"), new Date());
@@ -139,7 +152,7 @@ public class XmlSitemap {
         //Estraer galerias e imágenes para completar información de item
         Map<String, Object> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
 
-        addUrlElements(elementCollection);
+        addUrlElements(elementCollection, xmlElment);
 
         logger.debug("End");
     }
@@ -148,7 +161,7 @@ public class XmlSitemap {
      *
      * @param collection
      */
-    private void addUrlElements(Map<String, Object> collection){
+    private void addUrlElements(Map<String, Object> collection, XmlPhotos xmlElment){
         String sLoc = Propertyx.readProperty("iml.url.root");
 
         //Recorrer los item para procesado
@@ -171,6 +184,7 @@ public class XmlSitemap {
 
                     String url = "";
                     String suf = "";
+                    Date update = null;
 
                     Integer iImgIndex = -1;
 
@@ -182,14 +196,20 @@ public class XmlSitemap {
 
                         if (iteValue instanceof Image) {
                             iImgIndex = gal.getIndexKey(((Image) iteValue).get_id());
+                            if (xmlElment.config.images.photo.containsKey(ele.get_id())){
+                                update = xmlElment.config.images.photo.get(ele.get_id()).get_update();
+                            }
                         } else if (iteValue instanceof Video) {
                             iImgIndex = gal.getIndexKey(((Video) iteValue).get_id());
+                            if (xmlElment.config.medias.media.containsKey(ele.get_id())){
+                                update = xmlElment.config.medias.media.get(ele.get_id()).get_update();
+                            }
                         }
                         suf = "&amp;photo=" + iImgIndex;
                     }
 
                     //Se añade línea por cada imagen o vídeo
-                    Url uElm = new Url(url + suf, gal.get_update());
+                    Url uElm = new Url(url + suf, update);
                     this.urlset.addUrl(uElm);
                 }
             }else if (colValue instanceof Folder){
@@ -201,7 +221,7 @@ public class XmlSitemap {
                         folder.get_update());
                 this.urlset.addUrl(uFolder);
 
-                addUrlElements(folder.elements);
+                addUrlElements(folder.elements, xmlElment);
             }
         }
     }

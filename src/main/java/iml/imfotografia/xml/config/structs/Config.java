@@ -20,7 +20,7 @@ public class Config {
     private String _infoText;
     private String _keywords;
 
-    public Map<Integer, Object> elements;
+    public Map<String, Object> elements;
     public Title title;
     public Slogan slogan;
     public Tracks tracks;
@@ -46,7 +46,7 @@ public class Config {
         this._infoText = "";
         this._keywords = "";
 
-        elements = new LinkedHashMap<Integer, Object>();
+        elements = new LinkedHashMap<String, Object>();
         title = new Title();
         slogan = new Slogan();
         tracks = new Tracks();
@@ -89,7 +89,7 @@ public class Config {
      * @return
      */
     public void addGalleries(Galleries galleries){
-        this.elements.put(_iKey++, galleries);
+        this.elements.put((_iKey++).toString(), galleries);
     }
 
     /**
@@ -97,7 +97,7 @@ public class Config {
      * @return
      */
     public void addFolder(Folder folder){
-        this.elements.put(_iKey++, folder);
+        this.elements.put((_iKey++).toString(), folder);
     }
 
     /**
@@ -105,7 +105,7 @@ public class Config {
      * @return
      */
     public void addSection(Section section){
-        this.elements.put(_iKey++, section);
+        this.elements.put((_iKey++).toString(), section);
     }
 
     /**
@@ -183,8 +183,8 @@ public class Config {
         parentNode.setAttribute(ATTRIBUTE_KEYWORDS, this.get_keywords());
 
         //Recorrer los item para procesado
-        for (Map.Entry<Integer, Object> entry1 : this.elements.entrySet()) {
-            Integer key = entry1.getKey();
+        for (Map.Entry<String, Object> entry1 : this.elements.entrySet()) {
+            String key = entry1.getKey();
             Object value = entry1.getValue();
 
             if (value instanceof Galleries) {

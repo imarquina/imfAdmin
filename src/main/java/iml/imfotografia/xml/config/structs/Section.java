@@ -1,5 +1,6 @@
 package iml.imfotografia.xml.config.structs;
 
+import iml.imfotografia.arq.utils.Crypto;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static iml.imfotografia.arq.utils.Number.isNumeric;
+import static iml.imfotografia.arq.utils.Text.htmlReplace;
 import static iml.imfotografia.arq.utils.Xml.innerXml;
 
 public class Section {
@@ -61,6 +63,10 @@ public class Section {
     /**
      * GETTER / SETTER
      */
+    public String get_id() {
+        return Crypto.getMD5(htmlReplace(this._name));
+    }
+
     public String get_name() {
         return this._name;
     }

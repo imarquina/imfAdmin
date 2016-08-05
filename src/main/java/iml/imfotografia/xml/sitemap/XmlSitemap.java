@@ -1,10 +1,12 @@
 package iml.imfotografia.xml.sitemap;
 
-import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.arq.utils.Crypto;
+import iml.imfotografia.arq.utils.Date;
 import iml.imfotografia.arq.utils.Text;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
-import iml.imfotografia.xml.config.base.CollectionBase;
+import iml.imfotografia.xml.config.base.ElementBase;
+import iml.imfotografia.xml.config.structs.Folder;
 import iml.imfotografia.xml.config.structs.Gallery;
 import iml.imfotografia.xml.config.structs.Image;
 import iml.imfotografia.xml.config.structs.Video;
@@ -25,7 +27,6 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -132,37 +133,77 @@ public class XmlSitemap {
         //Leer los datos de estructura
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
+        Url uRot = new Url(Propertyx.readProperty("iml.url.root"), new Date());
+        this.urlset.addUrl(uRot);
+
         //Estraer galerias e imágenes para completar información de item
-        ArrayList<CollectionBase> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements);
+        Map<String, Object> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
 
-        String sLoc = Propertyx.readProperty("iml.url.root") +
-                Propertyx.readProperty("iml.feed.item.link");
-
-        //Recorrer los item para procesado
-        for (CollectionBase c : elementCollection){
-            Url uGal = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(c.get_name())),
-                    c.get_update());
-            this.urlset.addUrl(uGal);
-
-            for (Map.Entry<String, Object> entry : c.elements.entrySet()) {
-                String key = entry.getKey();
-                Object value = entry.getValue();
-
-                Integer iImgIndex = -1;
-                if (value instanceof Image){
-                    iImgIndex = c.getIndexKey(((Image)value).get_id());
-                } else if (value instanceof Video){
-                    iImgIndex = c.getIndexKey(((Video)value).get_id());
-                }
-
-                Url uImg = new Url(sLoc + Crypto.getMD5(Text.htmlReplace(c.get_name())) +
-                        "&amp;photo=" + iImgIndex,
-                        c.get_update());
-                this.urlset.addUrl(uImg);
-            }
-        }
+        addUrlElements(elementCollection);
 
         logger.debug("End");
+    }
+
+    /**
+     *
+     * @param collection
+     */
+    private void addUrlElements(Map<String, Object> collection){
+        String sLoc = Propertyx.readProperty("iml.url.root");
+
+        //Recorrer los item para procesado
+        for (Map.Entry<String, Object> col : collection.entrySet()){
+            String colKey = col.getKey();
+            Object colValue = col.getValue();
+
+            if (colValue instanceof Gallery){
+                Gallery gal = (Gallery)colValue;
+
+                //Se añade línea por la galería
+                Url uGal = new Url(sLoc + Propertyx.readProperty("iml.sitemap.gallery.link") +
+                        Crypto.getMD5(Text.htmlReplace(gal.get_name())),
+                        gal.get_update());
+                this.urlset.addUrl(uGal);
+
+                for (Map.Entry<String, Object> entry : gal.elements.entrySet()) {
+                    String iteKey = entry.getKey();
+                    Object iteValue = entry.getValue();
+
+                    String url = "";
+                    String suf = "";
+
+                    Integer iImgIndex = -1;
+
+                    if (iteValue instanceof Image || iteValue instanceof Video) {
+                        ElementBase ele = (ElementBase)iteValue;
+
+                        url = sLoc + Propertyx.readProperty("iml.sitemap.item.link") +
+                                Crypto.getMD5(Text.htmlReplace(gal.get_name()));
+
+                        if (iteValue instanceof Image) {
+                            iImgIndex = gal.getIndexKey(((Image) iteValue).get_id());
+                        } else if (iteValue instanceof Video) {
+                            iImgIndex = gal.getIndexKey(((Video) iteValue).get_id());
+                        }
+                        suf = "&amp;photo=" + iImgIndex;
+                    }
+
+                    //Se añade línea por cada imagen o vídeo
+                    Url uElm = new Url(url + suf, gal.get_update());
+                    this.urlset.addUrl(uElm);
+                }
+            }else if (colValue instanceof Folder){
+                Folder folder = (Folder)colValue;
+
+                //Se añade línea por la galería
+                Url uFolder = new Url(sLoc + Propertyx.readProperty("iml.sitemap.folder.link") +
+                        Crypto.getMD5(Text.htmlReplace(folder.get_name())),
+                        folder.get_update());
+                this.urlset.addUrl(uFolder);
+
+                addUrlElements(folder.elements);
+            }
+        }
     }
 }
 

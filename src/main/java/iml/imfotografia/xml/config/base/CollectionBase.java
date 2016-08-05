@@ -3,6 +3,7 @@ package iml.imfotografia.xml.config.base;
 import iml.imfotografia.xml.config.interfaces.ICollection;
 import iml.imfotografia.xml.config.interfaces.IElement;
 import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.config.structs.Section;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -45,6 +46,11 @@ public class CollectionBase implements ICollection {
      */
     public CollectionBase(){
         this._nodeName = "gallery";
+        this._name = "";
+        this._src = "";
+        this._title = "";
+        this._infoText = "";
+        this._keywords = "";
         this.elements = new LinkedHashMap<String, Object>();
     }
 
@@ -60,6 +66,10 @@ public class CollectionBase implements ICollection {
     /**
      * GETTER / SETTER
      */
+    public String get_id() {
+        return this._src.replace(".jpg", "");
+    }
+
     public String get_name() {
         return this._name;
     }
@@ -129,7 +139,7 @@ public class CollectionBase implements ICollection {
         List<Object> list = new ArrayList<Object>(this.elements.values());
 
         for (Integer i = 0; i < list.size(); i++){
-            if (((IElement)list.get(i)).get_id().equalsIgnoreCase(key))
+            if (list.get(i) instanceof IElement && ((IElement)list.get(i)).get_id().equalsIgnoreCase(key))
                 return i;
         }
         return -1;
@@ -141,6 +151,22 @@ public class CollectionBase implements ICollection {
      */
     public void addElement(ElementBase element){
         this.elements.put(element.get_id(), element);
+    }
+
+    /**
+     *
+     * @param collection
+     */
+    public void addCollection(CollectionBase collection) {
+        this.elements.put(collection.get_id(), collection);
+    }
+
+    /**
+     *
+     * @param section
+     */
+    public void addSection(Section section) {
+        this.elements.put(section.get_id(), section);
     }
 
     /**

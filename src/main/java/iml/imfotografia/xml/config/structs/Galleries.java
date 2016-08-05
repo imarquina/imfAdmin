@@ -12,7 +12,7 @@ import java.util.Map;
 public class Galleries {
     private Integer _iKey;
     private String _nodeName = "";
-    public Map<Integer, Object> elements;
+    public Map<String, Object> elements;
 
     final static Logger logger = Logger.getLogger(Galleries.class);
 
@@ -23,7 +23,7 @@ public class Galleries {
         this._iKey = 0;
         this._nodeName = "galleries";
 
-        this.elements = new LinkedHashMap<Integer, Object>();
+        this.elements = new LinkedHashMap<String, Object>();
     }
 
     /**
@@ -38,7 +38,7 @@ public class Galleries {
      * @return
      */
     public void addGallery (Gallery gallery) {
-        this.elements.put(_iKey++, gallery);
+        this.elements.put((_iKey++).toString(), gallery);
     }
 
     /**
@@ -46,7 +46,7 @@ public class Galleries {
      * @return
      */
     public void addFolder(Folder folder){
-        this.elements.put(_iKey++, folder);
+        this.elements.put((_iKey++).toString(), folder);
     }
 
     /**
@@ -54,7 +54,7 @@ public class Galleries {
      * @return
      */
     public void addMultimedia(Multimedia multimedia) {
-        this.elements.put(_iKey++, multimedia);
+        this.elements.put((_iKey++).toString(), multimedia);
     }
 
     /**
@@ -92,8 +92,8 @@ public class Galleries {
     public void toXml(Document document, Element parentNode){
         logger.debug("Begin");
 
-        for (Map.Entry<Integer, Object> entry1 : this.elements.entrySet()) {
-            Integer key = entry1.getKey();
+        for (Map.Entry<String, Object> entry1 : this.elements.entrySet()) {
+            String key = entry1.getKey();
             Object value = entry1.getValue();
 
             if (value instanceof  Gallery) {

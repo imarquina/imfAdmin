@@ -17,6 +17,7 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -298,24 +299,42 @@ public class XmlConfig {
         logger.debug("Begin");
 
         Integer iKey = 0;
+        Date lastUpdate = null;
 
         for (Map.Entry<String, Object> entry : elements.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractCollections(((Galleries) value).elements, extractCollection, clazz);
+                Galleries galleries = (Galleries)value;
+
+                extractCollections(galleries.elements, extractCollection, clazz);
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)value;
+
+                if (lastUpdate == null)
+                    lastUpdate = gallery.get_update();
+                else if (lastUpdate.before(gallery.get_update()))
+                    lastUpdate = gallery.get_update();
 
                 extractCollection.put(gallery.get_id(), gallery);
             } else if (value instanceof Multimedia){
                 Multimedia multimedia = (Multimedia)value;
 
+                if (lastUpdate == null)
+                    lastUpdate = multimedia.get_update();
+                else if (lastUpdate.before(multimedia.get_update()))
+                    lastUpdate = multimedia.get_update();
+
                 extractCollection.put(multimedia.get_id(), multimedia);
             } else if (value instanceof Folder) {
                 if (clazz == XmlSitemap.class){
                     Folder folder = (Folder)value;
+
+                    if (lastUpdate == null)
+                        lastUpdate = folder.get_update();
+                    else if (lastUpdate.before(folder.get_update()))
+                        lastUpdate = folder.get_update();
 
                     extractCollection.put(folder.get_id(), folder);
                 }

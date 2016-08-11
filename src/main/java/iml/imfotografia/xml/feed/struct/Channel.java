@@ -7,6 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class Channel {
         this.elements = new LinkedHashMap<Integer, Object>();
     }
 
-    public Channel(Config xmlConfig) throws ParseException {
+    public Channel(Config xmlConfig, Date lastElementUpdate) throws ParseException {
         this();
 
         Title title = new Title(xmlConfig.get_title());
@@ -64,7 +65,7 @@ public class Channel {
         PubDate pubDate = new PubDate(Propertyx.readProperty("iml.feed.channel.pubDate"));
         this.addPubDate(pubDate);
 
-        LastBuildDate lastBuildDate = new LastBuildDate("20181231");
+        LastBuildDate lastBuildDate = new LastBuildDate(lastElementUpdate);
         this.addLastBuildDate(lastBuildDate);
 
         Docs docs = new Docs(Propertyx.readProperty("iml.feed.channel.docs"));

@@ -5,10 +5,7 @@ import iml.imfotografia.arq.utils.Text;
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.base.ElementBase;
-import iml.imfotografia.xml.config.structs.Folder;
-import iml.imfotografia.xml.config.structs.Gallery;
-import iml.imfotografia.xml.config.structs.Image;
-import iml.imfotografia.xml.config.structs.Video;
+import iml.imfotografia.xml.config.structs.*;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.sitemap.element.Url;
 import iml.imfotografia.xml.sitemap.element.Urlset;
@@ -150,9 +147,9 @@ public class XmlSitemap {
         this.urlset.addUrl(uRot);
 
         //Estraer galerias e imágenes para completar información de item
-        Map<String, Object> elementCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
+        ExtractCollection elementCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
 
-        addUrlElements(elementCollection, xmlElment);
+        addUrlElements(elementCollection.elements, xmlElment);
 
         logger.debug("End");
     }

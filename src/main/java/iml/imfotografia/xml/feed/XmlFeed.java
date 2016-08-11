@@ -3,6 +3,7 @@ package iml.imfotografia.xml.feed;
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
 import iml.imfotografia.xml.config.base.CollectionBase;
+import iml.imfotografia.xml.config.structs.ExtractCollection;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.feed.struct.Channel;
@@ -24,6 +25,7 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -143,20 +145,21 @@ public class XmlFeed {
         //Agrupar los elementos
         List<IElement> list = xmlElment.getElementByUpdate();
 
+        //Estraer galerias e imágenes para completar información de item
+        //El método getCollections informa LastElementUpdate
+        ExtractCollection extractCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlFeed.class);
+
         //Crear el xml
-        Channel chanel = createChanel(xmlConfig);
+        Channel chanel = createChanel(xmlConfig, extractCollection.getLastElementUpdate());
         this.rss.addChanel(chanel);
 
         Image image = createImage();
         chanel.addImage(image);
 
-        //Estraer galerias e imágenes para completar información de item
-        Map<String, Object> extractCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlFeed.class);
-
         //Recorrer cada item para procesado
         for (IElement e : list) {
             //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-            for (Map.Entry<String, Object> entry : extractCollection.entrySet()){
+            for (Map.Entry<String, Object> entry : extractCollection.elements.entrySet()){
                 String key = entry.getKey();
                 CollectionBase value = (CollectionBase)entry.getValue();
 
@@ -177,10 +180,10 @@ public class XmlFeed {
      * @return
      * @throws ParseException
      */
-    private Channel createChanel(XmlConfig xmlConfig) throws ParseException {
+    private Channel createChanel(XmlConfig xmlConfig, Date lastElementUpdate) throws ParseException {
         logger.debug("Begin");
 
-        Channel chanel = new Channel(xmlConfig.config);
+        Channel chanel = new Channel(xmlConfig.config, lastElementUpdate);
 
         logger.debug("End");
         return chanel;

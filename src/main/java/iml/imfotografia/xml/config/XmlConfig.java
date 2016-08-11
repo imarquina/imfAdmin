@@ -17,8 +17,6 @@ import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static iml.imfotografia.arq.utils.Text.SetLength;
@@ -54,6 +52,8 @@ public class XmlConfig {
     private static final String ATTRIBUTE_TITLE = "TITLE";
     private static final String ATTRIBUTE_INFOTEXT = "INFOTEXT";
     private static final String ATTRIBUTE_KEYWORDS = "KEYWORDS";
+
+//    private Date lastElementUpdate;
 
     /**
      * ENUMERATORS
@@ -97,6 +97,17 @@ public class XmlConfig {
     public void set_xml(String xml) {
         this._xml = xml;
     }
+
+/*    public Date getLastElementUpdate() {
+        return lastElementUpdate;
+    }
+
+    private void setLastElementUpdate(Date lastElementUpdate) {
+        if (this.lastElementUpdate == null)
+            this.lastElementUpdate = lastElementUpdate;
+        else if (this.lastElementUpdate.before(lastElementUpdate))
+            this.lastElementUpdate = lastElementUpdate;
+    }*/
 
     /**
      * PRIVATE METHODS
@@ -294,12 +305,11 @@ public class XmlConfig {
      * @param clazz
      * @return
      */
-    private Map<String, Object> extractCollections(Map<String, Object> elements,
-                                                   Map<String, Object> extractCollection, Class clazz){
+    private ExtractCollection extractCollections(Map<String, Object> elements,
+                                                 ExtractCollection extractCollection, Class clazz){
         logger.debug("Begin");
 
         Integer iKey = 0;
-        Date lastUpdate = null;
 
         for (Map.Entry<String, Object> entry : elements.entrySet()) {
             String key = entry.getKey();
@@ -312,39 +322,27 @@ public class XmlConfig {
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)value;
 
-                if (lastUpdate == null)
-                    lastUpdate = gallery.get_update();
-                else if (lastUpdate.before(gallery.get_update()))
-                    lastUpdate = gallery.get_update();
-
-                extractCollection.put(gallery.get_id(), gallery);
+                extractCollection.setLastElementUpdate(gallery.get_update());
+                extractCollection.elements.put(gallery.get_id(), gallery);
             } else if (value instanceof Multimedia){
                 Multimedia multimedia = (Multimedia)value;
 
-                if (lastUpdate == null)
-                    lastUpdate = multimedia.get_update();
-                else if (lastUpdate.before(multimedia.get_update()))
-                    lastUpdate = multimedia.get_update();
-
-                extractCollection.put(multimedia.get_id(), multimedia);
+                extractCollection.setLastElementUpdate(multimedia.get_update());
+                extractCollection.elements.put(multimedia.get_id(), multimedia);
             } else if (value instanceof Folder) {
                 if (clazz == XmlSitemap.class){
                     Folder folder = (Folder)value;
 
-                    if (lastUpdate == null)
-                        lastUpdate = folder.get_update();
-                    else if (lastUpdate.before(folder.get_update()))
-                        lastUpdate = folder.get_update();
-
-                    extractCollection.put(folder.get_id(), folder);
+                    extractCollection.setLastElementUpdate(folder.get_update());
+                    extractCollection.elements.put(folder.get_id(), folder);
                 }
-                //extractCollections(((Folder) value).elements, elementCollection, clazz);
             }
         }
 
         logger.debug("End");
         return  extractCollection;
     }
+
 
     /**
      *
@@ -400,11 +398,10 @@ public class XmlConfig {
      * @param elements
      * @return
      */
-    public Map<String, Object> getCollections(Map<String, Object> elements, Class clazz){
-        Map<String, Object> elementCollection = new LinkedHashMap<String, Object>();
+    public ExtractCollection getCollections(Map<String, Object> elements, Class clazz){
+        ExtractCollection elementCollection = new ExtractCollection();
 
         return this.extractCollections(elements, elementCollection, clazz);
-
     }
 
     /**

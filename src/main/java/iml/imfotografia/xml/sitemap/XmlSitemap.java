@@ -143,13 +143,13 @@ public class XmlSitemap {
         XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());
         XmlConfig xmlConfig = new XmlConfig(get_xmlConfig());
 
-        Url uRot = new Url(Propertyx.readProperty("iml.url.root"), new Date());
+        //Estraer galerias e imágenes para completar información de item
+        ExtractCollection extractCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
+
+        Url uRot = new Url(Propertyx.readProperty("iml.url.root"), extractCollection.getLastElementUpdate());
         this.urlset.addUrl(uRot);
 
-        //Estraer galerias e imágenes para completar información de item
-        ExtractCollection elementCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlSitemap.class);
-
-        addUrlElements(elementCollection.elements, xmlElment);
+        this.addUrlElements(extractCollection.elements, xmlElment);
 
         logger.debug("End");
     }

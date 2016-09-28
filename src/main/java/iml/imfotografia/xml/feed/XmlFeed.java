@@ -159,7 +159,7 @@ public class XmlFeed {
         //Recorrer cada item para procesado
         for (IElement e : list) {
             //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-            for (Map.Entry<String, Object> entry : extractCollection.elements.entrySet()){
+            for (Map.Entry<String, Object> entry : extractCollection.elements.entrySet()) {
                 String key = entry.getKey();
                 CollectionBase value = (CollectionBase)entry.getValue();
 

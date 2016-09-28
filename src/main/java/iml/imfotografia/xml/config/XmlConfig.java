@@ -2,6 +2,7 @@ package iml.imfotografia.xml.config;
 
 import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.structs.*;
+import iml.imfotografia.xml.feed.XmlFeed;
 import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
@@ -330,11 +331,13 @@ public class XmlConfig {
                 extractCollection.setLastElementUpdate(multimedia.get_update());
                 extractCollection.elements.put(multimedia.get_id(), multimedia);
             } else if (value instanceof Folder) {
-                if (clazz == XmlSitemap.class){
-                    Folder folder = (Folder)value;
+                Folder folder = (Folder)value;
 
+                if (clazz == XmlSitemap.class){
                     extractCollection.setLastElementUpdate(folder.get_update());
                     extractCollection.elements.put(folder.get_id(), folder);
+                } else if (clazz == XmlFeed.class){
+                    extractCollections(folder.elements, extractCollection, clazz);
                 }
             }
         }

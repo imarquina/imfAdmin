@@ -29,7 +29,7 @@ public class ElementBase implements IElement {
      * CONSTRUCTORS
      */
     public ElementBase() {
-        this._nodeName = "img";
+        this._nodeName = "ele";
     }
 
     public ElementBase(String id) {
@@ -50,6 +50,10 @@ public class ElementBase implements IElement {
 
     public String get_nodeName() {
         return this._nodeName;
+    }
+
+    protected void set_nodeName(String value) {
+        this._nodeName = value;
     }
 
     /**

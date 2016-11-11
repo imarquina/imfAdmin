@@ -14,6 +14,11 @@ import java.text.ParseException;
 public class Image extends ElementBase implements IElement {
     final static Logger logger = Logger.getLogger(Image.class);
 
+    public Image() {
+        super();
+        this.set_nodeName("img");
+    }
+
     /**
      *
      * @param node

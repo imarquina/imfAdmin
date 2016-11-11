@@ -159,5 +159,6 @@
 		<vid WIDTH="700" HEIGHT="467" CAPTION="revelación" SRC="v150120042_1.jpg" DX="140" DY="377" LINKTEXT="+info" LINKURL="https://youtu.be/p686YYu6jHQ" INFOTEXT="Pequeña historia de un paseo bajo la lluvia en Bilbao. Realizado para charla en Photobat" FORMAT="" PRICE="" STOCK="" UPDATE="20160621" PUBLIC="20160616"/>
 		<img WIDTH="405" HEIGHT="500" CAPTION="Detrás del sirimi IX" SRC="150604002_1.jpg" DX="140" DY="377" LINKTEXT="+info" LINKURL="" INFOTEXT="Edificio Términus de la Plaza Circular, de 1893 diseñado por Severino Achúcarro." PRICE="" STOCK="(1/5)" UPDATE="20160621" PUBLIC="20160617"/>
 		<img WIDTH="439" HEIGHT="500" CAPTION="Detrás del sirimi X" SRC="150668010.jpg" DX="140" DY="377" LINKTEXT="+info" LINKURL="" INFOTEXT="Edificio de la Unión y Fenix desde la calle Ribera." PRICE="" STOCK="(1/5)" UPDATE="20161018" PUBLIC="20160808"/>
+		<vid WIDTH="700" HEIGHT="467" CAPTION="entre.ribera.y.arenal" SRC="v150668010.jpg" DX="191" DY="159" LINKTEXT="+info" LINKURL="https://youtu.be/X3vF0zy-HB0" INFOTEXT="Vídeo sobre la historia de la foto Entre ribera y arenal: no dejes que la realidad estropee una buena idea" FORMAT="" PRICE="" STOCK="" UPDATE="20161108" PUBLIC="20161104"/>
 	</photos>
 </config>

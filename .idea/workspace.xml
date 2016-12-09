@@ -4,7 +4,6 @@
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/xml/in/config.xml" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +23,29 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="350" column="14" selection-start-line="350" selection-start-column="14" selection-end-line="350" selection-end-column="14" />
+              <folding>
+                <element signature="n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#0;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#1;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#2;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#3;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#folder#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#folder#2;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#gallery#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+                <element signature="n#folder#3;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -964,7 +985,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478893590569</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fix generación XML Sitemap / Feed">
+      <created>1481302674902</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1481302674902</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1422,25 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="278" column="31" selection-start-line="278" selection-start-column="31" selection-end-line="278" selection-end-column="31" />
-          <folding>
-            <element signature="n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#0;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#1;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#2;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#3;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#folder#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#folder#2;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#gallery#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-            <element signature="n#folder#3;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/out/feed.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1462,6 +1471,25 @@
         <state relative-caret-position="322">
           <caret line="155" column="9" selection-start-line="155" selection-start-column="9" selection-end-line="155" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="350" column="14" selection-start-line="350" selection-start-column="14" selection-end-line="350" selection-end-column="14" />
+          <folding>
+            <element signature="n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#0;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#1;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#2;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#3;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#folder#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#folder#2;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+            <element signature="n#folder#3;n#galleries#0;n#config#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

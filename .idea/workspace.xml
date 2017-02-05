@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/xml/in/config.xml" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" afterPath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,28 +23,7 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="276" column="37" lean-forward="false" selection-start-line="276" selection-start-column="37" selection-end-line="276" selection-end-column="37" />
-              <folding>
-                <element signature="n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#0;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#1;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#2;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#3;n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#folder#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#folder#2;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-                <element signature="n#gallery#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -109,9 +87,9 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/base/ElementBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Image.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Video.java" />
-        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" />
         <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
+        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
       </list>
     </option>
   </component>
@@ -164,6 +142,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -646,9 +627,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -979,7 +957,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481302809370</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fix generación XML Sitemap / Feed">
+      <created>1484379903467</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1484379903467</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -993,7 +978,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1002,10 +987,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39308578" sideWeight="0.50416666" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32138285" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32138285" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178826" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25822604" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24444444" sideWeight="0.50497514" order="3" side_tool="true" content_ui="tabs" />
@@ -1362,14 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="162" column="72" lean-forward="false" selection-start-line="162" selection-start-column="62" selection-end-line="162" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/out/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1382,7 +1359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,14 +1414,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config copia.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="272" column="12" lean-forward="false" selection-start-line="272" selection-start-column="12" selection-end-line="290" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config copia.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/out/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1456,7 +1425,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="360">
           <caret line="276" column="37" lean-forward="false" selection-start-line="276" selection-start-column="37" selection-end-line="276" selection-end-column="37" />
           <folding>
             <element signature="n#folder#0;n#galleries#0;n#config#0;n#!!top" expanded="false" />
@@ -1469,6 +1438,14 @@
             <element signature="n#folder#2;n#galleries#0;n#config#0;n#!!top" expanded="false" />
             <element signature="n#gallery#1;n#galleries#0;n#config#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="115" column="350" lean-forward="true" selection-start-line="115" selection-start-column="350" selection-end-line="115" selection-end-column="350" />
+          <folding />
         </state>
       </provider>
     </entry>

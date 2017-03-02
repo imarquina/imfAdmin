@@ -3,7 +3,9 @@ package iml.imfotografia.xml.config.base;
 import iml.imfotografia.xml.config.interfaces.ICollection;
 import iml.imfotografia.xml.config.interfaces.IElement;
 import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.config.structs.Image;
 import iml.imfotografia.xml.config.structs.Section;
+import iml.imfotografia.xml.config.structs.Video;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -188,10 +190,19 @@ public class CollectionBase implements ICollection {
             String key = entry1.getKey();
             ElementBase value = (ElementBase) entry1.getValue();
 
-            Element imagekNode = document.createElement(value.get_nodeName());
-            value.toXml(document, imagekNode);
+            if (value instanceof Image) {
+                Image imageValue = (Image)value;
+                Element imagekNode = document.createElement(imageValue.get_nodeName());
+                imageValue.toXml(document, imagekNode);
 
-            parentNode.appendChild(imagekNode);
+                parentNode.appendChild(imagekNode);
+            } else if (value instanceof Video) {
+                Video videoValue = (Video)value;
+                Element videoNode = document.createElement(videoValue.get_nodeName());
+                videoValue.toXml(document, videoNode);
+
+                parentNode.appendChild(videoNode);
+            }
         }
 
         logger.debug("End");

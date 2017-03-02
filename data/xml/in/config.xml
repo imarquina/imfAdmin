@@ -12,6 +12,7 @@
 				<img ID="150140039"/>
 				<img ID="150604009"/>
 				<img ID="150604002_1"/>
+				<img id="150668010"/>
 			</gallery>
 			<gallery NAME="Policromatico" SRC="150170008.jpg" TITLE="IMFotografía - Galería Bilbao policromático" INFOTEXT="Sacando los colores al tópico del Bilbao gris" KEYWORDS="creative imagine photo photography art fotografía creativa artista bilbao policromático policromatic color" UPDATE="20121024">
 				<img ID="150170008"/>
@@ -176,8 +177,7 @@
 			<img ID="150497030"/>
 			<img ID="150497031"/>
 		</gallery>
-		<folder NAME="Exposiciones" SRC="000000030.jpg" TITLE="IMFotografía - Album Exposiciones" INFOTEXT="Exposiciones realizadas y en proyecto donde mostrar mi punto de vista fotográfico" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20141220">
-			<!--<section NAME="Desde detras del sirimiri al paisaje entropico" WIDTH="320" HEIGHT="350" BYDEFAULT="true"><title>DESDE DETRÁS DEL SIRIMIRI ...</title><p>Siempre me ha gustado la fotografía. No supe de qué manera hasta aquella vez en que tuve tiempo.</p><p>Y fue eso, el tiempo, y sobre todo el que se pierde, el que no se aprovecha, el que convierte los símbolos en ídolos perdidos.</p><p>Me gustó la idea y me apeteció pensar en esas cosas que estarán o no cuando los demás nos hayamos ido.</p><p>A todos los que disfrutaron y disfrutan viendo las cosas.</p><p>Iñaki Marquina</p></section>-->
+		<folder NAME="Exposiciones" SRC="000000040.jpg" TITLE="IMFotografía - Album Exposiciones" INFOTEXT="Exposiciones realizadas y en proyecto donde mostrar mi punto de vista fotográfico" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20170109">
 			<gallery NAME="En FTSI 2012" SRC="000000001.jpg" TITLE="IMFotografía - Galería exposición FTSI 2012" INFOTEXT="Exposición realizada en la Fundación de los Trabajadores de la Siderurgia Integral (FTSI) en 2012" KEYWORDS="ftsi exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20121021">
 				<img ID="000000001"/>
 				<img ID="150120005"/>
@@ -269,11 +269,33 @@
 				<img ID="150536009_pan"/>
 				<img ID="150440065_pan"/>
 			</gallery>
+			<gallery NAME="En Expodistrito 2017" SRC="000000040.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada para Expodistrito 2017 en Centros Municipales de Bilbao Udala Ayuntamiento y Kultura barrutik" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía udala ayuntamiento expositrito kultura barrutik" UPDATE="20170109">
+				<img ID="000000040"/>
+				<img ID="150163003"/>
+				<img ID="150183001"/>
+				<img ID="150116023_2"/>
+				<img ID="150136006"/>
+				<img ID="150196001"/>
+				<img ID="150116019"/>
+				<img ID="150247004"/>
+				<img ID="150284042_2"/>
+				<img ID="150284022"/>
+				<img ID="150281027"/>
+				<img ID="150415013_pan"/>
+				<img ID="150298014_pan"/>
+				<img ID="150414013_pan"/>
+				<img ID="150419001"/>
+				<img ID="150431059"/>
+				<img ID="150247010"/>
+				<img ID="150224012"/>
+			</gallery>
 		</folder>
 		<multimedia NAME="Multimedia" SRC="v150431059.jpg" TITLE="IMFotografía - Multimedia" INFOTEXT="Galería multimedia" KEYWORDS="multimedia bilbao art surreal creative imagine video photo photography surrealismo fotografía creativa" UPDATE="20160621">
 			<vid ID="v150120042_1"/>
 			<vid ID="v150508015"/>
 			<vid ID="v150431059"/>
+			<vid ID="v150668010"/>
+			<vid ID="v150048018"/>
 		</multimedia>
 	</galleries>
 	<folder NAME="Sobre mi" UPDATE="20121010">
@@ -345,11 +367,6 @@
 			</li>
 			<!--<li>Eduardo Blazquez </li><li>Xenia Pérez <a href="http://www.xeniaperez.com" target="_blank"><font COLOR="#E0E0E0">http://www.xeniaperez.com</font></a></li><li>Iñaki Silveira <a href="http://www.paisajesdigitales.com" target="_blank"><font COLOR="#E0E0E0">http://www.paisajesdigitales.com</font></a></li>-->
 		</ul>
-	</section>
-	<section NAME="Tienda online"  WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20140201">
-		<p>Desde la tienda online podrás aquirir las imágenes que aquí ves</p><p>Ir a la tienda online <b>IMFotografía Shop</b> en <a href="http://shop.imarquina.es" target="_blank">
-				<font COLOR="#E0E0E0">shop.imarquina.es</font>
-			</a>. Échale un vistazo ;).</p>
 	</section>
 	<title>iñaki marquina</title>
 	<slogan>FOTOGRAFÍA</slogan>

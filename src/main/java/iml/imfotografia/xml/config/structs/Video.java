@@ -14,6 +14,12 @@ import java.text.ParseException;
 public class Video extends ElementBase implements IElement {
     final static Logger logger = Logger.getLogger(Video.class);
 
+    public Video() {
+        super();
+
+        this.set_nodeName("vid");
+    }
+
     /**
      *
      * @param node

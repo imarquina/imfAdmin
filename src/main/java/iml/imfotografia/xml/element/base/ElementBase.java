@@ -1,18 +1,22 @@
 package iml.imfotografia.xml.element.base;
 
 import iml.imfotografia.xml.element.interfaces.IElement;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static iml.imfotografia.utils.Number.isNumeric;
+import static iml.imfotografia.arq.utils.Number.isNumeric;
 
 /**
  * Created by inaki.marquina on 07/07/2016.
  */
 public abstract class ElementBase implements IElement {
+    private String _nodeName = "";
     private String _id;
     private Integer _width;
     private Integer _height;
@@ -28,17 +32,50 @@ public abstract class ElementBase implements IElement {
     private Integer _price;
     private Date _update;
     private Date _public;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
+    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
+
+    final static Logger logger = Logger.getLogger(ElementBase.class);
+
+    /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_WIDTH = "width";
+    private static final String ATTRIBUTE_HEIGHT = "height";
+    private static final String ATTRIBUTE_CAPTION = "caption";
+    private static final String ATTRIBUTE_SRC = "src";
+    private static final String ATTRIBUTE_DX = "dx";
+    private static final String ATTRIBUTE_DY = "dy";
+    private static final String ATTRIBUTE_LINKTEXT = "linktext";
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+    private static final String ATTRIBUTE_LINKURL = "linkurl";
+    private static final String ATTRIBUTE_FORMAT = "format";
+    private static final String ATTRIBUTE_PRICE = "price";
+    private static final String ATTRIBUTE_STOCK = "stock";
+    private static final String ATTRIBUTE_UPDATE = "update";
+    private static final String ATTRIBUTE_PUBLIC = "public";
 
     /**
      * CONSTRUCTORES
      */
     public ElementBase() {
-
+        this._id = "";
+        this._width = 0;
+        this._height = 0;
+        this._caption = "";
+        this._src = "";
+        this._dx = "";
+        this._dy = "";
+        this._linkText = "";
+        this._infoText = "";
+        this._format = "";
+        this._stock = "";
+        this._price = 0;
     }
 
     public ElementBase(String id, Integer width, Integer height, String caption, String src,
                  Date update, Date dPublic) {
+        this();
         this.set_id(id);
         this.set_width(width);
         this.set_height(height);
@@ -157,8 +194,12 @@ public abstract class ElementBase implements IElement {
         return this._update;
     }
 
+    public String get_updateString() {
+        return _dateFormatOut.format(this._update);
+    }
+
     public void set_update(String update) throws ParseException {
-        this._update = _formatDate.parse(update);
+        this._update = _dateFormatIn.parse(update);
     }
 
     public void set_update(Date update) {
@@ -169,8 +210,12 @@ public abstract class ElementBase implements IElement {
         return this._public;
     }
 
+    public String get_dPublicString() {
+        return _dateFormatOut.format(this._public);
+    }
+
     public void set_dPublic(String dPublic) throws ParseException {
-        this._public = _formatDate.parse(dPublic);
+        this._public = _dateFormatIn.parse(dPublic);
     }
 
     public void set_dPublic(Date dPublic) {
@@ -191,5 +236,37 @@ public abstract class ElementBase implements IElement {
 
     public void set_dy(String dy) {
         this._dy = dy;
+    }
+
+    public String get_nodeName() { return this._nodeName; }
+
+    protected void set_nodeName(String nodeName) {
+        this._nodeName = nodeName;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element nodeImage = document.createElement(this.get_nodeName());
+
+        nodeImage.setAttribute(ATTRIBUTE_WIDTH, this.get_width().toString());
+        nodeImage.setAttribute(ATTRIBUTE_HEIGHT, this.get_height().toString());
+        nodeImage.setAttribute(ATTRIBUTE_CAPTION, this.get_caption());
+        nodeImage.setAttribute(ATTRIBUTE_SRC, this.get_src());
+        nodeImage.setAttribute(ATTRIBUTE_DX, this.get_dx());
+        nodeImage.setAttribute(ATTRIBUTE_DY, this.get_dy());
+        nodeImage.setAttribute(ATTRIBUTE_LINKTEXT, this.get_linkText());
+        nodeImage.setAttribute(ATTRIBUTE_LINKURL, this.get_linkUrl());
+        nodeImage.setAttribute(ATTRIBUTE_INFOTEXT, this.get_infoText());
+        nodeImage.setAttribute(ATTRIBUTE_FORMAT, this.get_format());
+        if (this.get_price()>0)
+            nodeImage.setAttribute(ATTRIBUTE_PRICE, this.get_price().toString());
+        nodeImage.setAttribute(ATTRIBUTE_STOCK, this.get_stock());
+        nodeImage.setAttribute(ATTRIBUTE_UPDATE, this.get_updateString());
+        nodeImage.setAttribute(ATTRIBUTE_PUBLIC, this.get_dPublicString());
+
+        parentNode.appendChild(nodeImage);
+
+        logger.debug("End");
     }
 }

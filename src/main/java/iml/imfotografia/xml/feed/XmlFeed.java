@@ -1,25 +1,9 @@
 package iml.imfotografia.xml.feed;
 
-import java.util.ArrayList;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Text;
-
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.XmlConfig;
-import iml.imfotografia.xml.config.structs.Gallery;
+import iml.imfotografia.xml.config.base.CollectionBase;
+import iml.imfotografia.xml.config.structs.ExtractCollection;
 import iml.imfotografia.xml.element.XmlPhotos;
 import iml.imfotografia.xml.element.interfaces.IElement;
 import iml.imfotografia.xml.feed.struct.Channel;
@@ -27,12 +11,23 @@ import iml.imfotografia.xml.feed.struct.Image;
 import iml.imfotografia.xml.feed.struct.Item;
 import iml.imfotografia.xml.feed.struct.Rss;
 import org.apache.log4j.Logger;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by imarquina on 29/6/16.
@@ -57,8 +52,6 @@ public class XmlFeed {
     private static final String ATTRIBUTE_DOCS = "DOCS";
     private static final String ATTRIBUTE_MANAGINGEDITOR = "MANAGINGEDITOR";
     private static final String ATTRIBUTE_WEBMASTER = "WEBMASTER";
-
-    private Property properties;
 
     /**
      * CONSTRUCTORS
@@ -99,48 +92,31 @@ public class XmlFeed {
     /**
      * PUBLIC METHODS
      */
-    public void writeXml() throws ParserConfigurationException, TransformerConfigurationException, TransformerException {
+    public void writeXml() throws ParserConfigurationException, TransformerException {
         logger.debug("Begin");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         DOMImplementation implementation = builder.getDOMImplementation();
 
-        Document document = implementation.createDocument(null, this._nameXml, null);
+        Document document = implementation.createDocument(null, this.rss.get_nodeName(), null);
         document.setXmlVersion("1.0");
 
-        //Main Node
-        Element raiz = document.getDocumentElement();
-
-        Element rssNode = document.createElement("rss");
-        rssNode.setAttribute("version", this.rss.get_version());
-
-        Element chanelNode = document.createElement("channel");
-
-        Element titleNode = document.createElement("title");
-        titleNode.appendChild(document.createTextNode(this.rss.chanel.title.get_content());
-        chanelNode.appendChild(titleNode);
-
-        Element linkNode = document.createElement("link");
-        linkNode.appendChild(document.createTextNode(this.rss.chanel.link.get_content());
-        chanelNode.appendChild(linkNode);
-
-        Element descriptionNode = document.createElement("description");
-        descriptionNode.appendChild(document.createTextNode(this.rss.chanel.description.get_content());
-        chanelNode.appendChild(descriptionNode);
-
-        //...
-
-        rssNode.appendChild(chanelNode);
-
-        raiz.appendChild(rssNode);
+        this.rss.toXml(document);
 
         //Generate XML
         Source source = new DOMSource(document);
 
         //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new java.io.File(this._nameXml + ".xml")); //nombre del archivo
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Result result = new StreamResult(new File(Propertyx.readProperty("iml.xml.dir.out") +
+                this._nameXml + ".xml")); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
         transformer.transform(source, result);
 
         logger.debug("End");
@@ -160,9 +136,7 @@ public class XmlFeed {
     private void generateXml() throws SAXException, ParserConfigurationException, ParseException, XPathExpressionException, IOException {
         logger.debug("Begin");
 
-        properties = new Property("config.properties");
-
-        this.rss.set_version(properties.readProperty("iml.feed.rss.version"));
+        this.rss.set_version(Propertyx.readProperty("iml.feed.rss.version"));
 
         //Leer los datos de elementos y estructura
         XmlPhotos xmlElment = new XmlPhotos(get_xmlElement());
@@ -172,10 +146,11 @@ public class XmlFeed {
         List<IElement> list = xmlElment.getElementByUpdate();
 
         //Estraer galerias e imágenes para completar información de item
-        ArrayList<Gallery> imageGalleries = xmlConfig.getGallerys(xmlConfig.config.elements);
+        //El método getCollections informa LastElementUpdate
+        ExtractCollection extractCollection = xmlConfig.getCollections(xmlConfig.config.elements, XmlFeed.class);
 
         //Crear el xml
-        Channel chanel = createChanel(xmlConfig);
+        Channel chanel = createChanel(xmlConfig, extractCollection.getLastElementUpdate());
         this.rss.addChanel(chanel);
 
         Image image = createImage();
@@ -184,10 +159,13 @@ public class XmlFeed {
         //Recorrer cada item para procesado
         for (IElement e : list) {
             //Buscar cada elemento en la galería / imagenes para saber cuantos item añadir
-            for (Gallery g : imageGalleries){
-                if (g.elements.containsKey(e.get_id())) {
+            for (Map.Entry<String, Object> entry : extractCollection.elements.entrySet()) {
+                String key = entry.getKey();
+                CollectionBase value = (CollectionBase)entry.getValue();
+
+                if (value.elements.containsKey(e.get_id())) {
                     //Bucle para añadir items por cada elemento si hay más de uno
-                    Item item = createItem(e, g, g.getIndexKey(e.get_id()));
+                    Item item = createItem(e, value, value.getIndexKey(e.get_id()));
                     chanel.addItem(item);
                 }
             }
@@ -202,10 +180,10 @@ public class XmlFeed {
      * @return
      * @throws ParseException
      */
-    private Channel createChanel(XmlConfig xmlConfig) throws ParseException {
+    private Channel createChanel(XmlConfig xmlConfig, Date lastElementUpdate) throws ParseException {
         logger.debug("Begin");
 
-        Channel chanel = new Channel(xmlConfig.config);
+        Channel chanel = new Channel(xmlConfig.config, lastElementUpdate);
 
         logger.debug("End");
         return chanel;
@@ -229,10 +207,10 @@ public class XmlFeed {
      *
      * @return
      */
-    private Item createItem(IElement element, Gallery gallery, Integer iImage) {
+    private Item createItem(IElement element, CollectionBase collection, Integer iImage) {
         logger.debug("Begin");
 
-        Item item = new Item(element, gallery, iImage);
+        Item item = new Item(element, collection, iImage);
 
         logger.debug("End");
         return item;

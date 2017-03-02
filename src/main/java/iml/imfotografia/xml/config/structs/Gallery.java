@@ -1,90 +1,21 @@
 package iml.imfotografia.xml.config.structs;
 
-import java.text.DateFormat;
+import iml.imfotografia.xml.config.base.CollectionBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
-public class Gallery {
-    private String _name;
-    private String _src;
-    private String _title;
-    private String _infoText;
-    private String _keywords;
-    private Date _update;
-    private DateFormat _formatDate = new SimpleDateFormat("yyyymmdd");
-
-    public Map<String, Object> elements;
+public class Gallery extends CollectionBase {
+    final static Logger logger = Logger.getLogger(Gallery.class);
 
     /**
-     * CONSTRUCTORES
+     * CONSTRUCOTRS
      */
-    public Gallery() {
-        elements = new LinkedHashMap<String, Object>();
-    }
-
-    public Gallery(String name, String src, String title, Date update) {
-        this();
-
-        set_name(name);
-        set_src(src);
-        set_title(title);
-        set_update(update);
-    }
-
-    /**
-     * GETTER / SETTER
-     */
-    public String get_name() {
-        return this._name;
-    }
-
-    public void set_name(String name) {
-        this._name = name;
-    }
-
-    public String get_src() {
-        return this._src;
-    }
-
-    public void set_src(String src) {
-        this._src = src;
-    }
-
-    public String get_title() {
-        return this._title;
-    }
-
-    public void set_title(String title) {
-        this._title = title;
-    }
-
-    public String get_infoText() {
-        return this._infoText;
-    }
-
-    public void set_infoText(String infoText) {
-        this._infoText = infoText;
-    }
-
-    public String get_keywords() {
-        return this._keywords;
-    }
-
-    public void set_keywords(String keywords) {
-        this._keywords = keywords;
-    }
-
-    public Date get_update() {
-        return this._update;
-    }
-
-    public void set_update(String update) throws ParseException {
-        this._update = _formatDate.parse(update);
-    }
-
-    public void set_update(Date update) {
-        this._update = update;
+    public Gallery(){
+        super();
+        super._nodeName = "gallery";
     }
 
     /**
@@ -92,21 +23,50 @@ public class Gallery {
      * @return
      */
     public void addImage(Image image) {
-        this.elements.put(image.get_id(), image);
+        super.addElement(image);
     }
 
     /**
      *
-     * @param key
+     * @param node
      * @return
+     * @throws ParseException
      */
-    public Integer getIndexKey(String key){
-        List<Object> list = new ArrayList<Object>(this.elements.values());
+    public Gallery fromXml(Node node) throws ParseException {
+        logger.debug("Begin");
+        Gallery collection = new Gallery();
 
-        for (Integer i = 0; i < list.size(); i++){
-            if (((Image)list.get(i)).get_id().equalsIgnoreCase(key))
-                return i;
+        // get attributes names and values
+        NamedNodeMap nodeMap = node.getAttributes();
+        for (int i = 0; i < nodeMap.getLength(); i++) {
+            Node tempNode = nodeMap.item(i);
+            String sAttrName = tempNode.getNodeName();
+            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
+            String sAttrValue = tempNode.getNodeValue();
+            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
+
+            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
+
+            if (sAttrName.equalsIgnoreCase(ATTRIBUTE_NAME)) {
+                collection.set_name(sAttrValue);
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_SRC)) {
+                collection.set_src(sAttrValue);
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_TITLE)) {
+                collection.set_title(sAttrValue);
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_INFOTEXT)) {
+                collection.set_infoText(sAttrValue);
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_KEYWORDS)) {
+                collection.set_keywords(sAttrValue);
+            } else if (sAttrName.equalsIgnoreCase(ATTRIBUTE_UPDATE)) {
+                collection.set_update(sAttrValue);
+            } else {
+                logger.info("unknow Multimedia property " + sAttrName + ":" + sAttrValue);
+            }
+
+            logger.debug("set Multimedia property " + sAttrName + ":" + sAttrValue);
         }
-        return -1;
+
+        logger.debug("End");
+        return collection;
     }
 }

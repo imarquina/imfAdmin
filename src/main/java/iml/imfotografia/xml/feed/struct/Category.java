@@ -1,29 +1,41 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Category {
-    private String _content;
+public class Category extends ElementStringBase {
+    final static Logger logger = Logger.getLogger(Category.class);
 
     /**
      * CONSTRUCTORS
      */
     public Category() {
+        super();
     }
 
     public Category(String content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("category");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return this._content;
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) {
-        this._content = content;
+        Element descriptionNode = document.createElement(this.get_nodeName());
+        descriptionNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(descriptionNode);
+
+        logger.debug("End");
     }
 }

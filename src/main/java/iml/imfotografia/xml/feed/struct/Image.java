@@ -1,13 +1,19 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.Propertyx;
+import iml.imfotografia.xml.interfaces.IXmlNode;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.ParseException;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Image {
+public class Image implements IXmlNode {
+    private String _nodeName;
+
     public Title title;
     public Url url;
     public Link link;
@@ -15,36 +21,44 @@ public class Image {
     public Width width;
     public Height height;
 
-    private Property properties;
+    final static Logger logger = Logger.getLogger(Image.class);
 
     /**
      * CONSTRUCTOR
      */
     public Image() throws ParseException {
-        properties = new Property("config.properties");
+        this._nodeName = "image";
 
-        Height height = new Height(properties.readProperty("iml.feed.image.logo.height"));
+        Height height = new Height(Propertyx.readProperty("iml.feed.image.logo.height"));
         this.addHeight(height);
 
-        Width width = new Width(properties.readProperty("iml.feed.image.logo.width"));
+        Width width = new Width(Propertyx.readProperty("iml.feed.image.logo.width"));
         this.addWith(width);
 
-        Link link = new Link(properties.readProperty("iml.url.root"));
+        Link link = new Link(Propertyx.readProperty("iml.url.root"));
         this.addLink(link);
 
         PubDate pubDate = new PubDate("20120512");
         this.addPubDate(pubDate);
 
-        Title title = new Title(properties.readProperty("iml.name"));
+        Title title = new Title(Propertyx.readProperty("iml.name"));
         this.addTitle(title);
 
-        Url url = new Url(properties.readProperty("iml.url.root") +
-                properties.readProperty("iml.feed.image.logo.url"));
+        Url url = new Url(Propertyx.readProperty("iml.url.root") +
+                Propertyx.readProperty("iml.feed.image.logo.url"));
         this.addUrl(url);
     }
 
+    /**
+     * GETTER / SETTER
+     */
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+
     public void addTitle(Title title){
-        this.title = new Title();
+        this.title = title;
     }
 
     public void addUrl(Url url) {
@@ -65,5 +79,27 @@ public class Image {
 
     public void addHeight(Height height){
         this.height = height;
+    }
+
+    /**
+     *
+     * @param document
+     * @param parentNode
+     */
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element imageNode = document.createElement(this.get_nodeName());
+
+        this.title.toXml(document, imageNode);
+        this.url.toXml(document, imageNode);
+        this.link.toXml(document, imageNode);
+        this.pubDate.toXml(document, imageNode);
+        this.width.toXml(document, imageNode);
+        this.height.toXml(document, imageNode);
+
+        parentNode.appendChild(imageNode);
+
+        logger.debug("End");
     }
 }

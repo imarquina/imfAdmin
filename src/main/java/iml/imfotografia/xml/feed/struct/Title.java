@@ -1,26 +1,37 @@
 package iml.imfotografia.xml.feed.struct;
 
-public class Title {
-    private String _content;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class Title extends ElementStringBase {
+    final static Logger logger = Logger.getLogger(Title.class);
 
     /**
      * CONSTRUCTORS
      */
     public Title() {
+        super();
     }
 
     public Title(String content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("title");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return this._content;
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) {
-        this._content = content;
+        Element titleNode = document.createElement(this.get_nodeName());
+        titleNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(titleNode);
+
+        logger.debug("End");
     }
 }

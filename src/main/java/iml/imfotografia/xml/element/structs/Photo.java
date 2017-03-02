@@ -1,15 +1,19 @@
 package iml.imfotografia.xml.element.structs;
 
 import iml.imfotografia.xml.element.base.ElementBase;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 
 public class Photo extends ElementBase {
+    final static Logger logger = Logger.getLogger(Photo.class);
+
     /**
      * CONSTRUCTORES
      */
     public Photo() {
         super();
+        this.set_nodeName("img");
     }
 
     public Photo(String id, Integer width, Integer height, String caption, String src,

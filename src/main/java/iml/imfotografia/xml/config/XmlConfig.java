@@ -1,7 +1,9 @@
 package iml.imfotografia.xml.config;
 
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.structs.*;
-import iml.imfotografia.xml.element.interfaces.IElement;
+import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.sitemap.XmlSitemap;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -9,21 +11,24 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Map;
 
-import static iml.imfotografia.utils.Text.SetLength;
-import static iml.imfotografia.utils.Xml.innerXml;
-import static iml.imfotografia.utils.Xml.normalize;
+import static iml.imfotografia.arq.utils.Text.SetLength;
+import static iml.imfotografia.arq.utils.Xml.innerXml;
+import static iml.imfotografia.arq.utils.Xml.normalize;
 
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
 public class XmlConfig {
+    private String _nameXml = "config";
     private String _xml;
     public Config config;
 
@@ -44,9 +49,28 @@ public class XmlConfig {
     private static final String NODO_IMAGEN = "img";
     private static final String NODO_VIDEO = "vid";
     private static final String NODO_TRACK = "track";
+
     private static final String ATTRIBUTE_TITLE = "TITLE";
     private static final String ATTRIBUTE_INFOTEXT = "INFOTEXT";
     private static final String ATTRIBUTE_KEYWORDS = "KEYWORDS";
+
+//    private Date lastElementUpdate;
+
+    /**
+     * ENUMERATORS
+     */
+    public enum writeMode
+    {
+        minified,
+        unminified,
+        both
+    }
+
+    private enum execMode
+    {
+        minified,
+        unminified
+    }
 
     /**
      * CONSTRUCTORS
@@ -56,7 +80,8 @@ public class XmlConfig {
         config = new Config();
     }
 
-    public XmlConfig(String xml) throws SAXException, ParserConfigurationException, XPathExpressionException, IOException, ParseException {
+    public XmlConfig(String xml) throws SAXException, ParserConfigurationException,
+            XPathExpressionException, IOException, ParseException {
         this ();
         this.set_xml(xml);
 
@@ -73,6 +98,17 @@ public class XmlConfig {
     public void set_xml(String xml) {
         this._xml = xml;
     }
+
+/*    public Date getLastElementUpdate() {
+        return lastElementUpdate;
+    }
+
+    private void setLastElementUpdate(Date lastElementUpdate) {
+        if (this.lastElementUpdate == null)
+            this.lastElementUpdate = lastElementUpdate;
+        else if (this.lastElementUpdate.before(lastElementUpdate))
+            this.lastElementUpdate = lastElementUpdate;
+    }*/
 
     /**
      * PRIVATE METHODS
@@ -111,6 +147,12 @@ public class XmlConfig {
         logger.debug("End");
     }
 
+    /**
+     *
+     * @param nList
+     * @param object
+     * @throws ParseException
+     */
     private void openChildNodes(NodeList nList, Object object) throws ParseException {
         logger.debug("Begin");
 
@@ -119,8 +161,6 @@ public class XmlConfig {
             Node node = nList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE)
             {
-                Boolean bNodeContentHTML = false;
-
                 String nodeName =  node.getNodeName();
                 if (!nodeName.equals(null)) nodeName = nodeName.trim();
 
@@ -128,31 +168,31 @@ public class XmlConfig {
 
                 if (object instanceof Config ) {
                     if (nodeName.equalsIgnoreCase(NODO_GALLERIES)) {
-                        Galleries galleries = getAttrGalleries(node);
+                        Galleries galleries = (new Galleries()).fromXml(node);
                         this.config.addGalleries(galleries);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), galleries);
                     } else if (nodeName.equalsIgnoreCase(NODO_FOLDER)) {
-                        Folder folder = getAttrFolder(node);
+                        Folder folder = (new Folder()).fromXml(node);
                         this.config.addFolder(folder);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), folder);
                     } else if (nodeName.equalsIgnoreCase(NODO_SECTION)) {
-                        Section section = getAttrSection(node);
+                        Section section = (new Section()).fromXml(node);
                         this.config.addSection(section);
                     } else if (nodeName.equalsIgnoreCase(NODO_TITLE)) {
-                        Title title = getAttrTitle(node);
+                        Title title = (new Title()).fromXml(node);
                         this.config.addTitle(title);
                     } else if (nodeName.equalsIgnoreCase(NODO_SLOGAN)) {
-                        Slogan slogan = getAttrSlogan(node);
+                        Slogan slogan = (new Slogan()).fromXml(node);
                         this.config.addSlogan(slogan);
                     } else if (nodeName.equalsIgnoreCase(NODO_TRACKS)) {
-                        Tracks tracks = getAttrTracks(node);
+                        Tracks tracks = (new Tracks()).fromXml(node);
                         this.config.addTracks(tracks);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), tracks);
                     } else if (nodeName.equalsIgnoreCase(NODO_CONTACTFORM)) {
-                        ContactForm contactForm = getAttrContactForm(node);
+                        ContactForm contactForm = (new ContactForm()).fromXml(node);
                         this.config.addContactForm(contactForm);
                     } else {
                         logger.info("unknow Node of ConfigNode: " + nodeName);
@@ -161,17 +201,17 @@ public class XmlConfig {
                     Galleries galleries = (Galleries)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_FOLDER)) {
-                        Folder folder = getAttrFolder(node);
+                        Folder folder = (new Folder()).fromXml(node);
                         galleries.addFolder(folder);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), folder);
                     } else if (nodeName.equalsIgnoreCase(NODO_GALLERY)) {
-                        Gallery gallery = getAttrGallery(node);
+                        Gallery gallery = (new Gallery()).fromXml(node);
                         galleries.addGallery(gallery);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), gallery);
                     } else if (nodeName.equalsIgnoreCase(NODO_MULTIMEDIA)) {
-                        Multimedia multimedia = getAttrMultimedia(node);
+                        Multimedia multimedia = (new Multimedia()).fromXml(node);
                         galleries.addMultimedia(multimedia);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), multimedia);
@@ -182,7 +222,7 @@ public class XmlConfig {
                     Gallery gallery = (Gallery)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_IMAGEN)) {
-                        Image image = getAttrImage(node);
+                        Image image = (new Image()).fromXml(node);
                         gallery.addImage(image);
                     } else {
                         logger.info("unknow Node of Gallery: " + nodeName);
@@ -191,12 +231,12 @@ public class XmlConfig {
                     Folder folder = (Folder)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_GALLERY)) {
-                        Gallery gallery = getAttrGallery(node);
+                        Gallery gallery = (new Gallery()).fromXml(node);
                         folder.addGallery(gallery);
                         if (node.hasChildNodes())
                             openChildNodes(node.getChildNodes(), gallery);
                     } else if (nodeName.equalsIgnoreCase(NODO_SECTION)) {
-                        Section section = getAttrSection(node);
+                        Section section = (new Section()).fromXml(node);
                         folder.addSection(section);
                     } else {
                         logger.info("unknow Node of Folder: " + nodeName);
@@ -205,7 +245,7 @@ public class XmlConfig {
                     Multimedia multimedia = (Multimedia)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_VIDEO)) {
-                        Video video = getAttrVideo(node);
+                        Video video = (Video)(new Video()).fromXml(node);
                         multimedia.addVideo(video);
                     } else {
                         logger.info("unknow Node of Multimedia: " + nodeName);
@@ -214,7 +254,7 @@ public class XmlConfig {
                     Tracks tracks = (Tracks)object;
 
                     if (nodeName.equalsIgnoreCase(NODO_TRACK)) {
-                        Track track = getAttrTrack(node);
+                        Track track = (new Track()).fromXml(node);
                         tracks.addTrack(track);
                     }
                 } else {
@@ -225,6 +265,10 @@ public class XmlConfig {
         logger.debug("End");
     }
 
+    /**
+     *
+     * @param node
+     */
     private void getAttrConfig(Node node) {
         logger.debug("Begin");
 
@@ -255,398 +299,131 @@ public class XmlConfig {
         logger.debug("End");
     }
 
-    private Galleries getAttrGalleries(Node node) {
-        logger.debug("Begin");
-        Galleries galleries = new Galleries();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            logger.debug("set Galleries property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return galleries;
-    }
-
-    private Folder getAttrFolder(Node node) throws ParseException {
-        logger.debug("Begin");
-        Folder folder = new Folder();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("NAME")) {
-                folder.set_name(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("SRC")) {
-                folder.set_src(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("TITLE")) {
-                folder.set_title(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("INFOTEXT")) {
-                folder.set_infoText(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("KEYWORDS")) {
-                folder.set_keywords(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("UPDATE")) {
-                folder.set_update(sAttrValue);
-            } else {
-                logger.info("unknow Folder property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Folder property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return folder;
-    }
-
-    private Gallery getAttrGallery(Node node) throws ParseException {
-        logger.debug("Begin");
-        Gallery gallery = new Gallery();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName == "NAME") {
-                gallery.set_name(sAttrValue);
-            } else if (sAttrName == "SRC") {
-                gallery.set_src(sAttrValue);
-            } else if (sAttrName == "TITLE") {
-                gallery.set_title(sAttrValue);
-            } else if (sAttrName == "INFOTEXT") {
-                gallery.set_infoText(sAttrValue);
-            } else if (sAttrName == "KEYWORDS") {
-                gallery.set_keywords(sAttrValue);
-            } else if (sAttrName == "UPDATE") {
-                gallery.set_update(sAttrValue);
-            } else {
-                logger.info("unknow Gallery property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Gallery property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return gallery;
-    }
-
-    private Multimedia getAttrMultimedia(Node node) throws ParseException {
-        logger.debug("Begin");
-        Multimedia multimedia = new Multimedia();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName == "NAME") {
-                multimedia.set_name(sAttrValue);
-            } else if (sAttrName == "SRC") {
-                multimedia.set_src(sAttrValue);
-            } else if (sAttrName == "TITLE") {
-                multimedia.set_title(sAttrValue);
-            } else if (sAttrName == "INFOTEXT") {
-                multimedia.set_infoText(sAttrValue);
-            } else if (sAttrName == "KEYWORDS") {
-                multimedia.set_keywords(sAttrValue);
-            } else if (sAttrName == "UPDATE") {
-                multimedia.set_update(sAttrValue);
-            } else {
-                logger.info("unknow Multimedia property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Multimedia property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return multimedia;
-    }
-
-    private Section getAttrSection(Node node) throws ParseException {
-        logger.debug("Begin");
-        Section section = new Section();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("NAME")) {
-                section.set_name(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("WIDTH")) {
-                section.set_width(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("HEIGHT")) {
-                section.set_height(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("BYDEFAULT")) {
-                section.set_byDefault(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("UPDATE")) {
-                section.set_update(sAttrValue);
-            } else {
-                logger.info("unknow Section property " + sAttrName + ":" + sAttrValue);
-            }
-            logger.debug("set Section property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return section;
-    }
-
-    private Title getAttrTitle(Node node) {
-        logger.debug("Begin");
-        Title title = new Title();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            logger.debug("set Title property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return title;
-    }
-
-    private Slogan getAttrSlogan(Node node) {
-        logger.debug("Begin");
-        Slogan slogan = new Slogan();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            logger.debug("set Slogan property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return slogan;
-    }
-
-    private Tracks getAttrTracks(Node node) {
-        logger.debug("Begin");
-        Tracks tracks = new Tracks();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("NAME")) {
-                tracks.set_name(sAttrValue);
-            } else {
-                logger.info("unknow Tracks property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Tracks property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return tracks;
-    }
-
-    private ContactForm getAttrContactForm(Node node) {
-        logger.debug("Begin");
-        ContactForm contactForm = new ContactForm();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            logger.debug("set ContactForm property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return contactForm;
-    }
-
-    private Image getAttrImage(Node node) throws ParseException {
-        logger.debug("Begin");
-        Image image = new Image();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("ID")) {
-                image.set_id(sAttrValue);
-            } else {
-                logger.info("unknow Image property " + sAttrName + ":" + sAttrValue);
-            }
-            logger.debug("set Image property " + sAttrName + ":" + sAttrValue);
-        }
-        logger.debug("End");
-        return image;
-    }
-
-    private Video getAttrVideo(Node node) throws ParseException {
-        logger.debug("Begin");
-        Video video = new Video();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("ID")) {
-                video.set_id(sAttrValue);
-            } else {
-                logger.info("unknow Video property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Video property " + sAttrName + ":" + sAttrValue);
-        }
-        logger.debug("End");
-        return video;
-    }
-
-    private Track getAttrTrack(Node node) {
-        logger.debug("Begin");
-        Track track = new Track();
-
-        // get attributes names and values
-        NamedNodeMap nodeMap = node.getAttributes();
-        for (int i = 0; i < nodeMap.getLength(); i++) {
-            Node tempNode = nodeMap.item(i);
-            String sAttrName = tempNode.getNodeName();
-            if (!sAttrName.equals(null)) sAttrName = sAttrName.trim().toUpperCase();
-            String sAttrValue = tempNode.getNodeValue();
-            if (!sAttrValue.equals(null)) sAttrValue = sAttrValue.trim();
-
-            logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
-
-            if (sAttrName.equalsIgnoreCase("SRC")) {
-                track.set_src(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("ARTIST")) {
-                track.set_artist(sAttrValue);
-            } else if (sAttrName.equalsIgnoreCase("NAME")) {
-                track.set_name(sAttrValue);
-            } else {
-                logger.info("unknow Track property " + sAttrName + ":" + sAttrValue);
-            }
-
-            logger.debug("set Track property " + sAttrName + ":" + sAttrValue);
-        }
-
-        logger.debug("End");
-        return track;
-    }
-
     /**
-     * Recorre de manera redundante todos los elementos para extraer
-     * los Gallery y sus imágenes
+     *
      * @param elements
-     * @param imageGalleries
+     * @param extractCollection
+     * @param clazz
      * @return
      */
-    private ArrayList<Gallery> extractElements(Map<Integer, Object> elements, ArrayList<Gallery> imageGalleries){
+    private ExtractCollection extractCollections(Map<String, Object> elements,
+                                                 ExtractCollection extractCollection, Class clazz){
         logger.debug("Begin");
 
         Integer iKey = 0;
 
-        for (Map.Entry<Integer, Object> entry : elements.entrySet()) {
-            Integer key = entry.getKey();
+        for (Map.Entry<String, Object> entry : elements.entrySet()) {
+            String key = entry.getKey();
             Object value = entry.getValue();
 
             if (value instanceof Galleries) {
-                extractElements(((Galleries) value).elements, imageGalleries);
+                Galleries galleries = (Galleries)value;
+
+                extractCollections(galleries.elements, extractCollection, clazz);
             } else if (value instanceof Gallery){
                 Gallery gallery = (Gallery)value;
 
-                imageGalleries.add(gallery);
+                extractCollection.setLastElementUpdate(gallery.get_update());
+                extractCollection.elements.put(gallery.get_id(), gallery);
+            } else if (value instanceof Multimedia){
+                Multimedia multimedia = (Multimedia)value;
+
+                extractCollection.setLastElementUpdate(multimedia.get_update());
+                extractCollection.elements.put(multimedia.get_id(), multimedia);
             } else if (value instanceof Folder) {
-                extractElements(((Folder) value).elements, imageGalleries);
+                Folder folder = (Folder)value;
+
+                if (clazz == XmlSitemap.class){
+                    extractCollection.setLastElementUpdate(folder.get_update());
+                    extractCollection.elements.put(folder.get_id(), folder);
+                } else if (clazz == XmlFeed.class){
+                    extractCollections(folder.elements, extractCollection, clazz);
+                }
             }
         }
 
         logger.debug("End");
-        return  imageGalleries;
+        return  extractCollection;
+    }
+
+
+    /**
+     *
+     * @param type
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    private void setXml(execMode type) throws ParserConfigurationException, TransformerException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+
+        Document document = implementation.createDocument(null, this.config.get_nodeName(), null);
+        document.setXmlVersion("1.0");
+
+        //Main Node
+        Element configNode = document.getDocumentElement();
+        this.config.toXml(document, configNode);
+
+        //Generate XML
+        Source source = new DOMSource(document);
+
+        this.execXml(source,type);
     }
 
     /**
-     * PUBLIC METHODS
+     *
+     * @param source
+     * @param type
+     * @throws TransformerException
      */
+    private void execXml(Source source, execMode type) throws TransformerException {
+        //Indicamos donde lo queremos almacenar
+        String nameFile = "";
+        if (type == execMode.minified)
+            nameFile = Propertyx.readProperty("iml.xml.dir.out") + this._nameXml + ".min.xml";
+        else
+            nameFile = Propertyx.readProperty("iml.xml.dir.out") + this._nameXml + ".xml";
+
+        Result result = new StreamResult(new File(nameFile)); //nombre del archivo
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
+        transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
+        transformer.setOutputProperty(OutputKeys.INDENT,(type==execMode.unminified)?"yes":"no");
+        transformer.setOutputProperty(OutputKeys.STANDALONE,"yes");
+        transformer.transform(source, result);
+    }
+
     /**
-     * Obtiene todas los elementos Gallery y sus imágenes
+     *
      * @param elements
      * @return
      */
-    public ArrayList<Gallery> getGallerys(Map<Integer, Object> elements){
-        ArrayList<Gallery> imageGalleries = new ArrayList<Gallery>();
+    public ExtractCollection getCollections(Map<String, Object> elements, Class clazz){
+        ExtractCollection elementCollection = new ExtractCollection();
 
-        return this.extractElements(elements, imageGalleries);
+        return this.extractCollections(elements, elementCollection, clazz);
+    }
+
+    /**
+     *
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    public void writeXml(writeMode type) throws TransformerException, ParserConfigurationException {
+        logger.debug("Begin");
+
+        if(type == writeMode.both){
+            this.setXml(execMode.minified);
+            this.setXml(execMode.unminified);
+        } else if (type == writeMode.minified) {
+            this.setXml(execMode.minified);
+        } else if (type == writeMode.unminified) {
+            this.setXml(execMode.unminified);
+        }
+
+        logger.debug("End");
     }
 }

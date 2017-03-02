@@ -1,29 +1,40 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.base.ElementStringBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 /**
  * Created by inaki.marquina on 06/07/2016.
  */
-public class Width {
-    private String _content;
+public class Width extends ElementStringBase {
+    final static Logger logger = Logger.getLogger(Width.class);
 
     /**
      * CONSTRUCTORS
      */
     public Width() {
+        super();
     }
 
     public Width(String content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("width");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return this._content;
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) {
-        this._content = content;
+        Element titleNode = document.createElement(this.get_nodeName());
+        titleNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(titleNode);
+
+        logger.debug("End");
     }
 }

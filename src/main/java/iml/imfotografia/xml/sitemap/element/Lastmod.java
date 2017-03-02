@@ -1,20 +1,31 @@
 package iml.imfotografia.xml.sitemap.element;
 
+import iml.imfotografia.xml.interfaces.IXmlNode;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Lastmod {
+public class Lastmod implements IXmlNode {
+    private String _nodeName;
     private Date _content;
-    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-mm-dd");
+    private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-MM-dd");
+
+    final static Logger logger = Logger.getLogger(Lastmod.class);
 
     /**
      * CONSTRUCTORS
      */
     public Lastmod() {
+        this._nodeName = "lastmod";
+        this._content = new Date();
     }
 
     public Lastmod(Date content) {
+        this();
         this.set_content(content);
     }
 
@@ -22,10 +33,30 @@ public class Lastmod {
      * GETTER / SETTER
      */
     public String get_content() {
-        return _dateFormatOut.format(this._content);
+        try {
+            return _dateFormatOut.format(this._content);
+        }
+        catch(Exception ex){
+            System.out.print(ex.fillInStackTrace());
+            return "";
+        }
     }
 
     public void set_content(Date content) {
         this._content = content;
+    }
+
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element pubDateNode = document.createElement(this.get_nodeName());
+        pubDateNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(pubDateNode);
+
+        logger.debug("End");
     }
 }

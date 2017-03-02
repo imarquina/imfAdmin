@@ -1,5 +1,11 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementDateBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,40 +13,38 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class PubDate {
-    private Date _content;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
+public class PubDate extends ElementDateBase {
+    final static Logger logger = Logger.getLogger(PubDate.class);
 
     /**
      * CONSTRUCTORS
      */
     public PubDate() {
-        _dateFormatOut.setTimeZone(TimeZone.getTimeZone("GMT"));
+        super();
     }
 
     public PubDate(String content) throws ParseException {
-        this();
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("pubDate");
     }
 
     public PubDate(Date content) {
-        this();
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("pubDate");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return _dateFormatOut.format(this._content);
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) throws ParseException {
-        this._content = _dateFormatIn.parse(content);
-    }
+        Element pubDateNode = document.createElement(this.get_nodeName());
+        pubDateNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(pubDateNode);
 
-    public void set_content(Date content) {
-        this._content = content;
+        logger.debug("End");
     }
 }

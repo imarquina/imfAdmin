@@ -1,26 +1,37 @@
 package iml.imfotografia.xml.feed.struct;
 
-public class Language {
-    private String _content;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class Language extends ElementStringBase {
+    final static Logger logger = Logger.getLogger(Language.class);
 
     /**
      * CONSTRUCTORS
      */
     public Language() {
+        super();
     }
 
     public Language(String content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("language");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return this._content;
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) {
-        this._content = content;
+        Element languageNode = document.createElement(this.get_nodeName());
+        languageNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(languageNode);
+
+        logger.debug("End");
     }
 }

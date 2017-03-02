@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.List;
 
-import static iml.imfotografia.utils.Text.SetLength;
+import static iml.imfotografia.arq.utils.Text.SetLength;
 
 /**
  * Created by imarquina on 3/7/16.

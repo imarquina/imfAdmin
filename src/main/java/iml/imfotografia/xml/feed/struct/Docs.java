@@ -1,26 +1,37 @@
 package iml.imfotografia.xml.feed.struct;
 
-public class Docs {
-    private String _content;
+import iml.imfotografia.xml.feed.base.ElementStringBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class Docs extends ElementStringBase {
+    final static Logger logger = Logger.getLogger(Docs.class);
 
     /**
      * CONSTRUCTORS
      */
     public Docs() {
+        super();
     }
 
     public Docs(String content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("docs");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return this._content;
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) {
-        this._content = content;
+        Element docsNode = document.createElement(this.get_nodeName());
+        docsNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(docsNode);
+
+        logger.debug("End");
     }
 }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>http://www.imarquina.es</loc>
 		<lastmod>2014-02-09</lastmod>

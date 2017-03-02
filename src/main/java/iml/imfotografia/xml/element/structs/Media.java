@@ -1,15 +1,24 @@
 package iml.imfotografia.xml.element.structs;
 
 import iml.imfotografia.xml.element.base.ElementBase;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 
 public class Media extends ElementBase {
+    final static Logger logger = Logger.getLogger(Media.class);
+
+    /**
+     * CONSTANTS
+     */
+    private static final String ATTRIBUTE_INFOTEXT = "infotext";
+
     /**
      * CONSTRUCTORES
      */
     public Media() {
         super();
+        this.set_nodeName("vid");
     }
 
     public Media(String id, Integer width, Integer height, String caption, String src,

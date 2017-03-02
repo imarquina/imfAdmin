@@ -1,13 +1,19 @@
 package iml.imfotografia.xml.feed.struct;
 
-import iml.imfotografia.utils.Property;
+import iml.imfotografia.xml.Propertyx;
 import iml.imfotografia.xml.config.structs.Config;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Channel {
     private Integer _iKey;
+    private String _nodeName;
     public Title title;
     public Link link;
     public Description description;
@@ -17,17 +23,16 @@ public class Channel {
     public Docs docs;
     public ManagingEditor managingEditor;
     public WebMaster webMaster;
-    public LinkedHashMap<Integer, Object> elements;
+    public Map<Integer, Object> elements;
 
-    private Property properties;
+    final static Logger logger = Logger.getLogger(Channel.class);
 
     /**
      * CONSTRUCTORS
      */
     public Channel() {
-        properties = new Property("config.properties");
-
-        _iKey = 0;
+        this._iKey = 0;
+        this._nodeName = "channel";
 
         this.title = new Title();
         this.link = new Link();
@@ -42,35 +47,42 @@ public class Channel {
         this.elements = new LinkedHashMap<Integer, Object>();
     }
 
-    public Channel(Config xmlConfig) throws ParseException {
+    public Channel(Config xmlConfig, Date lastElementUpdate) throws ParseException {
         this();
 
         Title title = new Title(xmlConfig.get_title());
         this.addTitle(title);
 
-        Link link = new Link(properties.readProperty("iml.url.root"));
+        Link link = new Link(Propertyx.readProperty("iml.url.root"));
         this.addLink(link);
 
         Description description = new Description(xmlConfig.get_infoText());
         this.addDescription(description);
 
-        Language language = new Language(properties.readProperty("iml.feed.channel.language"));
+        Language language = new Language(Propertyx.readProperty("iml.feed.channel.language"));
         this.addLanguage(language);
 
-        PubDate pubDate = new PubDate(properties.readProperty("iml.feed.channel.pubDate"));
+        PubDate pubDate = new PubDate(Propertyx.readProperty("iml.feed.channel.pubDate"));
         this.addPubDate(pubDate);
 
-        LastBuildDate lastBuildDate = new LastBuildDate("20181231");
+        LastBuildDate lastBuildDate = new LastBuildDate(lastElementUpdate);
         this.addLastBuildDate(lastBuildDate);
 
-        Docs docs = new Docs(properties.readProperty("iml.feed.channel.docs"));
+        Docs docs = new Docs(Propertyx.readProperty("iml.feed.channel.docs"));
         this.addDocs(docs);
 
-        ManagingEditor managingEditor = new ManagingEditor(properties.readProperty("iml.email"));
+        ManagingEditor managingEditor = new ManagingEditor(Propertyx.readProperty("iml.email"));
         this.addManagingEditor(managingEditor);
 
-        WebMaster webMaster = new WebMaster(properties.readProperty("iml.email"));
+        WebMaster webMaster = new WebMaster(Propertyx.readProperty("iml.email"));
         this.addWebMaster(webMaster);
+    }
+
+    /**
+     * GETTER / SETTER
+     */
+    public String get_nodeName() {
+        return _nodeName;
     }
 
     /**
@@ -118,5 +130,37 @@ public class Channel {
 
     public void addItem (Item item) {
         this.elements.put(_iKey++, item);
+    }
+
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
+
+        Element chanelNode = document.createElement(this.get_nodeName());
+
+        this.title.toXml(document, chanelNode);
+        this.link.toXml(document, chanelNode);
+        this.description.toXml(document, chanelNode);
+        this.language.toXml(document, chanelNode);
+        this.pubDate.toXml(document, chanelNode);
+        this.lastBuildDate.toXml(document, chanelNode);
+        this.docs.toXml(document, chanelNode);
+        this.managingEditor.toXml(document, chanelNode);
+        this.webMaster.toXml(document, chanelNode);
+
+        Image image = (Image)this.elements.get(0);
+        image.toXml(document, chanelNode);
+
+        //bucle para los item
+        for (Map.Entry<Integer, Object> entry : this.elements.entrySet()) {
+            Integer key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof Item)
+                ((Item)value).toXml(document, chanelNode);
+        }
+
+        parentNode.appendChild(chanelNode);
+
+        logger.debug("End");
     }
 }

@@ -1,42 +1,49 @@
 package iml.imfotografia.xml.feed.struct;
 
+import iml.imfotografia.xml.feed.XmlFeed;
+import iml.imfotografia.xml.feed.base.ElementDateBase;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class LastBuildDate {
-    private Date _content;
-    private DateFormat _dateFormatIn = new SimpleDateFormat("yyyymmdd");
-    private DateFormat _dateFormatOut = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);
+public class LastBuildDate extends ElementDateBase {
+    final static Logger logger = Logger.getLogger(LastBuildDate.class);
 
     /**
      * CONSTRUCTORS
      */
     public LastBuildDate() {
+        super();
     }
 
     public LastBuildDate(String content) throws ParseException {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("lastBuildDate");
     }
 
     public LastBuildDate(Date content) {
-        this.set_content(content);
+        super(content);
+        this.set_nodeName("lastBuildDate");
     }
 
     /**
-     * GETTER / SETTER
+     *
+     * @param document
+     * @param parentNode
      */
-    public String get_content() {
-        return _dateFormatOut.format(this._content);
-    }
+    public void toXml(Document document, Element parentNode){
+        logger.debug("Begin");
 
-    public void set_content(String content) throws ParseException {
-        this._content = _dateFormatIn.parse(content);
-    }
+        Element lastBuildDateNode = document.createElement(this.get_nodeName());
+        lastBuildDateNode.appendChild(document.createTextNode(this.get_content()));
+        parentNode.appendChild(lastBuildDateNode);
 
-    public void set_content(Date content) {
-        this._content = content;
+        logger.debug("End");
     }
 }

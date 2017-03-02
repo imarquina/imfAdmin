@@ -1,25 +1,25 @@
-package iml.imfotografia.xml.sitemap.element;
+package iml.imfotografia.xml.feed.base;
 
 import iml.imfotografia.xml.interfaces.IXmlNode;
-import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Loc implements IXmlNode {
+/**
+ * Created by inaki.marquina on 18/07/2016.
+ */
+public abstract class ElementStringBase implements IXmlNode {
     private String _nodeName;
     private String _content;
-
-    final static Logger logger = Logger.getLogger(Loc.class);
 
     /**
      * CONSTRUCTORS
      */
-    public Loc() {
-        this._nodeName = "loc";
+    public ElementStringBase() {
+        this._nodeName = "";
         this._content = "";
     }
 
-    public Loc(String content) {
+    public ElementStringBase(String content) {
         this();
         this.set_content(content);
     }
@@ -39,18 +39,12 @@ public class Loc implements IXmlNode {
         return _nodeName;
     }
 
+    protected void set_nodeName(String nodeName) { this._nodeName = nodeName; }
+
     /**
      *
      * @param document
      * @param parentNode
      */
-    public void toXml(Document document, Element parentNode){
-        logger.debug("Begin");
-
-        Element pubDateNode = document.createElement(this.get_nodeName());
-        pubDateNode.appendChild(document.createTextNode(this.get_content()));
-        parentNode.appendChild(pubDateNode);
-
-        logger.debug("End");
-    }
+    public abstract void toXml(Document document, Element parentNode);
 }

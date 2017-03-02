@@ -1,22 +1,31 @@
 package iml.imfotografia.xml.sitemap.element;
 
-import iml.imfotografia.xml.feed.struct.Item;
+import iml.imfotografia.xml.Propertyx;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Urlset {
     private Integer _iKey;
+    private String _nodeName;
     private String _xmlns;
     private String xmlns_xsi;
     private String xsi_schemaLocation;
-    Hashtable<Integer, Url> url;
+
+    public Map<Integer, Url> url;
+
+    final static Logger logger = Logger.getLogger(Urlset.class);
 
     /**
      * CONSTRUCTORS
      */
     public Urlset() {
-        _iKey = 0;
-        url = new Hashtable<Integer, Url>();
+        this._iKey = 0;
+        this._nodeName = "urlset";
+        this.url = new LinkedHashMap<Integer, Url>();
     }
 
     public Urlset(String xmlns, String xmlns_xsi, String xsi_schemaLocation) {
@@ -54,7 +63,41 @@ public class Urlset {
         this.xsi_schemaLocation = xsi_schemaLocation;
     }
 
+    public String get_nodeName() {
+        return _nodeName;
+    }
+
+    /**
+     * PUBLIC METHODS
+     */
     public void addUrl(Url url) {
         this.url.put(_iKey++, url);
+    }
+
+    /**
+     *
+     * @param document
+     */
+    public void toXml(Document document){
+        logger.debug("Begin");
+
+        //Main Node
+        Element urlsetNode = document.getDocumentElement();
+        urlsetNode.setAttributeNS(
+                Propertyx.readProperty("iml.sitemap.xsi"), // namespace
+                "xsi:schemaLocation", // node name including prefix
+                Propertyx.readProperty("iml.sitemap.schemaLocation"));
+        urlsetNode.setAttributeNS("http://www.w3.org/2000/xmlns/",
+                "xmlns:xsi", Propertyx.readProperty("iml.sitemap.xsi"));
+
+        //bucle para los item
+        for (Map.Entry<Integer, Url> entry : this.url.entrySet()) {
+            Integer key = entry.getKey();
+            Url value = entry.getValue();
+
+            value.toXml(document, urlsetNode);
+        }
+
+        logger.debug("End");
     }
 }

@@ -1,16 +1,15 @@
-package iml.imfotografia.utils;
+package iml.imfotografia.arq.utils;
 
 import org.apache.log4j.Logger;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 /**
  * Created by imarquina on 9/7/16.
  */
 public class Property {
-    private Properties _prop;
+    private static Properties _prop;
     final static Logger logger = Logger.getLogger(Property.class);
 
     /**
@@ -20,10 +19,11 @@ public class Property {
         logger.debug("Begin");
 
         _prop = new Properties();
-        InputStream input = null;
+        InputStreamReader input = null;
 
         try {
-            input = getClass().getClassLoader().getResourceAsStream(filename);
+            InputStream stream = getClass().getClassLoader().getResourceAsStream(filename);
+            input = new InputStreamReader(stream, "UTF-8");
             if(input==null){
                 logger.error("Sorry, unable to find " + filename);
                 return;

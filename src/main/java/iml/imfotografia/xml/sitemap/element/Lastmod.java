@@ -33,7 +33,13 @@ public class Lastmod implements IXmlNode {
      * GETTER / SETTER
      */
     public String get_content() {
-        return _dateFormatOut.format(this._content);
+        try {
+            return _dateFormatOut.format(this._content);
+        }
+        catch(Exception ex){
+            System.out.print(ex.fillInStackTrace());
+            return "";
+        }
     }
 
     public void set_content(Date content) {

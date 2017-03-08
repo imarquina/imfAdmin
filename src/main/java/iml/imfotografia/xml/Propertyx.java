@@ -4,7 +4,7 @@ package iml.imfotografia.xml;
  * Created by imarquina on 17/7/16.
  */
 final public class Propertyx {
-    public final static String IML_PROPSFILE = "config.properties";
+    public final static String IML_PROPSFILE = "config.xml.properties";
 
     private static iml.imfotografia.arq.utils.Property _prop;
 

@@ -1,7 +1,7 @@
 package iml.framework.xml.website.feed.struct;
 
 import iml.framework.xml.website.Property;
-import iml.framework.xml.website.interfaces.IXmlNode;
+import iml.framework.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

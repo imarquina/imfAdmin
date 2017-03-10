@@ -1,73 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/Launcher.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/extensions/StringWriter.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/extensions/StringWriter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Crypto.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Crypto.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Date.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Date.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Number.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Number.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Property.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Property.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Text.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Text.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/arq/utils/Xml.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Xml.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/html/data/HtmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/html/data/HtmlConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/Propertyx.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Property.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/XmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/XmlConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/base/CollectionBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/base/ElementBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/interfaces/ICollection.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/ICollection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/interfaces/IElement.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Config.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/ContactForm.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ContactForm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/ExtractCollection.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ExtractCollection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Folder.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Galleries.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Gallery.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Multimedia.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Multimedia.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Section.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Slogan.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Title.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Title.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Track.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Track.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Tracks.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Tracks.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/config/structs/Video.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Video.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/XmlPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/base/ElementBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/base/ElementBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/interfaces/IElement.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/interfaces/IElement.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Config.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Config.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Media.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Media.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Medias.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Medias.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Photo.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/element/structs/Photos.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/XmlFeed.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/base/ElementDateBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/base/ElementStringBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Category.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Category.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Channel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Description.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Description.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Docs.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Docs.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Guid.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Guid.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Height.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Height.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Item.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Language.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Language.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Link.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Link.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/ManagingEditor.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/ManagingEditor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/PubDate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Rss.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Title.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/WebMaster.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/WebMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/feed/struct/Width.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Width.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/interfaces/IXmlNode.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/interfaces/IXmlNode.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/XmlSitemap.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/XmlSitemap.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Lastmod.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Loc.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Urlset.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/config.xml.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.website.properties" />
+    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="Updated structure">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/interfaces/IXmlNode.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/interfaces/IXmlNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/ICollection.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/ICollection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/interfaces/IXmlNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Loc.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/sitemap/element/Url.java" />
         <option value="$PROJECT_DIR$/data/xml/out/sitemap.xml" />
@@ -162,6 +106,7 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/Propertyx.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/website/Propertyx.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/imfotografia/xml/website/Property.java" />
+        <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" />
       </list>
     </option>
   </component>
@@ -718,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488960051762</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated structure">
+      <created>1489134259105</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1489134259105</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -743,8 +695,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762313" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2128" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32762313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2128" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32762313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -795,7 +747,8 @@
     <MESSAGE value="Fix generación XML Sitemap" />
     <MESSAGE value="Fix generación XML Sitemap / Feed" />
     <MESSAGE value="Updated properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated properties" />
+    <MESSAGE value="Updated structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -848,35 +801,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/sitemap.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -899,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -924,13 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="97" column="16" lean-forward="false" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -970,28 +880,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/src.zip!/org/w3c/dom/Element.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="55" column="31" lean-forward="false" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/out/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1003,13 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1098,6 +980,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1198,10 +1073,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="336">
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#1046#1047#0" expanded="true" />
+            <element signature="e#1090#1091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <folding>
+            <element signature="e#2139#2140#0" expanded="true" />
+            <element signature="e#2191#2192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="31" />
+          <folding>
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding>
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
           </folding>
         </state>
       </provider>

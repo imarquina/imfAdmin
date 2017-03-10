@@ -1,6 +1,6 @@
 package iml.framework.xml.website.sitemap.element;
 
-import iml.framework.xml.website.interfaces.IXmlNode;
+import iml.framework.xml.interfaces.IXmlNode;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

@@ -1,4 +1,4 @@
-package iml.framework.xml.website.interfaces;
+package iml.framework.xml.interfaces;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

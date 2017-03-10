@@ -1,6 +1,6 @@
 package iml.framework.xml.website.config.interfaces;
 
-import iml.framework.xml.website.interfaces.IXmlNode;
+import iml.framework.xml.interfaces.IXmlNode;
 
 /**
  * Created by imarquina on 3/8/16.

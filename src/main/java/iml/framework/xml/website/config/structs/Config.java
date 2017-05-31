@@ -23,6 +23,7 @@ public class Config {
     public Map<String, Object> elements;
     public Title title;
     public Slogan slogan;
+    public Cookies cookies;
     public Tracks tracks;
     public ContactForm contactForm;
 
@@ -122,6 +123,14 @@ public class Config {
      */
     public void addSlogan(Slogan slogan) {
         this.slogan = slogan;
+    }
+
+    /**
+     *
+     * @param cookies
+     */
+    public void addCookies(Cookies cookies){
+        this.cookies = cookies;
     }
 
     /**
@@ -236,6 +245,11 @@ public class Config {
         Element sloganNode = document.createElement(this.slogan.get_nodeName());
         this.slogan.toXml(document, sloganNode);
         parentNode.appendChild(sloganNode);
+
+        //cookies
+        Element cookiesNode = document.createElement(this.cookies.get_nodeName());
+        this.cookies.toXml(document, cookiesNode);
+        parentNode.appendChild(cookiesNode);
 
         //tracks
         Element tracksNode = document.createElement(this.tracks.get_nodeName());

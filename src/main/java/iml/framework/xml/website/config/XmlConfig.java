@@ -45,6 +45,7 @@ public class XmlConfig {
     private static final String NODO_SECTION = "section";
     private static final String NODO_TITLE = "title";
     private static final String NODO_SLOGAN = "slogan";
+    private static final String NODO_COOKIES = "cookies";
     private static final String NODO_CONTACTFORM = "contactform";
     private static final String NODO_IMAGEN = "img";
     private static final String NODO_VIDEO = "vid";
@@ -186,6 +187,9 @@ public class XmlConfig {
                     } else if (nodeName.equalsIgnoreCase(NODO_SLOGAN)) {
                         Slogan slogan = (new Slogan()).fromXml(node);
                         this.config.addSlogan(slogan);
+                    } else if (nodeName.equalsIgnoreCase(NODO_COOKIES)){
+                        Cookies cookies = (new Cookies()).fromXml(node);
+                        this.config.addCookies(cookies);
                     } else if (nodeName.equalsIgnoreCase(NODO_TRACKS)) {
                         Tracks tracks = (new Tracks()).fromXml(node);
                         this.config.addTracks(tracks);

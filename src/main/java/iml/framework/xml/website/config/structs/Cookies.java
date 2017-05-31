@@ -6,21 +6,21 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-public class Slogan {
+public class Cookies {
     private String _nodeName = "";
     private String _content;
 
-    final static Logger logger = Logger.getLogger(Slogan.class);
+    final static Logger logger = Logger.getLogger(Cookies.class);
 
     /**
      * CONSTRUCTORS
      */
-    public Slogan() {
-        this._nodeName = "slogan";
+    public Cookies() {
+        this._nodeName = "cookies";
         this._content = "";
     }
 
-    public Slogan(String content) {
+    public Cookies(String content) {
         this();
         this.set_content(content);
     }
@@ -45,9 +45,9 @@ public class Slogan {
      * @param node
      * @return
      */
-    public Slogan fromXml(Node node) {
+    public Cookies fromXml(Node node) {
         logger.debug("Begin");
-        Slogan slogan = new Slogan();
+        Cookies slogan = new Cookies();
 
         // get attributes names and values
         NamedNodeMap nodeMap = node.getAttributes();
@@ -60,7 +60,7 @@ public class Slogan {
 
             logger.info("    Attr name : " + sAttrName + "; Value = " + sAttrValue);
 
-            logger.debug("set Slogan property " + sAttrName + ":" + sAttrValue);
+            logger.debug("set Cookies property " + sAttrName + ":" + sAttrValue);
         }
 
         slogan.set_content(node.getFirstChild().getTextContent());

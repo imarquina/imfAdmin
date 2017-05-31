@@ -322,8 +322,8 @@
 					<font COLOR="#E0E0E0">Twitter (@imarkina)</font>
 				</a>
 			</li>
-			<li>También puesdes enviarme un correo electronico a <a HREF="mailto:imarquina@gmail.com">
-					<font COLOR="#E0E0E0">imarquina@gmail.com</font>
+			<li>También puesdes enviarme un correo electronico a <a HREF="mailto:imfotografia@live.com">
+					<font COLOR="#E0E0E0">imfotografia@live.com</font>
 				</a>
 			</li>
 		</ul>
@@ -371,7 +371,8 @@
 		</ul>
 	</section>
 	<title>iñaki marquina</title>
-	<slogan>FOTOGRAFÍA</slogan>
+	<slogan><![CDATA[<h4>Sobre este sitio</h4><p class="text-muted">Esta página tiene un 5% de HTML, un 50% de imágenes, un 70% de JavaScript y un 80% de imaginación ... sí, ya sé que no suma lo que debe, pero cuando haces lo que te gusta la motivación te hace ir más allá a través de la creatividad ;)</p>]]></slogan>
+	<cookies><![CDATA[Como muchas páginas web utilizo <a href='http://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)' target='_blank'>cookies</a> para mejorar a través del análisis de tu navegación en el sitio. <a href='http://www.google.es/intl/es/policies/technologies/cookies/' target='_blank'>Más información</a><br>Si sigues navegando entiendo que aceptas el uso de cookies. En todo caso mejor activar la Navegación Privada de tu navegador ;)</div><div class='banner-cookie-vinculos'><a id='banner-cookie-submit' href='#'>Lo entiendo</a><a id='banner-cookie-cancel' href='#'>Cerrar</a>]]></cookies>
 	<tracks name="Audio">
 		<track SRC="../tracks/track01.mp3" ARTIST="Stranglehold" NAME="Soundtrack # 01" />
 		<track SRC="../tracks/track02.mp3" ARTIST="Lluvia" NAME="Soundtrack # 02" />
@@ -379,5 +380,5 @@
 		<track SRC="../tracks/track04.mp3" ARTIST="Breakbeat" NAME="Soundtrack # 04" />
 		<track SRC="../tracks/track05.mp3" ARTIST="Ambient" NAME="Soundtrack # 05" />
 	</tracks>
-	<contactform EMAIL="imarquina@gmail.com" SUBJAUXTEXT="THIS MESSAGE HAS BEEN SENT FROM YOUR WEBSITE: " />
+	<contactform EMAIL="imfotografia@live.com" SUBJAUXTEXT="THIS MESSAGE HAS BEEN SENT FROM YOUR WEBSITE: " />
 </config>

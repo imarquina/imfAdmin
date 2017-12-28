@@ -1,87 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="Updated data in">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lib/org/apache/log4j/log4j-1.2.17.jar" afterPath="$PROJECT_DIR$/lib/org/apache/log4j/log4j-1.2.17.jar" />
-      <change beforePath="$PROJECT_DIR$/lib/org/jsoup/jsoup-1.9.2.jar" afterPath="$PROJECT_DIR$/lib/org/jsoup/jsoup-1.9.2.jar" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/extensions/StringWriter.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/extensions/StringWriter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Crypto.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Crypto.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Date.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Date.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Number.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Number.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Property.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Property.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Text.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Text.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Xml.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Xml.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/html/data/HtmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/html/data/HtmlConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/interfaces/IXmlNode.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/interfaces/IXmlNode.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Property.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Property.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/XmlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/XmlConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/ICollection.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/ICollection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/interfaces/IElement.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ContactForm.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ContactForm.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ExtractCollection.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ExtractCollection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Multimedia.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Multimedia.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Title.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Title.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Track.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Track.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Tracks.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Tracks.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Video.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Video.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/base/ElementBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/base/ElementBase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/interfaces/IElement.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/interfaces/IElement.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Config.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Config.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Media.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Media.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Medias.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Medias.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photo.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photos.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photos.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementDateBase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/base/ElementStringBase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Category.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Category.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Channel.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Channel.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Description.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Description.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Docs.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Docs.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Guid.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Guid.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Height.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Height.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Language.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Language.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Link.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Link.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/ManagingEditor.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/ManagingEditor.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/PubDate.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/PubDate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/WebMaster.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/WebMaster.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Width.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Width.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/XmlSitemap.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/XmlSitemap.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.website.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.website.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change beforePath="$PROJECT_DIR$/data/xml/in/config.xml" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" />
+      <change beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,68 +23,7 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compiler.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maven__org_jsoup_jsoup_1_9_2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maven__log4j_log4j_1_2_17.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profiles_settings.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/copyright/profiles_settings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j_1_2_17.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -239,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" />
-        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
+        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
       </list>
     </option>
   </component>
@@ -294,7 +156,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -307,6 +168,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -821,13 +683,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -906,13 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.website.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1099,22 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="168" column="83" lean-forward="false" selection-start-line="168" selection-start-column="74" selection-end-line="168" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-browsers.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1135,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,15 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,6 +1009,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.website.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="170" column="338" lean-forward="false" selection-start-line="170" selection-start-column="338" selection-end-line="170" selection-end-column="338" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-559">
+          <caret line="168" column="34" lean-forward="false" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
           <folding />
         </state>
       </provider>

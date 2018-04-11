@@ -23,7 +23,7 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" />
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" />
-        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
+        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
       </list>
     </option>
   </component>
@@ -155,6 +155,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -185,8 +187,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1052,18 +1052,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="171" column="37" lean-forward="false" selection-start-line="171" selection-start-column="37" selection-end-line="171" selection-end-column="37" />
+        <state relative-caret-position="300">
+          <caret line="166" column="261" lean-forward="false" selection-start-line="166" selection-start-column="261" selection-end-line="166" selection-end-column="261" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="173" column="82" lean-forward="false" selection-start-line="173" selection-start-column="73" selection-end-line="173" selection-end-column="82" />
+        <state relative-caret-position="177">
+          <caret line="304" column="253" lean-forward="false" selection-start-line="304" selection-start-column="253" selection-end-line="304" selection-end-column="253" />
           <folding />
         </state>
       </provider>

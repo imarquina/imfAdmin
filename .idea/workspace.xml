@@ -4,7 +4,6 @@
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/xml/in/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" afterDir="false" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,26 +22,7 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="photos.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="149" column="380" selection-start-line="149" selection-start-column="380" selection-end-line="149" selection-end-column="380" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="192" column="387" selection-start-line="192" selection-start-column="387" selection-end-line="192" selection-end-column="387" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,6 +49,11 @@
       <find>EGR</find>
       <find>Detrás del sirimi</find>
       <find>edm</find>
+      <find>150415013_pan</find>
+      <find>150116019</find>
+      <find>150196001</find>
+      <find>150387025</find>
+      <find>fuente</find>
     </findStrings>
     <replaceStrings>
       <replace>ogger.debug(&quot;Begin&quot;);</replace>
@@ -176,6 +161,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +191,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -577,7 +562,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290653" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32004982" />
@@ -1007,17 +991,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/config.2.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.2.xml" />
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="149" column="380" selection-start-line="149" selection-start-column="380" selection-end-line="149" selection-end-column="380" />
+        <state relative-caret-position="260">
+          <caret line="304" column="241" selection-start-line="304" selection-start-column="241" selection-end-line="304" selection-end-column="241" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="192" column="387" selection-start-line="192" selection-start-column="387" selection-end-line="192" selection-end-column="387" />
+        <state relative-caret-position="243">
+          <caret line="34" column="82" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="82" />
         </state>
       </provider>
     </entry>

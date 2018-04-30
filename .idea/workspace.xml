@@ -4,6 +4,7 @@
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/xml/in/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" afterDir="false" />
     </list>
     <ignored path="imfAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photos.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="178" column="374" selection-start-line="178" selection-start-column="374" selection-end-line="178" selection-end-column="374" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="304" column="235" selection-start-line="304" selection-start-column="235" selection-end-line="304" selection-end-column="235" />
+            <state relative-caret-position="226">
+              <caret line="346" column="253" selection-start-line="346" selection-start-column="253" selection-end-line="346" selection-end-column="253" />
             </state>
           </provider>
         </entry>
@@ -126,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" />
         <option value="$PROJECT_DIR$/data/xml/in/config.2.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/photos.2.xml" />
-        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
+        <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
       </list>
     </option>
   </component>
@@ -577,13 +587,13 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290653" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32004982" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50416666" side_tool="true" weight="0.39308578" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50416666" side_tool="true" visible="true" weight="0.31755915" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32650447" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.31755915" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49583334" visible="true" weight="0.31755915" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290653" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950249" visible="true" weight="0.23472223" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4950249" visible="true" weight="0.23472223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.50497514" side_tool="true" weight="0.24444444" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49583334" weight="0.39052495" />
@@ -1002,17 +1012,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/config.2.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.2.xml" />
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="34" column="82" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="82" />
+        <state relative-caret-position="226">
+          <caret line="346" column="253" selection-start-line="346" selection-start-column="253" selection-end-line="346" selection-end-column="253" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="304" column="235" selection-start-line="304" selection-start-column="235" selection-end-line="304" selection-end-column="235" />
+        <state relative-caret-position="381">
+          <caret line="178" column="374" selection-start-line="178" selection-start-column="374" selection-end-line="178" selection-end-column="374" />
         </state>
       </provider>
     </entry>

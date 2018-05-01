@@ -364,21 +364,24 @@
 				</a> al sitio que quizá más ha aportado a night.noise</p>
 		</section>
 	</folder>
-	<section NAME="Contacta y +info" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20121024">
-		<p>Tu opinion sobre esta pagina y el trabajo que hay detras para mí es muy importante. Tienes a tu disposicion:</p>
+	<section NAME="Contacta y +info" WIDTH="320" HEIGHT="350" BYDEFAULT="true" UPDATE="20180501">
+		<p>Tu opinion sobre esta pagina y el trabajo que hay detras para mí es muy importante. Si te ha parecido interesante, puedes estar al día, o preguntarme lo que quieras a través de:</p>
 		<ul>
-			<li>Si te ha parecido interesante, <a href="http://twitter.com/share?original_referer=http://www.imarquina.es&amp;source=tweetbutton&amp;data-via=imarkina&amp;text=imarquina.fotografia&amp;url=http://www.imarquina.es" target="_blank">
-					<font COLOR="#E0E0E0">enlazar en Twitter</font>
-				</a> esta página</li>
-			<li>O quiza quieras seguirme en <a href="http://www.facebook.com/imfotografia.eu" target="_blank">
-					<font COLOR="#E0E0E0">Facebook</font>
-				</a> o <a href="https://twitter.com/imarkina" target="_blank">
-					<font COLOR="#E0E0E0">Twitter (@imarkina)</font>
-				</a>
+			<li>
+				Canal de Telegram <a href="https://t.me/imfotografia" target="_blank">
+				<font COLOR="#E0E0E0">t.me/imfotografia</font></a>
 			</li>
-			<li>También puesdes enviarme un correo electronico a <a HREF="mailto:imfotografia@live.com">
-					<font COLOR="#E0E0E0">imfotografia@live.com</font>
-				</a>
+			<li>
+				Facebook <a href="http://www.facebook.com/imfotografia.eu" target="_blank">
+				<font COLOR="#E0E0E0">facebook.com/imfotografia.eu</font></a>
+			</li>
+			<li>
+				Twitter <a href="https://twitter.com/imarkina" target="_blank">
+				<font COLOR="#E0E0E0">twitter.com/imarkina</font></a>
+			</li>
+			<li>
+				Email <a HREF="mailto:imfotografia@live.com">
+				<font COLOR="#E0E0E0">imfotografia@live.com</font></a>
 			</li>
 		</ul>
 	</section>
@@ -393,8 +396,8 @@
 					<font COLOR="#E0E0E0">http://www.albertpunti.com</font>
 				</a>
 			</li>
-			<li>Oriol Jolonch <a href="http://www.orioljolonch.com/" target="_blank">
-					<font COLOR="#E0E0E0">http://www.orioljolonch.com</font>
+			<li>Oriol Jolonch <a href="http://www.orioljolonch.net/" target="_blank">
+					<font COLOR="#E0E0E0">http://www.orioljolonch.net</font>
 				</a>
 			</li>
 			<li>Thomas Scholes <a href="http://artofscholes.com/" target="_blank">
@@ -421,7 +424,9 @@
 					<font COLOR="#E0E0E0">http://www.juliedewaroquier.com</font>
 				</a>
 			</li>
-			<!--<li>Eduardo Blazquez </li><li>Xenia Pérez <a href="http://www.xeniaperez.com" target="_blank"><font COLOR="#E0E0E0">http://www.xeniaperez.com</font></a></li><li>Iñaki Silveira <a href="http://www.paisajesdigitales.com" target="_blank"><font COLOR="#E0E0E0">http://www.paisajesdigitales.com</font></a></li>-->
+			<li>Eduardo Blazquez </li>
+			<li>Xenia Pérez <a href="http://www.xeniaperez.com" target="_blank"><font COLOR="#E0E0E0">http://www.xeniaperez.com</font></a></li>
+			<!--<li>Iñaki Silveira <a href="http://www.paisajesdigitales.com" target="_blank"><font COLOR="#E0E0E0">http://www.paisajesdigitales.com</font></a></li>-->
 		</ul>
 	</section>
 	<title>iñaki marquina</title>

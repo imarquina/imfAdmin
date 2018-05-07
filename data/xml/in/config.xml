@@ -190,68 +190,65 @@
 			<img ID="150643013"/>
 			<img ID="150565060_pan"/>
 		</gallery>
-		<folder NAME="Exposiciones" SRC="000000060.jpg" TITLE="IMFotografía - Album Exposiciones" INFOTEXT="Exposiciones realizadas y en proyecto donde mostrar mi punto de vista fotográfico" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20180423">
-			<gallery NAME="En FTSI 2012" SRC="000000001.jpg" TITLE="IMFotografía - Galería exposición FTSI 2012" INFOTEXT="Exposición realizada en la Fundación de los Trabajadores de la Siderurgia Integral (FTSI) en 2012" KEYWORDS="ftsi exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20121021">
-				<img ID="000000001"/>
-				<img ID="150120005"/>
-				<img ID="150120011"/>
-				<img ID="150120043"/>
-				<img ID="150120045"/>
-				<img ID="150120042_1"/>
-				<img ID="150113025"/>
-				<img ID="150156015"/>
-				<img ID="150163003"/>
-				<img ID="150183001"/>
-				<img ID="150136006"/>
-				<img ID="150116023_2"/>
-				<img ID="150196001"/>
-				<img ID="150116019"/>
-				<img ID="150232010"/>
-				<img ID="150247004"/>
-				<img ID="15027100b"/>
-				<img ID="15027100a"/>
-				<img ID="150168027"/>
-				<img ID="150271002"/>
-				<img ID="150271006"/>
-				<img ID="150271013"/>
-				<img ID="150271022"/>
-				<img ID="150271023"/>
-			</gallery>
-			<gallery NAME="En FTSI 2013" SRC="000000010.jpg" TITLE="IMFotografía - Galería exposición FTSI 2013" INFOTEXT="Exposición realizada en la Fundación de los Trabajadores de la Siderurgia Integral (FTSI) en 2012" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20130704">
-				<img ID="000000010"/>
-				<img ID="150156015"/>
-				<img ID="150163003"/>
-				<img ID="150116019"/>
-				<img ID="15027100b"/>
-				<img ID="15027100a"/>
-				<img ID="150284042_2"/>
-				<img ID="150376003_pan"/>
-				<img ID="150284022"/>
+		<folder NAME="Exposiciones" SRC="000000050.jpg" TITLE="IMFotografía - Album Exposiciones" INFOTEXT="Exposiciones realizadas y en proyecto donde mostrar mi punto de vista fotográfico" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20180511">
+			<gallery NAME="En Larruzz Bilbao 2018" SRC="000000050.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el Larruzz Bilbao, un especial espacio gastronómico a la orilla de la ría y en el centro de Bilbao" KEYWORDS="exposition larruzz bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180511">
+				<img ID="150298014_pan"/>
 				<img ID="150415013_pan"/>
-				<img ID="150298014_pan"/>
-				<img ID="150377028_pan"/>
-				<img ID="150436029_pan"/>
-			</gallery>
-			<gallery NAME="En BilboArgazki 2013 - FNAC" SRC="000000020.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada en el BilboArgazki 2013 en FNAC" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20130704">
-				<img ID="000000020"/>
-				<img ID="150156015"/>
+				<img ID="150196001"/>
+				<img ID="150247010"/>
+				<img ID="150116023_2"/>
+				<img ID="15027100a"/>
+				<img ID="150414013_pan"/>
+				<img ID="15027100b"/>
+				<img ID="150419001"/>
 				<img ID="150163003"/>
 				<img ID="150183001"/>
-				<img ID="150116023_2"/>
+				<img ID="150440065_pan"/>
+				<img ID="150536009_pan"/>
+			</gallery>
+			<gallery NAME="Exposición FANT 2018 24 ed." SRC="000000060.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el FANT Festival de cine fantástico de Bilbao 2018 en su 24 ed." KEYWORDS="exposición fant bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180423">
+				<img ID="150387025"/>
 				<img ID="150116019"/>
-				<img ID="150284042_2"/>
-				<img ID="150419001"/>
-				<img ID="150298014_pan"/>
-				<img ID="150414013_pan"/>
+				<img ID="150415013_pan"/>
 				<img ID="150196001"/>
-				<img ID="150136006"/>
+				<img ID="150156015"/>
+				<img ID="150206077"/>
+				<img ID="150247004"/>
+				<img ID="150536009_pan"/>
+				<img ID="150376003_pan"/>
+				<img ID="150247010"/>
+				<img ID="150431059"/>
+				<img ID="15027100a"/>
+				<img ID="15027100b"/>
 				<img ID="150284022"/>
 				<img ID="150224012"/>
-				<img ID="150281027"/>
+				<img ID="150414013_pan"/>
+				<img ID="150298014_pan"/>
+				<img ID="150284042_2"/>
+				<img ID="150419001"/>
+				<img ID="150163003"/>
+				<img ID="150116023_2"/>
+				<img ID="150136006"/>
+			</gallery>
+			<gallery NAME="En Expodistrito 2017" SRC="000000040.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada para Expodistrito 2017 en Centros Municipales de Bilbao Udala Ayuntamiento y Kultura barrutik" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía udala ayuntamiento expositrito kultura barrutik" UPDATE="20170109">
+				<img ID="000000040"/>
+				<img ID="150163003"/>
+				<img ID="150183001"/>
+				<img ID="150116023_2"/>
+				<img ID="150136006"/>
+				<img ID="150196001"/>
+				<img ID="150116019"/>
 				<img ID="150247004"/>
+				<img ID="150284042_2"/>
+				<img ID="150284022"/>
+				<img ID="150281027"/>
+				<img ID="150415013_pan"/>
+				<img ID="150298014_pan"/>
+				<img ID="150414013_pan"/>
+				<img ID="150419001"/>
 				<img ID="150431059"/>
-				<img ID="150376003_pan"/>
-				<img ID="15027100a"/>
+				<img ID="150247010"/>
+				<img ID="150224012"/>
 			</gallery>
 			<gallery NAME="En Getxoko Kultur Etxea (Torrene)" SRC="000000030.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada en Torrene Aretoa en Getxoko Kultur Etxea" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20141220">
 				<img ID="000000030"/>
@@ -282,67 +279,68 @@
 				<img ID="150536009_pan"/>
 				<img ID="150440065_pan"/>
 			</gallery>
-			<gallery NAME="En Expodistrito 2017" SRC="000000040.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada para Expodistrito 2017 en Centros Municipales de Bilbao Udala Ayuntamiento y Kultura barrutik" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía udala ayuntamiento expositrito kultura barrutik" UPDATE="20170109">
-				<img ID="000000040"/>
-				<img ID="150163003"/>
-				<img ID="150183001"/>
-				<img ID="150116023_2"/>
-				<img ID="150136006"/>
-				<img ID="150196001"/>
-				<img ID="150116019"/>
-				<img ID="150247004"/>
-				<img ID="150284042_2"/>
-				<img ID="150284022"/>
-				<img ID="150281027"/>
-				<img ID="150415013_pan"/>
-				<img ID="150298014_pan"/>
-				<img ID="150414013_pan"/>
-				<img ID="150419001"/>
-				<img ID="150431059"/>
-				<img ID="150247010"/>
-				<img ID="150224012"/>
-			</gallery>
-			<gallery NAME="Exposición FANT 2018 - XXIV Edicion" SRC="000000060.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el FANT Festival de cine fantástico de Bilbao 2018 en su 24 ed." KEYWORDS="exposición fant bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180423">
-				<img ID="150387025"/>
-				<img ID="150116019"/>
-				<img ID="150415013_pan"/>
-				<img ID="150196001"/>
+			<gallery NAME="En BilboArgazki 2013 - FNAC" SRC="000000020.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Exposición realizada en el BilboArgazki 2013 en FNAC" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20130704">
+				<img ID="000000020"/>
 				<img ID="150156015"/>
-				<img ID="150206077"/>
-				<img ID="150247004"/>
-				<img ID="150536009_pan"/>
-				<img ID="150376003_pan"/>
-				<img ID="150247010"/>
-				<img ID="150431059"/>
-				<img ID="15027100a"/>
-				<img ID="15027100b"/>
-				<img ID="150284022"/>
-				<img ID="150224012"/>
-				<img ID="150414013_pan"/>
-				<img ID="150298014_pan"/>
-				<img ID="150284042_2"/>
-				<img ID="150419001"/>
-				<img ID="150163003"/>
-				<img ID="150116023_2"/>
-				<img ID="150136006"/>
-			</gallery>
-			<!--
-			<gallery NAME="En Larruzz Bilbao 2018" SRC="000000050.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el Larruzz Bilbao, un especial espacio gastronómico a la orilla de la ría y en el centro de Bilbao" KEYWORDS="exposition larruzz bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180501">
-				<img ID="150298014_pan"/>
-				<img ID="150415013_pan"/>
-				<img ID="150196001"/>
-				<img ID="150247010"/>
-				<img ID="150116023_2"/>
-				<img ID="15027100a"/>
-				<img ID="150414013_pan"/>
-				<img ID="15027100b"/>
-				<img ID="150419001"/>
 				<img ID="150163003"/>
 				<img ID="150183001"/>
-				<img ID="150440065_pan"/>
-				<img ID="150536009_pan"/>
+				<img ID="150116023_2"/>
+				<img ID="150116019"/>
+				<img ID="150284042_2"/>
+				<img ID="150419001"/>
+				<img ID="150298014_pan"/>
+				<img ID="150414013_pan"/>
+				<img ID="150196001"/>
+				<img ID="150136006"/>
+				<img ID="150284022"/>
+				<img ID="150224012"/>
+				<img ID="150281027"/>
+				<img ID="150247004"/>
+				<img ID="150431059"/>
+				<img ID="150376003_pan"/>
+				<img ID="15027100a"/>
 			</gallery>
-			-->
+			<gallery NAME="En FTSI 2013" SRC="000000010.jpg" TITLE="IMFotografía - Galería exposición FTSI 2013" INFOTEXT="Exposición realizada en la Fundación de los Trabajadores de la Siderurgia Integral (FTSI) en 2012" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20130704">
+				<img ID="000000010"/>
+				<img ID="150156015"/>
+				<img ID="150163003"/>
+				<img ID="150116019"/>
+				<img ID="15027100b"/>
+				<img ID="15027100a"/>
+				<img ID="150284042_2"/>
+				<img ID="150376003_pan"/>
+				<img ID="150284022"/>
+				<img ID="150415013_pan"/>
+				<img ID="150298014_pan"/>
+				<img ID="150377028_pan"/>
+				<img ID="150436029_pan"/>
+			</gallery>
+			<gallery NAME="En FTSI 2012" SRC="000000001.jpg" TITLE="IMFotografía - Galería exposición FTSI 2012" INFOTEXT="Exposición realizada en la Fundación de los Trabajadores de la Siderurgia Integral (FTSI) en 2012" KEYWORDS="ftsi exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20121021">
+				<img ID="000000001"/>
+				<img ID="150120005"/>
+				<img ID="150120011"/>
+				<img ID="150120043"/>
+				<img ID="150120045"/>
+				<img ID="150120042_1"/>
+				<img ID="150113025"/>
+				<img ID="150156015"/>
+				<img ID="150163003"/>
+				<img ID="150183001"/>
+				<img ID="150136006"/>
+				<img ID="150116023_2"/>
+				<img ID="150196001"/>
+				<img ID="150116019"/>
+				<img ID="150232010"/>
+				<img ID="150247004"/>
+				<img ID="15027100b"/>
+				<img ID="15027100a"/>
+				<img ID="150168027"/>
+				<img ID="150271002"/>
+				<img ID="150271006"/>
+				<img ID="150271013"/>
+				<img ID="150271022"/>
+				<img ID="150271023"/>
+			</gallery>
 		</folder>
 		<multimedia NAME="Multimedia" SRC="v150431059.jpg" TITLE="IMFotografía - Multimedia" INFOTEXT="Galería multimedia" KEYWORDS="multimedia bilbao art surreal creative imagine video photo photography surrealismo fotografía creativa" UPDATE="20180428">
 			<vid ID="v150120042_1"/>

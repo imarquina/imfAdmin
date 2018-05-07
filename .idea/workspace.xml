@@ -22,7 +22,26 @@
     <favorites_list name="imfAdmin" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="photos.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2670">
+              <caret line="178" column="374" selection-start-line="178" selection-start-column="374" selection-end-line="178" selection-end-column="374" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="208" column="52" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,7 +179,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +209,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,14 +581,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290653" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32004982" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5048611" side_tool="true" visible="true" weight="0.31755915" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50625" side_tool="true" visible="true" weight="0.31755915" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32650447" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49513888" visible="true" weight="0.31755915" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49375" visible="true" weight="0.31755915" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290653" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4950249" visible="true" weight="0.23472223" />
@@ -1012,17 +1032,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/config.2.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.2.xml" />
-    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="371" column="66" selection-start-line="371" selection-start-column="66" selection-end-line="371" selection-end-column="66" />
+        <state relative-caret-position="2670">
+          <caret line="178" column="374" selection-start-line="178" selection-start-column="374" selection-end-line="178" selection-end-column="374" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
+    <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="178" column="374" selection-start-line="178" selection-start-column="374" selection-end-line="178" selection-end-column="374" />
+        <state relative-caret-position="236">
+          <caret line="208" column="52" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
         </state>
       </provider>
     </entry>

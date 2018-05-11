@@ -41,19 +41,20 @@
       <find>150299017_pan</find>
       <find>mañana</find>
       <find>corazón</find>
-      <find />
+      <find>la torre</find>
       <find>pap.</find>
       <find>pap</find>
       <find>mañan</find>
       <find>EDM</find>
       <find>EGR</find>
-      <find />
+      <find>Detrás del sirimi</find>
       <find>edm</find>
       <find>150415013_pan</find>
       <find>150116019</find>
       <find>150196001</find>
       <find>150387025</find>
       <find>fuente</find>
+      <find>natura</find>
     </findStrings>
     <replaceStrings>
       <replace>ogger.debug(&quot;Begin&quot;);</replace>
@@ -189,8 +190,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,55 +236,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="imfAdmin" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -566,10 +518,10 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290653" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32004982" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5069444" side_tool="true" visible="true" weight="0.31755915" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5076389" side_tool="true" visible="true" weight="0.31755915" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32650447" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49305555" visible="true" weight="0.31755915" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4923611" visible="true" weight="0.31755915" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290653" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4950249" visible="true" weight="0.23472223" />
@@ -1021,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="148" column="432" selection-start-line="148" selection-start-column="432" selection-end-line="148" selection-end-column="432" />
+        <state relative-caret-position="345">
+          <caret line="112" column="306" selection-start-line="112" selection-start-column="306" selection-end-line="112" selection-end-column="306" />
         </state>
       </provider>
     </entry>

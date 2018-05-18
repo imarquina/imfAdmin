@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xml/in/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/xml/in/photos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/xml/in/photos.xml" afterDir="false" />
     </list>
     <ignored path="imfAdmin.iws" />
@@ -55,6 +56,8 @@
       <find>150387025</find>
       <find>fuente</find>
       <find>natura</find>
+      <find>150419001</find>
+      <find>velando</find>
     </findStrings>
     <replaceStrings>
       <replace>ogger.debug(&quot;Begin&quot;);</replace>
@@ -117,8 +120,8 @@
         <option value="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" />
         <option value="$PROJECT_DIR$/data/xml/in/config.2.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/photos.2.xml" />
-        <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
         <option value="$PROJECT_DIR$/data/xml/in/photos.xml" />
+        <option value="$PROJECT_DIR$/data/xml/in/config.xml" />
       </list>
     </option>
   </component>
@@ -518,10 +521,10 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290653" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32004982" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5076389" side_tool="true" visible="true" weight="0.31755915" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5083333" side_tool="true" visible="true" weight="0.31755915" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32650447" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4923611" visible="true" weight="0.31755915" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49166667" visible="true" weight="0.31755915" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290653" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4950249" visible="true" weight="0.23472223" />
@@ -966,15 +969,15 @@
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.2.xml" />
     <entry file="file://$PROJECT_DIR$/data/xml/in/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="208" column="52" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
+        <state relative-caret-position="317">
+          <caret line="203" column="16" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/xml/in/photos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="112" column="306" selection-start-line="112" selection-start-column="306" selection-end-line="112" selection-end-column="306" />
+        <state relative-caret-position="149">
+          <caret line="144" column="80" selection-start-line="144" selection-start-column="71" selection-end-line="144" selection-end-column="80" />
         </state>
       </provider>
     </entry>

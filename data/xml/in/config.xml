@@ -192,6 +192,7 @@
 		</gallery>
 		<folder NAME="Exposiciones" SRC="000000050.jpg" TITLE="IMFotografía - Album Exposiciones" INFOTEXT="Exposiciones realizadas y en proyecto donde mostrar mi punto de vista fotográfico" KEYWORDS="exposition creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri bilbao entrópico entropía" UPDATE="20180511">
 			<gallery NAME="En Larruzz Bilbao 2018" SRC="000000050.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el Larruzz Bilbao, un especial espacio gastronómico a la orilla de la ría y en el centro de Bilbao" KEYWORDS="exposition larruzz bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180511">
+				<img ID="000000050"/>
 				<img ID="150298014_pan"/>
 				<img ID="150415013_pan"/>
 				<img ID="150196001"/>
@@ -200,13 +201,13 @@
 				<img ID="15027100a"/>
 				<img ID="150414013_pan"/>
 				<img ID="15027100b"/>
-				<img ID="150419001"/>
 				<img ID="150163003"/>
 				<img ID="150183001"/>
 				<img ID="150440065_pan"/>
 				<img ID="150536009_pan"/>
 			</gallery>
-			<gallery NAME="Exposición FANT 2018 24 ed." SRC="000000060.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el FANT Festival de cine fantástico de Bilbao 2018 en su 24 ed." KEYWORDS="exposición fant bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180423">
+			<gallery NAME="Exposición FANT 2018 24 ed." SRC="000000060.jpg" TITLE="IMFotografía - Album próximas exposiciones" INFOTEXT="Presentación exposición en el FANT Festival de cine fantástico de Bilbao 2018 en su 24 ed." KEYWORDS="exposición fant bilbao creative surreal imagine photo photography art exposición fotografía creativa surrealismo artista entropico matte painting sirimiri entrópico entropía" UPDATE="20180504">
+				<img ID="000000060"/>
 				<img ID="150387025"/>
 				<img ID="150116019"/>
 				<img ID="150415013_pan"/>

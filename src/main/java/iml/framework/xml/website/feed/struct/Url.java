@@ -1,7 +1,8 @@
 package iml.framework.xml.website.feed.struct;
 
 import iml.framework.xml.website.feed.base.ElementStringBase;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -9,7 +10,7 @@ import org.w3c.dom.Element;
  * Created by inaki.marquina on 06/07/2016.
  */
 public class Url extends ElementStringBase {
-    final static Logger logger = Logger.getLogger(Url.class);
+    final static Logger logger = LogManager.getLogger(Url.class);
 
     /**
      * CONSTRUCTORS

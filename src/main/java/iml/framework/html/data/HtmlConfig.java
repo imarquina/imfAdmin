@@ -4,7 +4,8 @@ import iml.framework.xml.website.config.structs.ContactForm;
 import iml.framework.xml.website.config.structs.Slogan;
 import iml.framework.xml.website.config.structs.Title;
 import iml.framework.xml.website.config.structs.Track;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -33,7 +34,7 @@ public class HtmlConfig {
     public Hashtable<String, Track> tracks;
     public Hashtable<Integer, Object> elements;
 
-    final static Logger logger = Logger.getLogger(HtmlConfig.class);
+    final static Logger logger = LogManager.getLogger(HtmlConfig.class);
 
     /**
      * ENUMERATORS

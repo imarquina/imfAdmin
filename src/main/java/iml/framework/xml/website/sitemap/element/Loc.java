@@ -1,7 +1,8 @@
 package iml.framework.xml.website.sitemap.element;
 
 import iml.framework.xml.interfaces.IXmlNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -9,7 +10,7 @@ public class Loc implements IXmlNode {
     private String _nodeName;
     private String _content;
 
-    final static Logger logger = Logger.getLogger(Loc.class);
+    final static Logger logger = LogManager.getLogger(Loc.class);
 
     /**
      * CONSTRUCTORS

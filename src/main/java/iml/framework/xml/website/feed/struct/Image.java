@@ -2,7 +2,8 @@ package iml.framework.xml.website.feed.struct;
 
 import iml.framework.xml.website.Property;
 import iml.framework.xml.interfaces.IXmlNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -21,7 +22,7 @@ public class Image implements IXmlNode {
     public Width width;
     public Height height;
 
-    final static Logger logger = Logger.getLogger(Image.class);
+    final static Logger logger = LogManager.getLogger(Image.class);
 
     /**
      * CONSTRUCTOR

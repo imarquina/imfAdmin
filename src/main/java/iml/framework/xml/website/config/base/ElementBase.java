@@ -2,7 +2,8 @@ package iml.framework.xml.website.config.base;
 
 import iml.framework.xml.website.config.interfaces.IElement;
 import iml.framework.xml.website.feed.base.ElementDateBase;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -13,7 +14,7 @@ public class ElementBase implements IElement {
     private String _nodeName = "";
     private String _id;
 
-    final static Logger logger = Logger.getLogger(ElementDateBase.class);
+    final static Logger logger = LogManager.getLogger(ElementDateBase.class);
 
     /**
      * CONSTANTS

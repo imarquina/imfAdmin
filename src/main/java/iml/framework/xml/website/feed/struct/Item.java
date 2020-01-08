@@ -7,7 +7,8 @@ import iml.framework.xml.website.element.interfaces.IElement;
 import iml.framework.xml.website.element.structs.Media;
 import iml.framework.xml.website.element.structs.Photo;
 import iml.framework.xml.interfaces.IXmlNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -26,7 +27,7 @@ public class Item implements IXmlNode {
     public PubDate pubDate;
     public Guid guid;
 
-    final static Logger logger = Logger.getLogger(Item.class);
+    final static Logger logger = LogManager.getLogger(Item.class);
 
     /**
      * CONSTRUCTORS

@@ -1,12 +1,13 @@
 package iml.framework.xml.website.element.structs;
 
 import iml.framework.xml.website.element.base.ElementBase;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.Date;
 
 public class Photo extends ElementBase {
-    final static Logger logger = Logger.getLogger(Photo.class);
+    final static Logger logger = LogManager.getLogger(Photo.class);
 
     /**
      * CONSTRUCTORES

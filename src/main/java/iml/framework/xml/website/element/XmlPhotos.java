@@ -6,7 +6,8 @@ import iml.framework.xml.website.element.interfaces.IElement;
 import iml.framework.xml.website.element.structs.Config;
 import iml.framework.xml.website.element.structs.Media;
 import iml.framework.xml.website.element.structs.Photo;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -33,7 +34,7 @@ public class XmlPhotos {
     private String _xml;
     public Config config;
 
-    final static Logger logger = Logger.getLogger(XmlPhotos.class);
+    final static Logger logger = LogManager.getLogger(XmlPhotos.class);
 
     /**
      * ENUMERATORS

@@ -1,7 +1,8 @@
 package iml.framework.xml.website.config.structs;
 
 import iml.framework.xml.website.config.base.CollectionBase;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -14,7 +15,7 @@ import java.util.Map;
  * COLLECTIONS
  */
 public class Folder extends CollectionBase {
-    final static Logger logger = Logger.getLogger(Folder.class);
+    final static Logger logger = LogManager.getLogger(Folder.class);
 
     /**
      * CONSTANTS

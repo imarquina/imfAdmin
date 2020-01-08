@@ -6,7 +6,8 @@ import iml.framework.xml.website.config.structs.Gallery;
 import iml.framework.xml.website.config.structs.Image;
 import iml.framework.xml.website.config.structs.Section;
 import iml.framework.xml.website.config.structs.Video;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -31,7 +32,7 @@ public class CollectionBase implements ICollection {
 
     public Map<String, Object> elements;
 
-    final static Logger logger = Logger.getLogger(Gallery.class);
+    final static Logger logger = LogManager.getLogger(Gallery.class);
 
     /**
      * CONSTANTS

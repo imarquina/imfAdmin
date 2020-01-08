@@ -1,6 +1,7 @@
 package iml.framework.xml.website.config.structs;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -14,7 +15,7 @@ public class Galleries {
     private String _nodeName = "";
     public Map<String, Object> elements;
 
-    final static Logger logger = Logger.getLogger(Galleries.class);
+    final static Logger logger = LogManager.getLogger(Galleries.class);
 
     /**
      * CONSTRUCTORES

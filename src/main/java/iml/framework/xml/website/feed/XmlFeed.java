@@ -10,7 +10,8 @@ import iml.framework.xml.website.feed.struct.Channel;
 import iml.framework.xml.website.feed.struct.Image;
 import iml.framework.xml.website.feed.struct.Item;
 import iml.framework.xml.website.feed.struct.Rss;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -38,7 +39,7 @@ public class XmlFeed {
     private String _nameXml = "feed";
     public Rss rss;
 
-    final static Logger logger = Logger.getLogger(XmlFeed.class);
+    final static Logger logger = LogManager.getLogger(XmlFeed.class);
 
     /**
      * CONSTANTS

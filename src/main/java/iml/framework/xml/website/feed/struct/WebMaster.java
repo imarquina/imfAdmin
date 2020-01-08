@@ -1,12 +1,13 @@
 package iml.framework.xml.website.feed.struct;
 
 import iml.framework.xml.website.feed.base.ElementStringBase;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class WebMaster extends ElementStringBase {
-    final static Logger logger = Logger.getLogger(WebMaster.class);
+    final static Logger logger = LogManager.getLogger(WebMaster.class);
 
     /**
      * CONSTRUCTORS

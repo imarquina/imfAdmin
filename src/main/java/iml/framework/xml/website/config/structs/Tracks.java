@@ -1,6 +1,7 @@
 package iml.framework.xml.website.config.structs;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -18,7 +19,7 @@ public class Tracks {
     private String _name;
     public Map<Integer, Track> track;
 
-    final static Logger logger = Logger.getLogger(Tracks.class);
+    final static Logger logger = LogManager.getLogger(Tracks.class);
 
     /**
      * CONSTANTS

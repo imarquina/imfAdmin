@@ -1,7 +1,8 @@
 package iml.framework.xml.website.element.base;
 
 import iml.framework.xml.website.element.interfaces.IElement;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -35,7 +36,7 @@ public abstract class ElementBase implements IElement {
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
     private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
-    final static Logger logger = Logger.getLogger(ElementBase.class);
+    final static Logger logger = LogManager.getLogger(ElementBase.class);
 
     /**
      * CONSTANTS

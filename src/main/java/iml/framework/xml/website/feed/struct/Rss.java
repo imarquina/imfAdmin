@@ -1,6 +1,7 @@
 package iml.framework.xml.website.feed.struct;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -9,7 +10,7 @@ public class Rss {
     private String _nodeName;
     public Channel chanel;
 
-    final static Logger logger = Logger.getLogger(Rss.class);
+    final static Logger logger = LogManager.getLogger(Rss.class);
 
     /**
      * CONSTRUCTORS

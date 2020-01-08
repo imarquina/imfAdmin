@@ -1,7 +1,8 @@
 package iml.framework.xml.website.sitemap.element;
 
 import iml.framework.xml.interfaces.IXmlNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -14,7 +15,7 @@ public class Lastmod implements IXmlNode {
     private Date _content;
     private DateFormat _dateFormatOut = new SimpleDateFormat("yyyy-MM-dd");
 
-    final static Logger logger = Logger.getLogger(Lastmod.class);
+    final static Logger logger = LogManager.getLogger(Lastmod.class);
 
     /**
      * CONSTRUCTORS

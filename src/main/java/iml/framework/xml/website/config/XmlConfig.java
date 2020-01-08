@@ -4,7 +4,8 @@ import iml.framework.xml.website.Property;
 import iml.framework.xml.website.config.structs.*;
 import iml.framework.xml.website.feed.XmlFeed;
 import iml.framework.xml.website.sitemap.XmlSitemap;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -32,7 +33,7 @@ public class XmlConfig {
     private String _xml;
     public Config config;
 
-    final static Logger logger = Logger.getLogger(XmlConfig.class);
+    final static Logger logger = LogManager.getLogger(XmlConfig.class);
 
     /**
      * CONSTANTS

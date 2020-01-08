@@ -9,7 +9,8 @@ import iml.framework.xml.website.config.structs.*;
 import iml.framework.xml.website.element.XmlPhotos;
 import iml.framework.xml.website.sitemap.element.Url;
 import iml.framework.xml.website.sitemap.element.Urlset;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -36,7 +37,7 @@ public class XmlSitemap {
     private String _nameXml = "sitemap";
     public Urlset urlset = new Urlset();
 
-    final static Logger logger = Logger.getLogger(XmlSitemap.class);
+    final static Logger logger = LogManager.getLogger(XmlSitemap.class);
 
     /**
      * CONSTANTS

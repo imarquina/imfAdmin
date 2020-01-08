@@ -2,7 +2,8 @@ package iml.framework.xml.website.config.structs;
 
 import iml.framework.xml.website.config.base.ElementBase;
 import iml.framework.xml.website.config.interfaces.IElement;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -12,7 +13,7 @@ import java.text.ParseException;
  * ELEMENTS
  */
 public class Image extends ElementBase implements IElement {
-    final static Logger logger = Logger.getLogger(Image.class);
+    final static Logger logger = LogManager.getLogger(Image.class);
 
     public Image() {
         super();

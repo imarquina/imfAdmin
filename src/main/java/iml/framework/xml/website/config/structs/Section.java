@@ -1,7 +1,8 @@
 package iml.framework.xml.website.config.structs;
 
 import iml.framework.arq.utils.Crypto;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -27,7 +28,7 @@ public class Section {
     private DateFormat _dateFormatIn = new SimpleDateFormat("yyyyMMdd");
     private DateFormat _dateFormatOut = new SimpleDateFormat("yyyyMMdd");
 
-    final static Logger logger = Logger.getLogger(Section.class);
+    final static Logger logger = LogManager.getLogger(Section.class);
 
     /**
      * CONSTANTS

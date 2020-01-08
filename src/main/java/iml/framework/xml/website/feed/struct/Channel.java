@@ -2,7 +2,8 @@ package iml.framework.xml.website.feed.struct;
 
 import iml.framework.xml.website.Property;
 import iml.framework.xml.website.config.structs.Config;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -25,7 +26,7 @@ public class Channel {
     public WebMaster webMaster;
     public Map<Integer, Object> elements;
 
-    final static Logger logger = Logger.getLogger(Channel.class);
+    final static Logger logger = LogManager.getLogger(Channel.class);
 
     /**
      * CONSTRUCTORS

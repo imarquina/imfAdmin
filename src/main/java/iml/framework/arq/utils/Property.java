@@ -1,6 +1,7 @@
 package iml.framework.arq.utils;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.*;
 import java.util.Properties;
@@ -10,7 +11,7 @@ import java.util.Properties;
  */
 public class Property {
     private static Properties _prop;
-    final static Logger logger = Logger.getLogger(Property.class);
+    final static Logger logger = LogManager.getLogger(Property.class);
 
     /**
      * CONSTRUCTORS

@@ -4,7 +4,8 @@ import iml.framework.xml.website.config.XmlConfig;
 import iml.framework.xml.website.element.XmlPhotos;
 import iml.framework.xml.website.feed.XmlFeed;
 import iml.framework.xml.website.sitemap.XmlSitemap;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -18,7 +19,7 @@ import java.text.ParseException;
  * Created by inaki.marquina on 30/06/2016.
  */
 public class Launcher {
-    final static Logger logger = Logger.getLogger(Launcher.class);
+    final static Logger logger = LogManager.getLogger(Launcher.class);
     final static String separatorLog = "++++++++++++++++++++++++++++++++++++++++";
 
     public static void main(String[] args) {

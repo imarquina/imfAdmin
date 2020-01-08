@@ -1,7 +1,8 @@
 package iml.framework.xml.website.sitemap.element;
 
 import iml.framework.xml.website.Property;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -17,7 +18,7 @@ public class Urlset {
 
     public Map<Integer, Url> url;
 
-    final static Logger logger = Logger.getLogger(Urlset.class);
+    final static Logger logger = LogManager.getLogger(Urlset.class);
 
     /**
      * CONSTRUCTORS

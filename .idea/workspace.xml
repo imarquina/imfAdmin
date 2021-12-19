@@ -1,65 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_13_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+    <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="Updated log4j">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_17_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_17_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_13_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imfAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/imfAdmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/html/data/HtmlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/html/data/HtmlConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/XmlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/XmlConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/CollectionBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/base/ElementBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ContactForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/ContactForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Cookies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Folder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Galleries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Gallery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Multimedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Multimedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Slogan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Tracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Tracks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/config/structs/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/XmlPhotos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/base/ElementBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/base/ElementBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/element/structs/Photo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/XmlFeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Description.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Docs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Docs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Guid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Guid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Height.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Height.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/LastBuildDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/ManagingEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/ManagingEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/PubDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/PubDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Rss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Url.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/WebMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/WebMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Width.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/feed/struct/Width.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/XmlSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/XmlSitemap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Lastmod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Loc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Url.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/website/sitemap/element/Urlset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/org/apache/logging/log4j/log4j-api-2.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/org/apache/logging/log4j/log4j-core-2.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/org/jsoup/jsoup-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,11 +47,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="873" />
-  </component>
   <component name="ProjectId" id="1W4tBKVch6pdThKB4d0VLckjRP5" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -124,6 +76,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -140,6 +93,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="iml.framework.xml.website.config.structs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunManager">
@@ -502,29 +458,26 @@
     <MESSAGE value="Updated data in" />
     <MESSAGE value="Updated project" />
     <MESSAGE value="Updated data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated data" />
+    <MESSAGE value="Updated log4j" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated log4j" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="208" y="43" key="SettingsEditor" timestamp="1578424946610">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="320" y="125" key="#Project_Structure" timestamp="1639899304544">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1578424946610" />
-    <state width="254" height="200" key="ShowFilterAction_Filter_Popup" timestamp="1578424375533">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="320" y="125" key="#Project_Structure/0.25.1440.875@0.25.1440.875" timestamp="1639899304544" />
+    <state x="321" y="62" key="CommitChangelistDialog2" timestamp="1639900038341">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state width="254" height="200" key="ShowFilterAction_Filter_Popup/0.23.1440.877@0.23.1440.877" timestamp="1578424375533" />
-    <state x="424" y="362" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1578424942052">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="321" y="62" key="CommitChangelistDialog2/0.25.1440.875@0.25.1440.875" timestamp="1639900038341" />
+    <state x="208" y="41" key="SettingsEditor" timestamp="1639899990619">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="424" y="362" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.877@0.23.1440.877" timestamp="1578424942052" />
-    <state x="378" y="97" width="837" height="729" key="find.popup" timestamp="1578511455604">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="208" y="41" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1639899990619" />
+    <state x="434" y="360" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1639899548145">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="378" y="97" width="837" height="729" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1578511455604" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1578424387914">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1578424387914" />
+    <state x="434" y="360" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.25.1440.875@0.25.1440.875" timestamp="1639899548145" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

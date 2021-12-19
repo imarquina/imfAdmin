@@ -2,21 +2,155 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4b6946-bcd2-4eef-8bd7-8a35ee0e3fc8" name="Default" comment="Updated log4j">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_17_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_17_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_api_2_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_core_2_13_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/_windows/git.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_windows/keymap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_windows/laf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_windows/path.macros.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xml/out/config.min.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xml/out/feed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xml/out/photos.min.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xml/out/photos.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xml/out/sitemap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor.codeinsight.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inspection/Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jsoup-1.14.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/log4j-api-2.17.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/log4j-core-2.17.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160705" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160714" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160715" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160718" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160719" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160721" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160729" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160801" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160803" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160809" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160831" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160928" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20160929" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20161209" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20170205" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20170530" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20171215" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20171228" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180112" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180411" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180413" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180418" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180422" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180423" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180424" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180426" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180506" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180507" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/imfAdmin.log.20180511" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/folders/Folder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/folders/eFolderCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/folders/eFolderStructure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/arq/utils/folders/eServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/base/ElementBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/base/PathBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/interfaces/IElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/interfaces/IPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Deploy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Elements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Exclude.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Folders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Name.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Path.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Source.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/iml/framework/xml/sourcetaj/structs/Structure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config.website.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/extensions/StringWriter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Crypto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Date.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Number.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Property.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Text.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/Xml.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/folders/Folder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/folders/eFolderCondition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/folders/eFolderStructure.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/arq/utils/folders/eServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/html/data/HtmlConfig$collectionType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/html/data/HtmlConfig$nodeType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/html/data/HtmlConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/interfaces/IXmlNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/Launcher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/Property.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/base/ElementBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/base/PathBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/interfaces/IElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/interfaces/IPath.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Deploy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Element.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Elements.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Exclude.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Folders.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Name.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Path.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Source.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/sourcetaj/structs/Structure.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/Launcher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/Property.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/XmlConfig$execMode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/XmlConfig$writeMode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/XmlConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/base/CollectionBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/base/ElementBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/interfaces/ICollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/interfaces/IElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/ContactForm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Cookies.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/ExtractCollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Folder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Galleries.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Gallery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Image.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Multimedia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Section.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Slogan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Title.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Track.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Tracks.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/config/structs/Video.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos$execMode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos$nodeType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos$writeMode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/XmlPhotos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/base/ElementBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/element/structs/Photo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/XmlFeed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/base/ElementDateBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/base/ElementStringBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Channel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Description.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Docs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Guid.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Height.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Image.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Language.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/LastBuildDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Link.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/ManagingEditor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/PubDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Rss.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Title.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Url.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/WebMaster.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/feed/struct/Width.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/iml/framework/xml/website/sitemap/XmlSitemap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-browsers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imfAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/imfAdmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/org/apache/logging/log4j/log4j-api-2.13.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/org/apache/logging/log4j/log4j-core-2.13.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/org/jsoup/jsoup-1.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -462,18 +596,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Updated log4j" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="125" key="#Notifications" timestamp="1639900732741">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="320" y="125" key="#Notifications/0.25.1440.875@0.25.1440.875" timestamp="1639900732741" />
     <state x="320" y="125" key="#Project_Structure" timestamp="1639899304544">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="320" y="125" key="#Project_Structure/0.25.1440.875@0.25.1440.875" timestamp="1639899304544" />
-    <state x="321" y="62" key="CommitChangelistDialog2" timestamp="1639900072917">
+    <state x="321" y="62" key="CommitChangelistDialog2" timestamp="1639900769256">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="321" y="62" key="CommitChangelistDialog2/0.25.1440.875@0.25.1440.875" timestamp="1639900072917" />
+    <state x="321" y="62" key="CommitChangelistDialog2/0.25.1440.875@0.25.1440.875" timestamp="1639900769256" />
     <state x="208" y="41" key="SettingsEditor" timestamp="1639899990619">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="208" y="41" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1639899990619" />
+    <state x="320" y="199" key="Vcs.Push.Dialog.v2" timestamp="1639900841195">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="320" y="199" key="Vcs.Push.Dialog.v2/0.25.1440.875@0.25.1440.875" timestamp="1639900841195" />
     <state x="434" y="360" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1639899548145">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
